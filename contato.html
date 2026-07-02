@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Iniciar projeto · Filka</title>
+<meta name="description" content="Conte o que o seu negócio precisa. A gente responde em até 1 dia útil, por WhatsApp ou e-mail." />
+<link rel="icon" type="image/png" href="assets/filka-logo-gradient.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Baumans&family=Cabin:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  /* ===== Form page ===== */
+  .fp-nav {
+    position: absolute; top: 0; left: 0; right: 0; z-index: 20;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px max(28px, calc((100% - 1240px) / 2));
+  }
+  .fp-nav__brand img { height: 22px; width: auto; display: block; }
+  .fp-back {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-family: var(--font-mono); font-size: 13px; letter-spacing: .01em;
+    color: rgba(255,255,255,.82);
+    border: 1px solid rgba(255,255,255,.24);
+    padding: 9px 16px; border-radius: 999px;
+    transition: background .25s, border-color .25s;
+  }
+  .fp-back:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.5); }
+
+  /* Hero */
+  .fp-hero {
+    position: relative; overflow: hidden;
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 130px 0 70px;
+    color: #fff;
+  }
+  .fp-hero__bg { position: absolute; inset: 0; z-index: 0; }
+  .fp-hero__bg::before {
+    content:""; position: absolute; inset: -2px;
+    background-image: url("assets/brand-bg.png");
+    background-size: cover; background-position: center;
+  }
+  .fp-hero__bg::after {
+    content:""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(10,8,16,.30), rgba(10,8,16,.55));
+  }
+  .fp-hero__inner { position: relative; z-index: 1; width: 100%; }
+  .fp-hero__grid {
+    display: grid; grid-template-columns: 1fr 1.05fr; gap: 72px; align-items: center;
+  }
+  @media (max-width: 940px) { .fp-hero__grid { grid-template-columns: 1fr; gap: 40px; } }
+  .fp-hero__intro { max-width: 520px; }
+  .fp-hero h1 {
+    font-family: var(--font-head); font-weight: 400;
+    font-size: clamp(40px, 5vw, 72px); line-height: .98; letter-spacing: -0.03em;
+    margin: 16px 0 18px; max-width: 14ch;
+  }
+  .fp-hero h1 .comma { color: var(--filka-peach); }
+  .fp-hero p { font-size: clamp(16px, 1.5vw, 18px); color: rgba(255,255,255,.82); max-width: 42ch; margin: 0; line-height: 1.55; }
+
+  /* Intro contact + quote (on dark hero) */
+  .fp-contact { display: flex; flex-direction: column; gap: 18px; margin-top: 34px; }
+  .fp-contact__item { display: flex; flex-direction: column; gap: 5px; }
+  .fp-contact__lab { font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+  .fp-contact__val { font-family: var(--font-head); font-size: 19px; letter-spacing: -0.01em; color: #fff; transition: color .2s; }
+  a.fp-contact__val:hover { color: var(--filka-peach); }
+  .fp-quote {
+    margin-top: 30px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.18);
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .fp-quote__text { font-family: var(--font-head); font-style: normal; font-size: 17px; letter-spacing: -0.01em; color: rgba(255,255,255,.92); line-height: 1.4; }
+  .fp-quote__by { display: flex; align-items: center; gap: 12px; }
+  .fp-quote__avatar {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: var(--grad-css);
+    display: grid; place-items: center; color: #fff; font-family: var(--font-head); font-size: 15px; flex: none;
+  }
+  .fp-quote__name { font-size: 14px; color: #fff; }
+  .fp-quote__role { font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,.5); letter-spacing: .06em; }
+
+  /* Form card */
+  .fp-form {
+    background: var(--paper-soft);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-xl);
+    padding: 36px;
+    box-shadow: 0 30px 70px -30px rgba(0,0,0,.5);
+  }
+  @media (max-width: 540px) { .fp-form { padding: 24px; } }
+  .fp-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 540px) { .fp-row { grid-template-columns: 1fr; } }
+  .fp-field { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+  .fp-field label {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .fp-field label .req { color: var(--filka-peach); }
+  .fp-field input,
+  .fp-field select,
+  .fp-field textarea {
+    width: 100%;
+    background: var(--paper);
+    border: 1px solid var(--hairline);
+    border-radius: 12px;
+    padding: 14px 15px;
+    font-family: var(--font-body); font-size: 15px; color: var(--ink);
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+    -webkit-appearance: none; appearance: none;
+  }
+  .fp-field textarea { min-height: 120px; resize: vertical; line-height: 1.5; }
+  .fp-field input::placeholder, .fp-field textarea::placeholder { color: var(--ink-mute); }
+  .fp-field input:focus, .fp-field select:focus, .fp-field textarea:focus {
+    border-color: var(--filka-peach);
+    box-shadow: 0 0 0 3px rgba(236,174,120,.18);
+  }
+  .fp-field select {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23ABA6B8' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>");
+    background-repeat: no-repeat; background-position: right 14px center;
+    padding-right: 40px; cursor: pointer;
+  }
+  .fp-field select option { background: var(--paper-deep); color: var(--ink); }
+  .fp-submit-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 4px; }
+  .fp-msg { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: .03em; color: var(--grad-mint); }
+  #projSubmit:disabled { opacity: .6; cursor: progress; }
+
+  /* Success state */
+  .fp-success { text-align: left; padding: 6px 2px; }
+  .fp-success.is-in { animation: fpFade .5s var(--ease) both; }
+  @keyframes fpFade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  .fp-success__icon {
+    width: 56px; height: 56px; border-radius: 50%;
+    display: grid; place-items: center; margin-bottom: 22px;
+    background: var(--grad-css); color: #fff;
+  }
+  .fp-success__title {
+    font-family: var(--font-head); font-weight: 400; font-size: clamp(26px, 3vw, 34px);
+    letter-spacing: -0.02em; line-height: 1.05; margin: 0 0 14px; color: var(--ink-true, var(--ink));
+  }
+  .fp-success__text { font-family: var(--font-body); font-size: 16px; line-height: 1.6; color: var(--ink); margin: 0 0 18px; max-width: 42ch; }
+  .fp-success__text strong { font-weight: 600; }
+  .fp-success__hint { font-family: var(--font-body); font-size: 14px; line-height: 1.55; color: var(--ink-soft); margin: 0 0 26px; }
+  .fp-success__actions { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-top: 30px; }
+  .fp-success__again {
+    background: none; border: none; cursor: pointer;
+    font-family: var(--font-mono); font-size: 12.5px; letter-spacing: .03em;
+    color: var(--ink-soft); text-decoration: underline; text-underline-offset: 3px;
+    transition: color .2s;
+  }
+  .fp-success__again:hover { color: var(--filka-peach); }
+</style>
+</head>
+<body>
+
+<!-- Hero with side form -->
+<header class="fp-hero">
+  <div class="fp-hero__bg" aria-hidden="true"></div>
+  <nav class="fp-nav">
+    <a class="fp-nav__brand" href="index.html" aria-label="Filka, início"><img src="assets/filka-wordmark-white.png" alt="filka," /></a>
+    <a class="fp-back" href="index.html">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Voltar para a home
+    </a>
+  </nav>
+
+  <div class="container fp-hero__inner">
+    <div class="fp-hero__grid">
+      <!-- Left: intro -->
+      <div class="fp-hero__intro">
+        <div class="eyebrow eyebrow--light" style="color: rgba(255,255,255,.6);">iniciar projeto</div>
+        <h1>Vamos começar a conversa</h1>
+        <p>Conte o que o seu negócio precisa. A gente responde em até 1 dia útil, por WhatsApp ou e-mail.</p>
+
+        <div class="fp-contact">
+          <div class="fp-contact__item">
+            <span class="fp-contact__lab">E-mail</span>
+            <a class="fp-contact__val" href="mailto:fmartins.nascimento@outlook.com">fmartins.nascimento@outlook.com</a>
+          </div>
+          <div class="fp-contact__item">
+            <span class="fp-contact__lab">WhatsApp</span>
+            <a class="fp-contact__val" href="https://wa.me/5511959409990" target="_blank" rel="noopener">+55 (11) 95940-9990</a>
+          </div>
+          <div class="fp-contact__item">
+            <span class="fp-contact__lab">Atendimento</span>
+            <span class="fp-contact__val">Remoto, Brasil e exterior</span>
+          </div>
+        </div>
+
+        <div class="fp-quote">
+          <p class="fp-quote__text">"Todo projeto começa com uma boa conversa<span class="comma" style="color: var(--filka-peach);">,</span>"</p>
+          <div class="fp-quote__by">
+            <span class="fp-quote__avatar">F</span>
+            <div>
+              <div class="fp-quote__name">Filipe</div>
+              <div class="fp-quote__role">filka</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div class="fp-form">
+        <form id="projForm" action="https://formsubmit.co/ajax/fmartins.nascimento@outlook.com" method="POST">
+          <input type="hidden" name="_subject" value="Novo contato pelo site da Filka" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_replyto" value="" id="replytoField" />
+          <div class="fp-row">
+            <div class="fp-field">
+              <label for="nome">Seu nome <span class="req">*</span></label>
+              <input id="nome" name="nome" type="text" required placeholder="Seu nome" />
+            </div>
+            <div class="fp-field">
+              <label for="telefone">Telefone <span class="req">*</span></label>
+              <input id="telefone" name="telefone" type="tel" required placeholder="(11) 90000-0000" />
+            </div>
+          </div>
+          <div class="fp-row">
+            <div class="fp-field">
+              <label for="email">E-mail corporativo <span class="req">*</span></label>
+              <input id="email" name="email" type="email" required placeholder="voce@empresa.com" />
+            </div>
+            <div class="fp-field">
+              <label for="empresa">Empresa <span class="req">*</span></label>
+              <input id="empresa" name="empresa" type="text" required placeholder="Nome da empresa" />
+            </div>
+          </div>
+          <div class="fp-field">
+            <label for="ajuda">Como podemos ajudar? <span class="req">*</span></label>
+            <select id="ajuda" name="ajuda" required>
+              <option value="" disabled selected>Selecione</option>
+              <option>Dados &amp; IA (diagnóstico, AI/BI, automação)</option>
+              <option>Salesforce sob medida</option>
+              <option>Landing page / Site institucional</option>
+              <option>Identidade visual</option>
+              <option>Retainer (capacidade contínua)</option>
+              <option>Ainda não sei, quero conversar</option>
+            </select>
+          </div>
+          <div class="fp-field">
+            <label for="origem">Como conheceu a Filka? <span class="req">*</span></label>
+            <select id="origem" name="origem" required>
+              <option value="" disabled selected>Selecione</option>
+              <option>Indicação</option>
+              <option>LinkedIn</option>
+              <option>Instagram</option>
+              <option>Google</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <div class="fp-field">
+            <label for="mente">Conte um pouco do que você tem em mente <span class="req">*</span></label>
+            <textarea id="mente" name="mente" required placeholder="Ex.: temos Databricks há 1 ano, mas o negócio ainda depende de analista para tudo..."></textarea>
+          </div>
+          <div class="fp-submit-row">
+            <button type="submit" class="btn btn--dark" id="projSubmit">
+              <span class="fp-btn-label">Enviar mensagem</span>
+              <span class="arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </button>
+            <span id="projMsg" class="fp-msg"></span>
+          </div>
+        </form>
+
+        <div class="fp-success" id="projSuccess" hidden>
+          <div class="fp-success__icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <h2 class="fp-success__title"><span style="color: #ffffffc7;">Mensagem recebida!</span></h2>
+          <p class="fp-success__text">Obrigado pelo contato, Karina. Já recebemos as suas informações e vamos responder em até 1 dia útil, por e-mail ou WhatsApp.
+
+</p>
+          <p class="fp-success__hint">Enquanto isso, se preferir adiantar a conversa, fale com a gente agora mesmo:</p>
+          <div class="fp-success__actions">
+            <a class="btn btn--dark" href="https://wa.me/5511959409990" target="_blank" rel="noopener">
+              Chamar no WhatsApp
+              <span class="arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </a>
+            <button type="button" class="fp-success__again" id="projAgain">Enviar outra mensagem</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Form submit → send to Formspree → thank-you state
+  (function () {
+    const form = document.getElementById('projForm');
+    const success = document.getElementById('projSuccess');
+    const nameOut = document.getElementById('projName');
+    const again = document.getElementById('projAgain');
+    const submitBtn = document.getElementById('projSubmit');
+    const msg = document.getElementById('projMsg');
+    if (!form) return;
+
+    const label = submitBtn.querySelector('.fp-btn-label');
+    const labelDefault = label.textContent;
+    const sendingText = { pt: 'Enviando…', en: 'Sending…', es: 'Enviando…' };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+
+      const nome = (document.getElementById('nome').value || '').trim();
+      const first = nome.split(' ')[0];
+      const showSuccess = () => {
+        if (first) nameOut.textContent = first;
+        form.hidden = true;
+        success.hidden = false;
+        success.classList.add('is-in');
+      };
+
+      // set reply-to from the email field
+      const replyto = document.getElementById('replytoField');
+      if (replyto) replyto.value = document.getElementById('email').value || '';
+
+      msg.style.color = '';
+      msg.textContent = '';
+      label.textContent = sendingText[localStorage.getItem('filka-lang') || 'pt'] || 'Enviando…';
+      submitBtn.disabled = true;
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok && (data.success === 'true' || data.success === true || res.status === 200)) {
+          showSuccess();
+        } else {
+          msg.style.color = '#E08A6E';
+          msg.textContent = (data.errors && data.errors[0] && data.errors[0].message)
+            || 'Não foi possível enviar agora. Tente de novo ou fale no WhatsApp.';
+        }
+      } catch (err) {
+        msg.style.color = '#E08A6E';
+        msg.textContent = 'Sem conexão. Tente de novo ou fale no WhatsApp.';
+      } finally {
+        label.textContent = labelDefault;
+        submitBtn.disabled = false;
+      }
+    });
+
+    again.addEventListener('click', () => {
+      form.reset();
+      success.hidden = true;
+      success.classList.remove('is-in');
+      form.hidden = false;
+      msg.textContent = '';
+    });
+  })();
+</script>
+<script src="cookies.js" defer></script>
+<script src="i18n.js" defer></script>
+<script src="cursor.js" defer></script>
+</body>
+</html>

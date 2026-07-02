@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Página não encontrada · Filka</title>
+<meta name="description" content="Esta página ainda está em construção. Volte ao início ou fale com a gente." />
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/png" href="assets/filka-logo-gradient.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Cabin:wght@400;500;600&family=Baumans&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  /* ===== 404 page ===== */
+  .nf {
+    position: relative; min-height: 100vh; overflow: hidden;
+    color: #fff; background: #0a0810;
+    display: flex; align-items: center; padding: 150px 0 90px;
+  }
+  .nf__bg {
+    position: absolute; inset: 0; z-index: 0;
+    background-image: url("assets/brand-bg.png");
+    background-size: cover; background-position: center right;
+    background-repeat: no-repeat; pointer-events: none;
+  }
+  .nf__bg::after {
+    content: ""; position: absolute; inset: 0;
+    background:
+      linear-gradient(95deg, rgba(10,8,16,.9) 0%, rgba(10,8,16,.62) 34%, rgba(10,8,16,.2) 66%, rgba(10,8,16,0) 100%),
+      linear-gradient(0deg, rgba(10,8,16,.6) 0%, rgba(10,8,16,0) 44%);
+    pointer-events: none;
+  }
+  .nf__tech {
+    position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,.10) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,.10) 1px, transparent 1px);
+    background-size: 120px 120px; background-position: center; opacity: .55;
+    -webkit-mask-image: radial-gradient(120% 100% at 70% 40%, #000 30%, transparent 85%);
+    mask-image: radial-gradient(120% 100% at 70% 40%, #000 30%, transparent 85%);
+  }
+  .nf__grain {
+    position: absolute; inset: 0; z-index: 0; opacity: .5; pointer-events: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/></svg>");
+  }
+  .nf__plexus {
+    position: absolute; top: 0; bottom: 0; right: 0; z-index: 0;
+    width: 62%; height: 100%; pointer-events: none;
+    object-fit: cover; object-position: right center;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 42%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 42%);
+  }
+
+  .nf__inner { position: relative; z-index: 1; width: 100%; }
+  .nf__copy { max-width: 720px; }
+
+  .nf__code {
+    font-family: var(--font-head); font-weight: 400; line-height: .92;
+    font-size: clamp(96px, 20vw, 220px); letter-spacing: -0.04em;
+    background: var(--grad-css);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    margin: 0 0 8px;
+  }
+  .nf__title {
+    font-family: var(--font-head); font-weight: 400; letter-spacing: -0.02em;
+    font-size: clamp(28px, 5vw, 46px); line-height: 1.06; margin: 0 0 18px;
+  }
+  .nf__lede {
+    color: rgba(255,255,255,.74); font-size: clamp(15px, 1.6vw, 18px);
+    line-height: 1.6; max-width: 52ch; margin: 0 0 20px;
+  }
+  .nf__pages {
+    display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 34px;
+  }
+  .nf__pill {
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: .02em;
+    color: rgba(255,255,255,.7); padding: 8px 15px; border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.04);
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .nf__pill::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--filka-peach); flex: none;
+  }
+  /* Minimal header */
+  .nf-nav {
+    position: absolute; top: 0; left: 0; right: 0; z-index: 20;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px max(28px, calc((100% - 1240px) / 2));
+  }
+  .nf-nav__brand img { height: 22px; width: auto; display: block; }
+  .nf-back {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-family: var(--font-mono); font-size: 13px; letter-spacing: .01em;
+    color: rgba(255,255,255,.82);
+    border: 1px solid rgba(255,255,255,.24);
+    padding: 9px 16px; border-radius: 999px;
+    transition: background .25s, border-color .25s, color .25s;
+  }
+  .nf-back:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.5); color: #fff; }
+  .nf-back svg { display: block; }
+
+  @media (max-width: 900px) {
+    .nf__plexus { width: 100%; opacity: .5;
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 30%, #000 100%);
+      mask-image: linear-gradient(to bottom, transparent 0%, #000 30%, #000 100%);
+    }
+  }
+  @media (max-width: 640px) {
+    .nf { padding: 120px 0 70px; }
+    .nf__cta { width: 100%; }
+    .nf__cta .btn { width: 100%; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nf-nav">
+  <a class="nf-nav__brand" href="index.html" aria-label="Filka">
+    <img src="assets/filka-wordmark-white.png" alt="Filka" />
+  </a>
+  <a class="nf-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+    Voltar para a home
+  </a>
+</header>
+
+<section class="nf" data-screen-label="404">
+  <div class="nf__bg" aria-hidden="true"></div>
+  <div class="nf__tech" aria-hidden="true"></div>
+  <canvas class="nf__plexus" id="hero-plexus" width="1920" height="1080" aria-hidden="true"></canvas>
+  <div class="nf__grain" aria-hidden="true"></div>
+
+  <div class="container nf__inner">
+    <div class="nf__copy">
+      <div class="eyebrow eyebrow--light">erro 404</div>
+      <p class="nf__code">404</p>
+      <h2 class="nf__title">Esta página ainda está sendo construída.</h2>
+      <p class="nf__lede">
+        O conteúdo que você procura ainda não está no ar. Estamos trabalhando nele —
+        enquanto isso, volte ao início ou fale com a gente.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<script src="i18n.js" defer></script>
+<script src="plexus.js" defer></script>
+<script src="cursor.js" defer></script>
+</body>
+</html>

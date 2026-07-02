@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Projetos — Filka</title>
+<meta name="description" content="Seleção de projetos do Filka — produtos digitais, plataformas de dados, marcas e agentes de IA." />
+<link rel="icon" type="image/png" href="assets/filka-logo-gradient.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Didact+Gothic&family=Baumans&family=Cabin:wght@400;500;600&family=Lato:wght@400;700&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="filkai.css" />
+<style>
+  .grid-projects {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+  }
+  @media (max-width: 880px) { .grid-projects { grid-template-columns: 1fr; } }
+  .gp-card { grid-column: span 6; }
+  .gp-card.wide { grid-column: span 8; }
+  .gp-card.narrow { grid-column: span 4; }
+  @media (max-width: 880px) { .gp-card, .gp-card.wide, .gp-card.narrow { grid-column: 1 / -1; } }
+
+  .gp-card {
+    background: var(--paper-soft);
+    border-radius: var(--r-xl);
+    overflow: hidden;
+    position: relative;
+    transition: transform .35s var(--ease);
+    display: flex; flex-direction: column;
+  }
+  .gp-card:hover { transform: translateY(-4px); }
+  .gp-card__media {
+    aspect-ratio: 16/10;
+    position: relative;
+    overflow: hidden;
+  }
+  .gp-card.narrow .gp-card__media { aspect-ratio: 1/1; }
+  .gp-card__media .label {
+    position: absolute; top: 18px; left: 18px;
+    background: rgba(255,255,255,.94); color: var(--ink-true);
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+    padding: 6px 10px; border-radius: 999px;
+  }
+  .gp-card__media .yr {
+    position: absolute; top: 18px; right: 18px;
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em;
+    color: rgba(255,255,255,.85);
+  }
+  .gp-card__body { padding: 24px 24px 28px; display: flex; justify-content: space-between; align-items: end; gap: 18px; }
+  .gp-card__body h3 { margin: 0 0 6px; font-size: 22px; font-weight: 400; letter-spacing: -0.015em; }
+  .gp-card__body p { margin: 0; color: var(--ink-soft); font-size: 14px; }
+  .gp-card__arrow {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--ink); color: var(--ink-true);
+    display: grid; place-items: center; flex: none;
+    transition: transform .35s var(--ease), background .35s;
+  }
+  .gp-card:hover .gp-card__arrow { transform: rotate(-45deg); background: var(--filka-blue); }
+
+  /* Decorative media patterns */
+  .pat-grid {
+    background-image:
+      linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .pat-dots {
+    background-image: radial-gradient(rgba(255,255,255,.3) 1.2px, transparent 1.6px);
+    background-size: 18px 18px;
+  }
+  .pat-line {
+    background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.12) 0 2px, transparent 2px 12px);
+  }
+
+  .gp-card__media .glyph {
+    position: absolute; inset: 0;
+    display: grid; place-items: center;
+    color: rgba(255,255,255,.92);
+    font-family: var(--font-serif); font-weight: 400;
+    font-size: clamp(48px, 5vw, 88px);
+    letter-spacing: -0.02em;
+  }
+</style>
+</head>
+<body>
+
+<div id="nav-mount"></div>
+
+<header class="page-head">
+  <div class="page-head__bg"></div>
+  <div class="container page-head__inner">
+    <div class="eyebrow">Projetos · 2023 — 2026</div>
+    <h1>Tudo o que entregamos, <em>do começo ao fim.</em></h1>
+    <p class="lede">Seleção de trabalhos onde código, dados, design e IA se encontraram para virar produto. Filtre por disciplina ou ano.</p>
+  </div>
+</header>
+
+<section style="padding: 80px 0 120px;">
+  <div class="container">
+
+    <div class="filters reveal" id="filters">
+      <button class="active" data-f="todos">Todos</button>
+      <button data-f="software">Software</button>
+      <button data-f="data">Data &amp; BI</button>
+      <button data-f="design">Design</button>
+      <button data-f="ia">IA</button>
+    </div>
+
+    <div class="grid-projects" id="grid">
+
+      <a class="gp-card wide reveal" data-cat="software data" href="cases.html#nimbus">
+        <div class="gp-card__media pat-grid" style="background-color:#5E84C4;">
+          <span class="label">CRM · Salesforce</span>
+          <span class="yr">2026</span>
+          <div class="glyph">Nimbus</div>
+        </div>
+        <div class="gp-card__body">
+          <div>
+            <h3>Nimbus Pipeline</h3>
+            <p>Reorganização do pipeline e relatórios de receita em tempo real para time comercial de 40 pessoas.</p>
+          </div>
+          <div class="gp-card__arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="gp-card narrow reveal" data-cat="design" href="cases.html#solis">
+        <div class="gp-card__media pat-line" style="background:linear-gradient(135deg,#6A5FA6,#ECAE78);">
+          <span class="label">Brand</span>
+          <span class="yr">2025</span>
+          <div class="glyph">Solís</div>
+        </div>
+        <div class="gp-card__body">
+          <div>
+            <h3>Solís Identity</h3>
+            <p>Identidade visual para fintech B2B.</p>
+          </div>
+          <div class="gp-card__arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="gp-card narrow reveal" data-cat="ia" href="cases.html#atlas">
+        <div class="gp-card__media pat-dots" style="background:linear-gradient(135deg,#16121F,#5E84C4);">
+          <span class="label">IA · Agent</span>
+          <span class="yr">2025</span>
+          <div class="glyph">Atlas</div>
+        </div>
+        <div class="gp-card__body">
+          <div>
+            <h3>Atlas Copilot</h3>
+            <p>Agente sobre base interna.</p>
+          </div>
+          <div class="gp-card__arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="gp-card wide reveal" data-cat="data" href="cases.html#orchard">
+        <div class="gp-card__media pat-grid" style="background:linear-gradient(135deg,#241F33,#3A3566);">
+          <span class="label">Data · Databricks</span>
+          <span class="yr">2025</span>
+          <div class="glyph">Orchard</div>
+        </div>
+        <div class="gp-card__body">
+          <div>
+            <h3>Orchard Analytics</h3>
+            <p>Modelagem dimensional e dashboards de operação para varejista multi-loja.</p>
+          </div>
+          <div class="gp-card__arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="gp-card reveal" data-cat="software design" href="#">
+        <div class="gp-card__media pat-line" style="background:linear-gradient(135deg,#5E84C4,#6A5FA6);">
+          <span class="label">Plataforma · SaaS</span>
+          <span class="yr">2024</span>
+          <div class="glyph">Vela</div>
+        </div>
+        <div class="gp-card__body">
+          <div>
+            <h3>Vela Portal</h3>
+            <p>Portal de clientes B2B com onboarding e workflow de assinatura digital.</p>
+          </div>
+          <div class="gp-card__arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="gp-card reveal" data-cat="design" href="#">
+        <div class="gp-card__media pat-dots" style="background:linear-gradient(135deg,#6A5FA6,#5E84C4);">
+          <span class="label">Design System</span>
+          <span class="yr">2024</span>
+          <div class="glyph">Mira UI</div>
+        </div>
+        <div class="gp-card__body">
+          <div>
+            <h3>Mira Design System</h3>
+            <p>Sistema de componentes em Figma e React para healthtech de assinatura.</p>
+          </div>
+          <div class="gp-card__arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="gp-card narrow reveal" data-cat="data" href="#">
+        <div class="gp-card__media pat-grid" style="background:linear-gradient(135deg,#3A3566,#5E84C4);">
+          <span class="label">Data · dbt</span>
+          <span class="yr">2024</span>
+          <div class="glyph">Boreal</div>
+        </div>
+        <div class="gp-card__body">
+          <div>
+            <h3>Boreal Marts</h3>
+            <p>Modelagem dbt para SaaS.</p>
+          </div>
+          <div class="gp-card__arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="gp-card wide reveal" data-cat="software ia" href="#">
+        <div class="gp-card__media pat-line" style="background:linear-gradient(135deg,#5E84C4,#241F33);">
+          <span class="label">IA · Automação</span>
+          <span class="yr">2024</span>
+          <div class="glyph">Inkwell</div>
+        </div>
+        <div class="gp-card__body">
+          <div>
+            <h3>Inkwell Drafts</h3>
+            <p>Plataforma de geração e revisão de propostas comerciais com LLMs e templates institucionais.</p>
+          </div>
+          <div class="gp-card__arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="gp-card narrow reveal" data-cat="design" href="#">
+        <div class="gp-card__media pat-dots" style="background:linear-gradient(135deg,#ECAE78,#6A5FA6);">
+          <span class="label">Site · Brand</span>
+          <span class="yr">2023</span>
+          <div class="glyph">Vinea</div>
+        </div>
+        <div class="gp-card__body">
+          <div>
+            <h3>Vinea Site</h3>
+            <p>Marca e site para vinícola boutique.</p>
+          </div>
+          <div class="gp-card__arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="section--tight" style="padding-bottom: 120px;">
+  <div class="container">
+    <div class="cta-box reveal">
+      <div class="eyebrow eyebrow--light">Próximo projeto</div>
+      <h2 style="margin-top: 18px;">Tem um produto<br/>em <em>mente?</em></h2>
+      <div class="cta-box__row">
+        <a class="btn btn--light" href="https://calendar.app.google/s7fpLVRSq7ARySYF6" target="_blank" rel="noopener">
+          Agendar reunião
+          <span class="arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </a>
+        <a class="btn btn--ghost" href="contato.html" style="color: #fff; border-color: rgba(255,255,255,.25);">
+          Falar por e-mail
+          <span class="arrow" style="background: #fff;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#16121F" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+<script src="nav.js" defer></script>
+<script src="cursor.js" defer></script>
+<script src="filkai.js" defer></script>
+<script>
+  // Filters
+  document.querySelectorAll('#filters button').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('#filters button').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      const f = b.dataset.f;
+      document.querySelectorAll('#grid .gp-card').forEach(card => {
+        const cats = (card.dataset.cat || '').split(' ');
+        const show = f === 'todos' || cats.includes(f);
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>

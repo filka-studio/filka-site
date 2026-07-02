@@ -1,0 +1,253 @@
+/* =========================================
+   FilkAI Chatbot Widget — styles
+   ========================================= */
+
+.filkai-fab {
+  position: fixed; right: 22px; bottom: 22px; z-index: 200;
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 12px 18px 12px 14px; border-radius: 999px;
+  background: rgba(22,19,31,.86); color: #fff;
+  border: 1px solid rgba(255,255,255,.14);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 38px -10px rgba(0,0,0,.55);
+  font-family: var(--font-sans);
+  font-size: 14px; letter-spacing: -0.01em;
+  cursor: pointer; text-decoration: none;
+  transition: transform .25s var(--ease), background .25s, border-color .25s;
+}
+.filkai-fab:hover { background: rgba(30,26,44,.95); border-color: rgba(255,255,255,.3); transform: translateY(-2px); }
+.filkai-fab.hidden { opacity: 0; pointer-events: none; transform: scale(.95); }
+.filkai-fab--wa {
+  padding: 0;
+  width: 60px; height: 60px;
+  justify-content: center;
+}
+.filkai-fab--wa .filkai-fab__icon {
+  width: 40px; height: 40px;
+}
+.filkai-fab__icon {
+  width: 30px; height: 30px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--grad-teal), var(--grad-mint));
+  color: #fff;
+}
+.filkai-fab__label { font-weight: 400; font-family: 'Baumans', var(--font-sans); letter-spacing: .02em; font-size: 16px; }
+.filkai-fab__pulse {
+  position: absolute; top: 8px; right: 14px;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--grad-mint);
+  box-shadow: 0 0 0 3px rgba(185,226,181,.25);
+  animation: filkaiPulse 2s ease-in-out infinite;
+}
+@keyframes filkaiPulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(185,226,181,.25); }
+  50%      { box-shadow: 0 0 0 6px rgba(185,226,181,.08); }
+}
+
+/* Panel */
+.filkai-panel {
+  position: fixed; right: 22px; bottom: 22px; z-index: 199;
+  width: 380px;
+  max-width: calc(100vw - 32px);
+  height: 560px;
+  max-height: calc(100vh - 80px);
+  background: var(--paper-deep);
+  border-radius: 22px;
+  border: 1px solid var(--hairline);
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,.6), 0 60px 120px -40px rgba(0,0,0,.5);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px) scale(.96);
+  transform-origin: bottom right;
+  pointer-events: none;
+  transition: opacity .35s var(--ease), transform .35s var(--ease);
+  font-family: var(--font-sans);
+}
+.filkai-panel.open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.filkai-panel__head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 16px;
+  background: #0B0912;
+  color: #fff;
+  border-bottom: 1px solid var(--hairline-soft);
+}
+.filkai-panel__brand { display: flex; align-items: center; gap: 12px; }
+.filkai-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--grad-blue), var(--grad-teal), var(--grad-mint));
+  display: grid; place-items: center;
+  color: #fff;
+  flex: none;
+}
+.filkai-panel__name { font-size: 18px; display: inline-flex; align-items: center; gap: 10px; font-family: 'Baumans', var(--font-sans); letter-spacing: .02em; }
+
+/* "AI" suffix uses Cabin instead of Baumans */
+.filkai-ai { font-family: 'Cabin', var(--font-sans); font-weight: 500; letter-spacing: 0; margin-left: 1px; }
+.filkai-status {
+  font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+  color: rgba(255,255,255,.7);
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.filkai-status .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--grad-mint);
+  box-shadow: 0 0 0 3px rgba(185,226,181,.25);
+}
+.filkai-panel__sub { font-size: 12px; color: rgba(255,255,255,.6); margin-top: 2px; }
+.filkai-panel__close {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: rgba(255,255,255,.10); color: #fff;
+  border: 1px solid rgba(255,255,255,.18);
+  display: grid; place-items: center; cursor: pointer;
+  transition: background .2s;
+}
+.filkai-panel__close:hover { background: rgba(255,255,255,.20); }
+
+.filkai-panel__body {
+  flex: 1; overflow-y: auto;
+  padding: 18px 16px;
+  background: var(--paper-soft);
+  display: flex; flex-direction: column; gap: 10px;
+  scroll-behavior: smooth;
+  font-family: 'Cabin', var(--font-sans);
+}
+.filkai-panel__body::-webkit-scrollbar { width: 6px; }
+.filkai-panel__body::-webkit-scrollbar-thumb { background: rgba(255,255,255,.18); border-radius: 999px; }
+
+.filkai-msg { display: flex; }
+.filkai-msg--bot { justify-content: flex-start; }
+.filkai-msg--user { justify-content: flex-end; }
+.filkai-bubble {
+  max-width: 82%;
+  padding: 12px 14px;
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+  word-wrap: break-word;
+  animation: filkaiFadeIn .35s var(--ease);
+}
+.filkai-msg--bot .filkai-bubble {
+  background: var(--paper-card);
+  color: var(--ink);
+  border-bottom-left-radius: 4px;
+  border: 1px solid var(--hairline);
+}
+.filkai-msg--user .filkai-bubble {
+  background: var(--filka-blue-deep);
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+.filkai-bubble a { color: var(--filka-blue); text-decoration: underline; }
+.filkai-msg--user .filkai-bubble a { color: #fff; }
+.filkai-bubble b { font-weight: 500; color: var(--filka-blue); }
+.filkai-msg--user .filkai-bubble b { color: #fff; }
+
+@keyframes filkaiFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.filkai-suggestions {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-top: 6px;
+}
+.filkai-chip {
+  background: var(--paper-card);
+  border: 1px solid var(--hairline);
+  color: var(--ink);
+  font-size: 12.5px;
+  font-family: inherit;
+  padding: 8px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color .2s, background .2s, color .2s;
+  letter-spacing: -0.005em;
+}
+.filkai-chip:hover { border-color: var(--filka-peach); color: var(--filka-peach); }
+
+.filkai-panel__foot {
+  display: flex; align-items: center; gap: 8px;
+  padding: 12px 14px;
+  border-top: 1px solid var(--hairline-soft);
+  background: var(--paper-deep);
+}
+.filkai-panel__foot input {
+  flex: 1;
+  border: none; outline: none; background: transparent;
+  font-family: 'Cabin', var(--font-sans); font-size: 14px;
+  color: var(--ink);
+  padding: 8px 6px;
+}
+.filkai-panel__foot input::placeholder { color: var(--ink-mute); }
+.filkai-panel__foot button {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--filka-blue-deep); color: #fff;
+  border: none; cursor: pointer;
+  display: grid; place-items: center;
+  transition: background .2s, transform .2s;
+}
+.filkai-panel__foot button:hover:not(:disabled) { background: var(--filka-blue); transform: rotate(-45deg); }
+.filkai-panel__foot button:disabled { opacity: .5; cursor: wait; }
+
+.filkai-panel__legal {
+  font-size: 10px; color: var(--ink-mute);
+  text-align: center; padding: 4px 14px 10px;
+  background: var(--paper-deep);
+  letter-spacing: .04em;
+}
+
+/* Typing indicator */
+.filkai-typing { display: inline-flex; gap: 3px; padding: 4px 0; }
+.filkai-typing span {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--ink-mute);
+  animation: filkaiBlink 1.2s infinite;
+}
+.filkai-typing span:nth-child(2) { animation-delay: .2s; }
+.filkai-typing span:nth-child(3) { animation-delay: .4s; }
+@keyframes filkaiBlink {
+  0%, 80%, 100% { opacity: .3; transform: translateY(0); }
+  40%           { opacity: 1;  transform: translateY(-2px); }
+}
+
+@media (max-width: 540px) {
+  .filkai-panel {
+    right: 12px; left: 12px;
+    bottom: 12px;
+    width: auto;
+    height: 70vh;
+  }
+  .filkai-fab { right: 12px; bottom: 12px; }
+}
+
+/* Back-to-top button (ao lado do WhatsApp) */
+.filkai-totop {
+  position: fixed; right: 92px; bottom: 22px; z-index: 200;
+  width: 60px; height: 60px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: rgba(22,19,31,.86); color: #fff;
+  border: 1px solid rgba(255,255,255,.14);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 38px -10px rgba(0,0,0,.55);
+  cursor: pointer;
+  opacity: 0; transform: translateY(8px) scale(.9); pointer-events: none;
+  transition: opacity .3s var(--ease), transform .3s var(--ease), background .25s, border-color .25s;
+}
+.filkai-totop.show { opacity: 1; transform: none; pointer-events: auto; }
+.filkai-totop:hover { background: rgba(30,26,44,.95); border-color: rgba(255,255,255,.3); transform: translateY(-2px); }
+
+/* Hide floating buttons over the footer to avoid covering social icons */
+#filkai-mount.over-footer .filkai-fab,
+#filkai-mount.over-footer .filkai-totop {
+  opacity: 0; pointer-events: none; transform: translateY(8px) scale(.92);
+}
+@media (max-width: 540px) {
+  .filkai-totop { right: 80px; bottom: 12px; }
+}

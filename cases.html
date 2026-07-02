@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cases — Filka</title>
+<meta name="description" content="Cases de sucesso do Filka — antes, depois, números e aprendizados." />
+<link rel="icon" type="image/png" href="assets/filka-logo-gradient.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Didact+Gothic&family=Baumans&family=Cabin:wght@400;500;600&family=Lato:wght@400;700&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="filkai.css" />
+<style>
+  .case-hero {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+    padding: 100px 0;
+    border-bottom: 1px solid var(--hairline-soft);
+  }
+  @media (max-width: 880px) { .case-hero { grid-template-columns: 1fr; gap: 32px; padding: 64px 0; } }
+  .case-hero--rev .case-hero__copy { order: 2; }
+  @media (max-width: 880px) { .case-hero--rev .case-hero__copy { order: 1; } }
+
+  .case-hero__media {
+    aspect-ratio: 4/3;
+    border-radius: var(--r-lg);
+    position: relative; overflow: hidden;
+  }
+  .case-hero__media .label {
+    position: absolute; top: 22px; left: 22px;
+    background: rgba(255,255,255,.94); color: var(--ink-true);
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+    padding: 7px 12px; border-radius: 999px;
+  }
+  .case-hero__media .glyph {
+    position: absolute; inset: 0;
+    display: grid; place-items: center;
+    color: rgba(255,255,255,.95);
+    font-family: var(--font-serif);
+    font-size: clamp(60px, 7vw, 132px);
+    letter-spacing: -0.02em;
+  }
+  .case-hero__media .grid-overlay {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.10) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.10) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .case-hero h2 { font-size: clamp(36px, 4.5vw, 64px); font-weight: 400; letter-spacing: -0.025em; line-height: 1; margin: 14px 0 20px; }
+  .case-hero h2 em { font-family: var(--font-serif); font-weight: 400; color: var(--filka-blue); }
+  .case-hero .lede { font-size: 18px; max-width: none; }
+  .case-hero .meta { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 28px; font-family: var(--font-mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
+  .case-hero .meta div b { display: block; color: var(--ink); font-weight: 400; margin-top: 4px; letter-spacing: 0; font-family: var(--font-sans); font-size: 14px; text-transform: none; }
+
+  .case-metrics { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-top: 36px; }
+  @media (max-width: 600px) { .case-metrics { grid-template-columns: 1fr 1fr; } }
+  .case-metric {
+    border-radius: var(--r-md);
+    padding: 22px 20px;
+    color: #fff;
+    background: var(--filka-blue-deep);
+  }
+  .case-metric .n { font-size: 38px; font-weight: 400; letter-spacing: -0.02em; line-height: 1; }
+  .case-metric .l { font-size: 13px; margin-top: 8px; opacity: .85; }
+  .case-metric--teal { background: var(--grad-teal); }
+  .case-metric--ink { background: var(--block-ink); }
+  .case-metric--paper { background: var(--block-paper); color: var(--ink); }
+  .case-metric--paper .n { color: var(--filka-blue); }
+</style>
+</head>
+<body>
+
+<div id="nav-mount"></div>
+
+<header class="page-head">
+  <div class="page-head__bg"></div>
+  <div class="container page-head__inner">
+    <div class="eyebrow">Cases de sucesso</div>
+    <h1>Resultados que <em>contam</em> uma história.</h1>
+    <p class="lede">Antes, depois, números e aprendizados — três projetos onde a integração entre tecnologia e design fez diferença real no negócio do cliente.</p>
+  </div>
+</header>
+
+<!-- Case 1 -->
+<section id="nimbus" style="background: var(--paper);">
+  <div class="container">
+    <div class="case-hero reveal">
+      <div class="case-hero__media" style="background: linear-gradient(135deg,#5E84C4,#6A5FA6);">
+        <div class="grid-overlay"></div>
+        <span class="label">Case · 01 · Nimbus</span>
+        <div class="glyph">Nimbus</div>
+      </div>
+      <div class="case-hero__copy">
+        <div class="eyebrow">Nimbus Tecnologia · Salesforce</div>
+        <h2>Pipeline visível, decisão em <em>tempo real</em>.</h2>
+        <p class="lede">Time comercial de 40 pessoas operando em silos: planilhas, dashboards desatualizados e relatórios fechados toda sexta. Reorganizamos a estrutura do Salesforce, conectamos a Databricks e entregamos um painel de receita em tempo real para a liderança.</p>
+
+        <div class="meta">
+          <div>Cliente <b>Nimbus Tecnologia</b></div>
+          <div>Disciplina <b>Software · Data</b></div>
+          <div>Duração <b>14 semanas</b></div>
+          <div>Ano <b>2026</b></div>
+        </div>
+
+        <div class="case-metrics">
+          <div class="case-metric"><div class="n">+24%</div><div class="l">Win-rate</div></div>
+          <div class="case-metric case-metric--teal"><div class="n">-42%</div><div class="l">Ciclo de venda</div></div>
+          <div class="case-metric case-metric--paper"><div class="n">R$ 4M</div><div class="l">Pipeline visível</div></div>
+          <div class="case-metric case-metric--ink"><div class="n">40</div><div class="l">Usuários ativos</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Case 2 -->
+<section id="orchard" style="background: var(--paper-soft);">
+  <div class="container">
+    <div class="case-hero case-hero--rev reveal">
+      <div class="case-hero__copy">
+        <div class="eyebrow">Orchard Varejo · Databricks</div>
+        <h2>De relatório semanal a <em>operação diária</em>.</h2>
+        <p class="lede">Varejista com 18 lojas operava no escuro: dados em CSV, divergências entre frente e retaguarda e zero visibilidade de margem. Construímos uma camada bronze/silver/gold em Databricks e três dashboards-chave para gestão de loja e categoria.</p>
+
+        <div class="meta">
+          <div>Cliente <b>Orchard Varejo</b></div>
+          <div>Disciplina <b>Data &amp; BI</b></div>
+          <div>Duração <b>10 semanas</b></div>
+          <div>Ano <b>2025</b></div>
+        </div>
+
+        <div class="case-metrics">
+          <div class="case-metric case-metric--teal"><div class="n">18</div><div class="l">Lojas integradas</div></div>
+          <div class="case-metric"><div class="n">D-0</div><div class="l">Atualização diária</div></div>
+          <div class="case-metric case-metric--ink"><div class="n">+11%</div><div class="l">Margem bruta</div></div>
+          <div class="case-metric case-metric--paper"><div class="n">3</div><div class="l">Dashboards-chave</div></div>
+        </div>
+      </div>
+      <div class="case-hero__media" style="background: linear-gradient(135deg,#241F33,#3A3566);">
+        <div class="grid-overlay"></div>
+        <span class="label">Case · 02 · Orchard</span>
+        <div class="glyph">Orchard</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Case 3 -->
+<section id="atlas" style="background: var(--paper);">
+  <div class="container">
+    <div class="case-hero reveal">
+      <div class="case-hero__media" style="background: linear-gradient(135deg,#16121F,#6A5FA6);">
+        <div class="grid-overlay"></div>
+        <span class="label">Case · 03 · Atlas</span>
+        <div class="glyph">Atlas</div>
+      </div>
+      <div class="case-hero__copy">
+        <div class="eyebrow">Atlas Consultoria · IA / RAG</div>
+        <h2>Conhecimento da casa <em>na palma da mão.</em></h2>
+        <p class="lede">Consultoria com 9 anos de documentos espalhados em SharePoint, Drive e Notion. Implementamos um agente RAG corporativo: respostas com fontes citadas, governança por equipe e fallback humano para casos sensíveis.</p>
+
+        <div class="meta">
+          <div>Cliente <b>Atlas Consultoria</b></div>
+          <div>Disciplina <b>IA · Agents</b></div>
+          <div>Duração <b>8 semanas</b></div>
+          <div>Ano <b>2025</b></div>
+        </div>
+
+        <div class="case-metrics">
+          <div class="case-metric"><div class="n">12k</div><div class="l">Documentos indexados</div></div>
+          <div class="case-metric case-metric--teal"><div class="n">-65%</div><div class="l">Tempo de pesquisa</div></div>
+          <div class="case-metric case-metric--paper"><div class="n">87%</div><div class="l">Acurácia (eval)</div></div>
+          <div class="case-metric case-metric--ink"><div class="n">110</div><div class="l">Consultores ativos</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial / quote -->
+<section class="section--paper section--tight">
+  <div class="container">
+    <div class="reveal" style="max-width: 920px; margin: 0 auto; text-align: center;">
+      <div class="eyebrow" style="justify-content: center;">Cliente</div>
+      <p style="font-family: var(--font-serif); font-size: clamp(28px, 3vw, 44px); line-height: 1.2; color: var(--ink); margin: 24px 0 28px;">
+        "Tratam o nosso problema como se fosse deles. Entregam código de gente grande e design com atenção a cada detalhe. Raro encontrar."
+      </p>
+      <div style="font-family: var(--font-mono); font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft);">
+        — Liderança de RevOps · Nimbus Tecnologia
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section--tight" style="padding-bottom: 120px;">
+  <div class="container">
+    <div class="cta-box reveal">
+      <div class="eyebrow eyebrow--light">Sua vez</div>
+      <h2 style="margin-top: 18px;">O próximo case<br/>pode ser <em>o seu.</em></h2>
+      <div class="cta-box__row">
+        <a class="btn btn--light" href="https://calendar.app.google/s7fpLVRSq7ARySYF6" target="_blank" rel="noopener">
+          Agendar reunião
+          <span class="arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </a>
+        <a class="btn btn--ghost" href="projetos.html" style="color: #fff; border-color: rgba(255,255,255,.25);">
+          Ver todos os projetos
+          <span class="arrow" style="background: #fff;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#16121F" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+<script src="nav.js" defer></script>
+<script src="cursor.js" defer></script>
+<script src="filkai.js" defer></script>
+</body>
+</html>

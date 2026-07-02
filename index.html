@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Filka · Inovando com a Tecnologia</title>
+<meta name="description" content="Integramos programação e design para transformar visão em produto. Engenharia de software, analytics, design digital e agentes de IA." />
+<link rel="icon" type="image/png" href="assets/filka-logo-gradient.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Cabin:wght@400;500;600&family=Baumans&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="filkai.css" />
+</head>
+<body>
+
+<!-- Nav mount (injected by nav.js) -->
+<div id="nav-mount"></div>
+
+<!-- =========================
+     Hero
+========================== -->
+<section class="hero" id="top" data-screen-label="Hero">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="hero__tech" aria-hidden="true"></div>
+  <canvas class="hero__plexus" id="hero-plexus" width="1920" height="1080" aria-hidden="true"></canvas>
+  <div class="hero__grain" aria-hidden="true"></div>
+
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <div class="hero__lockup">
+        <img class="wordmark" src="assets/filka-wordmark-white.png" alt="filka," />
+        <span class="cycler" id="cycler"><em>design</em></span>
+      </div>
+
+      <p class="hero__lede">
+        Integramos dois universos, programação e design, para transformar
+        sua visão em produto. Alta qualidade e agilidade, da arquitetura ao último pixel.
+      </p>
+
+      <div class="hero__cta">
+        <a class="btn btn--glass" href="https://calendar.app.google/s7fpLVRSq7ARySYF6" target="_blank" rel="noopener">
+          Agendar uma reunião
+          <span class="arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="hero__scrollcue"><span class="line"></span> role para explorar</div>
+</section>
+
+<!-- =========================
+     Tool strip
+========================== -->
+<div class="toolstrip" aria-hidden="true">
+  <div class="toolstrip__track">
+    <span>
+      Salesforce <span class="sep"></span> Databricks <span class="sep"></span> Power BI <span class="sep"></span>
+      React <span class="sep"></span> Next.js <span class="sep"></span> Python <span class="sep"></span>
+      dbt <span class="sep"></span> LangChain <span class="sep"></span> Figma <span class="sep"></span>
+      AWS <span class="sep"></span> PostgreSQL <span class="sep"></span>
+    </span>
+    <span>
+      Salesforce <span class="sep"></span> Databricks <span class="sep"></span> Power BI <span class="sep"></span>
+      React <span class="sep"></span> Next.js <span class="sep"></span> Python <span class="sep"></span>
+      dbt <span class="sep"></span> LangChain <span class="sep"></span> Figma <span class="sep"></span>
+      AWS <span class="sep"></span> PostgreSQL <span class="sep"></span>
+    </span>
+  </div>
+</div>
+
+<!-- =========================
+     Manifesto
+========================== -->
+<section class="section manifesto" id="sobre">
+  <div class="container">
+    <div class="manifesto__grid">
+      <h2 class="manifesto__text reveal">
+        Pensamos em <span class="grad-text">código</span> e em <span class="grad-text">composição visual</span> <span class="muted" style="color: rgb(239, 235, 227)">na mesma frase.</span>
+      </h2>
+      <p class="manifesto__aside reveal">No Filka, programação e design não são disciplinas separadas, são uma só prática. Automatize processos, reduza erros operacionais e tome a decisão certa para o seu negócio, sem abrir mão da estética.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     Empresas que confiam
+========================== -->
+<section class="trust" id="clientes">
+  <div class="container">
+    <div class="trust__row reveal">
+      <div class="trust__intro">
+        <p class="trust__label eyebrow">empresas que confiam</p>
+        <h2 class="trust__title" style="font-size: clamp(26px, 6vw, 40px)">Quem cresce com a gente.</h2>
+      </div>
+      <div class="trust__logos">
+        <div class="trust__logo"><img src="assets/client-jadlog.png" alt="Jadlog" /></div>
+        <div class="trust__logo"><img src="assets/client-lagondola.png" alt="La Gondola" /></div>
+        <div class="trust__logo"><img src="assets/client-knupp.png" alt="Colégio Knupp" /></div>
+        <div class="trust__logo"><img src="assets/client-karime.png" alt="Karime Biomedicina Estética" /></div>
+        <img class="trust-underline" src="assets/trust-underline.svg" alt="" aria-hidden="true" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     Big numbers
+========================== -->
+<section class="section--tight">
+  <div class="container">
+    <div class="sec-head reveal" style="margin-bottom: 64px;">
+      <div class="eyebrow">em números</div>
+      <h2 style="font-size: clamp(32px, 7vw, 60px)">Resultado que <span class="grad-text">se mede</span>.</h2>
+    </div>
+    <div class="bignumbers reveal">
+      <div class="bignum">
+        <div class="bignum__value" data-count="25" data-suffix="+" style="color: var(--grad-blue)">0</div>
+        <div class="bignum__lab">Projetos entregues</div>
+      </div>
+      <div class="bignum">
+        <div class="bignum__value" data-count="9.4" data-decimals="1" style="color: var(--filka-peach)">0</div>
+        <div class="bignum__lab">NPS médio</div>
+      </div>
+      <div class="bignum">
+        <div class="bignum__value" data-count="20" data-suffix="+" style="color: var(--grad-teal)">0</div>
+        <div class="bignum__lab">Tecnologias dominadas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     Expertise rows
+========================== -->
+<section class="section--tight" id="servicos">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">o que fazemos</div>
+      <h2 style="font-size: clamp(28px, 4.4vw, 46px)"><span style="font-size: clamp(30px, 7vw, 60px)">Da arquitetura ao último pixel,</span><br /><span class="scribble scribble--loop" style="font-size: clamp(30px, 7vw, 60px)">tudo no mesmo lugar.</span></h2>
+    </div>
+
+    <div class="expertise">
+      <div class="exp-row reveal">
+        <div class="exp-row__num">01</div>
+        <div class="exp-row__title">Dados &amp; IA</div>
+        <div class="exp-row__desc">Diagnóstico, pipelines, AI/BI Genie e automações sob medida. Levamos o dado bruto até a decisão, com governança e um Salesforce que conversa com o resto.</div>
+      </div>
+
+      <div class="exp-row reveal">
+        <div class="exp-row__num">02</div>
+        <div class="exp-row__title">Digital &amp; Marca</div>
+        <div class="exp-row__desc">Landing pages, sites e identidade visual com engenharia por trás. Carregam rápido, medem tudo e convertem, sem abrir mão da estética.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     Processo
+========================== -->
+<section class="section--tight" id="processo" style="padding-top: 60px;">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">como trabalhamos</div>
+      <h2 style="font-size: clamp(32px, 7vw, 60px)">Do primeiro olá ao <span class="scribble scribble--underline">pós-entrega</span>.</h2>
+    </div>
+
+    <div class="process-grid">
+      <article class="pcard reveal">
+        <div class="pcard__top">
+          <span class="pcard__tag">30 min · sem custo</span>
+          <div class="pcard__icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+        </div>
+        <div class="pcard__body">
+          <h3 class="pcard__title">Conversa</h3>
+          <p class="pcard__desc">Trinta minutos, sem custo. Saímos com o entendimento mútuo do problema.</p>
+        </div>
+        <span class="pcard__num">01</span>
+      </article>
+
+      <article class="pcard reveal">
+        <div class="pcard__top">
+          <span class="pcard__tag">até 1 semana</span>
+          <div class="pcard__icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          </div>
+        </div>
+        <div class="pcard__body">
+          <h3 class="pcard__title">Levantamento</h3>
+          <p class="pcard__desc">Acesso ao contexto técnico e mapeamento do cenário real, sem suposições.</p>
+        </div>
+        <span class="pcard__num">02</span>
+      </article>
+
+      <article class="pcard reveal">
+        <div class="pcard__top">
+          <span class="pcard__tag">validade 15 dias</span>
+          <div class="pcard__icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3v6a3 3 0 0 0 3 3h6a3 3 0 0 1 3 3v3"/><circle cx="6" cy="3" r="0.6" fill="currentColor"/><path d="M18 15l3 3-3 3"/><circle cx="6" cy="21" r="2"/></svg>
+          </div>
+        </div>
+        <div class="pcard__body">
+          <h3 class="pcard__title">Proposta em 3 caminhos</h3>
+          <p class="pcard__desc">MVP, Recomendado ou Completo. Cada um com escopo, prazo e preço fechados por escrito.</p>
+        </div>
+        <span class="pcard__num">03</span>
+      </article>
+
+      <article class="pcard reveal">
+        <div class="pcard__top">
+          <span class="pcard__tag">ciclos semanais</span>
+          <div class="pcard__icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12a9 9 0 0 1-9 9 9 9 0 0 1-7.7-4.4"/><path d="M3 12a9 9 0 0 1 9-9 9 9 0 0 1 7.7 4.4"/><path d="M21 4v4h-4"/><path d="M3 20v-4h4"/></svg>
+          </div>
+        </div>
+        <div class="pcard__body">
+          <h3 class="pcard__title">Execução em sprints</h3>
+          <p class="pcard__desc">Ciclos semanais com demo. Você vê o avanço do produto, não relatório de horas.</p>
+        </div>
+        <span class="pcard__num">04</span>
+      </article>
+
+      <article class="pcard pcard--feature reveal">
+        <div class="pcard__top">
+          <span class="pcard__tag pcard__tag--accent">30 dias inclusos</span>
+          <div class="pcard__icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10z"/></svg>
+          </div>
+        </div>
+        <div class="pcard__body">
+          <h3 class="pcard__title">Handover + cuidado</h3>
+          <p class="pcard__desc">Documentação, treinamento e suporte inclusos por 30 dias após a entrega. A gente não some no go-live.</p>
+        </div>
+        <span class="pcard__num">05</span>
+      </article>
+    </div>
+
+    <div style="margin-top: 44px; display: flex; justify-content: center;">
+      <a class="btn btn--accent" href="#precos">Conhecer soluções</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     Preços / Trilhas
+========================== -->
+<section class="section--tight" id="precos" style="padding-top: 70px;">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">investimento</div>
+      <h2 style="font-size: clamp(32px, 7vw, 60px)">Escopo, prazo
+e preços fechados.</h2>
+    </div>
+
+    <!-- Trilha 1 -->
+    <div class="ptrack reveal">
+      <div class="ptrack__head">
+        <div class="ptrack__intro">
+          <div class="eyebrow">dados &amp; ia</div>
+          <h3 class="ptrack__title">Seu lakehouse e seu CRM, finalmente entregando.</h3>
+        </div>
+        <p class="ptrack__sub">A maioria das empresas já tem plataforma de dados e Salesforce. O que falta é alguém que faça as duas coisas funcionarem juntas e responderem ao negócio.</p>
+      </div>
+
+      <div class="pricing-grid pricing-grid--5">
+        <article class="price-card">
+          <div class="price-card__tags"><span class="tag">2 semanas</span></div>
+          <h4 class="price-card__title">Diagnóstico de Dados</h4>
+          <p class="price-card__desc">Auditoria técnica do seu ambiente com plano de ação priorizado.</p>
+          <ul class="price-card__list">
+            <li>Arquitetura das camadas e qualidade dos pipelines</li>
+            <li>Governança e permissões no Unity Catalog</li>
+            <li>Custo de processamento e oportunidades de economia</li>
+            <li>Prontidão para AI/BI</li>
+            <li>Relatório executivo + sessão de leitura com seu time</li>
+          </ul>
+          <div class="price-card__foot">
+            <div class="price-card__price"><span class="val">R$ 9.500</span><span class="unit">investimento único</span></div>
+            <a class="price-card__cta" href="contato.html">Agendar diagnóstico <span>&#8599;</span></a>
+          </div>
+        </article>
+
+        <article class="price-card price-card--feature">
+          <div class="price-card__tags"><span class="tag">a depender do projeto</span></div>
+          <h4 class="price-card__title">AI/BI Genie Ready</h4>
+          <p class="price-card__desc">Seu time pergunta em português e o dado responde, com governança, não no improviso.</p>
+          <ul class="price-card__list">
+            <li>Modelagem das views dedicadas ao AI/BI</li>
+            <li>Segurança e permissões no Unity Catalog</li>
+            <li>Instruções e contexto por domínio de negócio</li>
+            <li>Exemplos curados e validados com usuários reais</li>
+            <li>Handover documentado para seu time operar sozinho</li>
+          </ul>
+          <div class="price-card__foot">
+            <div class="price-card__price"><span class="from">a partir de</span><span class="val">R$ 28.000</span><span class="unit">por projeto</span></div>
+            <a class="price-card__cta price-card__cta--solid" href="contato.html">Pedir proposta <span>&#8599;</span></a>
+          </div>
+        </article>
+
+        <article class="price-card">
+          <div class="price-card__tags"><span class="tag">2 a 3 semanas</span></div>
+          <h4 class="price-card__title">Automação sob medida</h4>
+          <p class="price-card__desc">Aquele processo manual que consome horas todo mês? A gente elimina.</p>
+          <ul class="price-card__list">
+            <li>ETLs e integrações entre sistemas</li>
+            <li>Robôs de dados e conectores de API</li>
+            <li>Relatórios que se montam sozinhos</li>
+            <li>Código documentado, sem caixa-preta</li>
+          </ul>
+          <div class="price-card__foot">
+            <div class="price-card__price"><span class="from">a partir de</span><span class="val">R$ 7.500</span><span class="unit">por automação</span></div>
+            <a class="price-card__cta" href="contato.html">Contar qual processo <span>&#8599;</span></a>
+          </div>
+        </article>
+
+        <article class="price-card">
+          <div class="price-card__tags"><span class="tag">a depender do projeto</span></div>
+          <h4 class="price-card__title">Salesforce sob medida</h4>
+          <p class="price-card__desc">Sales Cloud do jeito que sua operação precisa, não do jeito que veio de fábrica.</p>
+          <ul class="price-card__list">
+            <li>Automações em Apex e Flows</li>
+            <li>Componentes LWC sob medida</li>
+            <li>Integrações via API com seus sistemas</li>
+            <li>Qualidade e deduplicação de dados no CRM</li>
+          </ul>
+          <div class="price-card__foot">
+            <div class="price-card__price"><span class="from">a partir de</span><span class="val">R$ 14.000</span><span class="unit">por projeto</span></div>
+            <a class="price-card__cta" href="contato.html">Pedir proposta <span>&#8599;</span></a>
+          </div>
+        </article>
+
+        <article class="price-card">
+          <div class="price-card__tags"><span class="tag">mensal &middot; contínuo</span></div>
+          <h4 class="price-card__title">Retainer de Dados</h4>
+          <p class="price-card__desc">Um time de dados sob demanda, todo mês, sem custo de contratação.</p>
+          <ul class="price-card__list">
+            <li>Horas dedicadas de eng. de dados por mês</li>
+            <li>Evolução contínua de pipelines e modelos</li>
+            <li>Monitoramento e otimização de custos</li>
+            <li>Prioridade no atendimento e nas entregas</li>
+          </ul>
+          <div class="price-card__foot">
+            <div class="price-card__price"><span class="from">a partir de</span><span class="val">R$ 6.500</span><span class="unit">por mês</span></div>
+            <a class="price-card__cta" href="contato.html">Montar meu plano <span>&#8599;</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Trilha 2 -->
+    <div class="ptrack reveal">
+      <div class="ptrack__head">
+        <div class="ptrack__intro">
+          <div class="eyebrow">digital &amp; marca</div>
+          <h3 class="ptrack__title">Presença digital com engenharia por trás.</h3>
+        </div>
+        <p class="ptrack__sub">Sites que carregam rápido, medem tudo e convertem. Desenhados por quem entende de marca e construídos por quem entende de código.</p>
+      </div>
+
+      <div class="pricing-grid pricing-grid--4">
+        <article class="price-card">
+          <div class="price-card__tags"><span class="tag">2 semanas</span></div>
+          <h4 class="price-card__title">Landing Page de conversão</h4>
+          <p class="price-card__desc">Uma página, um objetivo, métricas desde o primeiro dia.</p>
+          <ul class="price-card__list">
+            <li>Copy orientada a conversão</li>
+            <li>Design alinhado à sua marca</li>
+            <li>Tracking e analytics configurados</li>
+            <li>Publicada e funcionando, não "entregue em Figma"</li>
+          </ul>
+          <div class="price-card__foot">
+            <div class="price-card__price"><span class="val">R$ 5.500</span><span class="unit">preço fechado</span></div>
+            <a class="price-card__cta" href="contato.html">Começar minha LP <span>&#8599;</span></a>
+          </div>
+        </article>
+
+        <article class="price-card">
+          <div class="price-card__tags"><span class="tag">3 a 5 semanas</span></div>
+          <h4 class="price-card__title">Site institucional</h4>
+          <p class="price-card__desc">Sua marca no ar com performance e mensuração de verdade.</p>
+          <ul class="price-card__list">
+            <li>Webflow ou código sob medida</li>
+            <li>SEO técnico e performance</li>
+            <li>Integração com CRM e ferramentas de marketing</li>
+            <li>Treinamento para seu time atualizar sozinho</li>
+          </ul>
+          <div class="price-card__foot">
+            <div class="price-card__price"><span class="from">a partir de</span><span class="val">R$ 11.000</span><span class="unit">por projeto</span></div>
+            <a class="price-card__cta" href="contato.html">Pedir proposta <span>&#8599;</span></a>
+          </div>
+        </article>
+
+        <article class="price-card">
+          <div class="price-card__tags"><span class="tag">3 a 4 semanas</span></div>
+          <h4 class="price-card__title">Identidade visual</h4>
+          <p class="price-card__desc">Uma marca com conceito e um manual que as pessoas realmente usam.</p>
+          <ul class="price-card__list">
+            <li>Marca, paleta e tipografia</li>
+            <li>Manual de uso objetivo</li>
+            <li>Templates de social media e e-mail</li>
+          </ul>
+          <div class="price-card__foot">
+            <div class="price-card__price"><span class="from">a partir de</span><span class="val">R$ 7.000</span><span class="unit">por projeto</span></div>
+            <a class="price-card__cta" href="contato.html">Pedir proposta <span>&#8599;</span></a>
+          </div>
+        </article>
+
+        <article class="price-card">
+          <div class="price-card__tags"><span class="tag">mensal &middot; contínuo</span></div>
+          <h4 class="price-card__title">Retainer</h4>
+          <p class="price-card__desc">Um time de produto sob demanda, todo mês, sem custo de contratação.</p>
+          <ul class="price-card__list">
+            <li>Horas dedicadas de eng. e design por mês</li>
+            <li>Evolução contínua de produto e dados</li>
+            <li>Prioridade no atendimento e nas entregas</li>
+            <li>Reunião de acompanhamento quinzenal</li>
+          </ul>
+          <div class="price-card__foot">
+            <div class="price-card__price"><span class="from">a partir de</span><span class="val">R$ 4.500</span><span class="unit">por mês</span></div>
+            <a class="price-card__cta" href="contato.html">Montar meu plano <span>&#8599;</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     FAQ
+========================== -->
+<section class="section--tight" id="faq" style="padding-top: 30px;">
+  <div class="container">
+    <div class="faq-grid">
+      <div class="faq-aside reveal">
+        <div class="eyebrow">faq</div>
+        <h2 class="faq-title">Alguma dúvida?</h2>
+        <a class="btn btn--dark" href="https://calendar.app.google/s7fpLVRSq7ARySYF6" target="_blank" rel="noopener">
+          Falar com a gente
+          <span class="arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+
+      <div class="faq-list reveal">
+        <div class="faq-item is-open">
+          <button class="faq-q" type="button" aria-expanded="true">Como funciona contratar a Filka?<span class="faq-ico"></span></button>
+          <div class="faq-collapse"><div class="faq-answer">Depois de uma conversa, a gente analisa o que seu projeto precisa (requisitos, prazo e escopo) e devolve uma proposta detalhada. Em todo o caminho você fica acompanhado: atualizamos o progresso, tiramos dúvidas e, mesmo depois da entrega, seguimos por perto nos 30 dias de cuidado.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">Que serviços vocês oferecem?<span class="faq-ico"></span></button>
+          <div class="faq-collapse"><div class="faq-answer">Duas frentes. Dados &amp; IA: diagnóstico, AI/BI Genie, automação sob medida e Salesforce. Digital &amp; Marca: landing pages, sites e identidade visual. E o Retainer, capacidade sênior mês a mês na frente que você escolher.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">Quanto tempo leva e quanto custa um projeto?<span class="faq-ico"></span></button>
+          <div class="faq-collapse"><div class="faq-answer">Os produtos de entrada têm preço fechado e prazo curto (a partir de 2 semanas). Os demais variam com o escopo. Uma conversa inicial ajuda a gente a mapear sua necessidade e dar uma estimativa precisa por escrito.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">Que tecnologias e ferramentas vocês usam?<span class="faq-ico"></span></button>
+          <div class="faq-collapse"><div class="faq-answer">Em dados: Databricks, Unity Catalog, Genie/AI·BI, Delta Lake, PySpark e Python. Em sistemas: Salesforce com Apex e LWC. Em digital: Webflow ou código sob medida, sempre com tracking configurado. Construímos coisas que rodam em produção, não protótipos.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">E depois que o projeto termina?<span class="faq-ico"></span></button>
+          <div class="faq-collapse"><div class="faq-answer">Todo projeto inclui handover documentado e 30 dias de cuidado, com treinamento e suporte para seu time operar sozinho. Se quiser evolução contínua, o Retainer mantém um time de produto à disposição mês a mês.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contato">
+  <div class="container">
+    <div class="cta-box reveal">
+      <div class="contact-top">
+        <div class="contact-lead">
+          <div class="eyebrow eyebrow--light">vamos conversar</div>
+          <h2>Pronto para fazer seus dados <span class="contact-q">responderem?</span></h2>
+        </div>
+        <div class="contact-info">
+          <div class="contact-info__item">
+            <span class="contact-info__lab">diga oi!</span>
+            <a class="contact-info__val" href="mailto:fmartins.nascimento@outlook.com">fmartins.nascimento@outlook.com</a>
+          </div>
+          <div class="contact-info__item">
+            <span class="contact-info__lab">WhatsApp</span>
+            <a class="contact-info__val" href="https://wa.me/5511959409990" target="_blank" rel="noopener">+55 (11) 95940-9990</a>
+          </div>
+          <div class="contact-info__social">
+            <span class="contact-info__lab">redes sociais</span>
+            <div class="contact-social">
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+              <a href="https://www.linkedin.com/company/filka/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+            </div>
+          </div>
+          <p class="contact-info__note">Vamos construir algo que roda.</p>
+          <a class="btn btn--light" href="contato.html">
+            Iniciar projeto
+            <span class="arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-wordmark">
+        <img src="assets/filka-wordmark-hq.png" alt="filka," />
+      </div>
+
+      <div class="contact-bottom">
+        <span class="contact-bottom__legal">© 2026 Filka. Todos os direitos reservados. </span>
+        <span class="contact-bottom__cnpj">CNPJ 56.302.887/0001-27</span>
+        <div class="contact-links__group">
+          <a href="404.html">Política de privacidade</a>
+          <a href="404.html">Termos de uso</a>
+          <a href="#" data-cookie-settings>Cookies</a>
+          <a href="404.html">Trabalhe conosco</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer mount -->
+
+<script src="nav.js" defer></script>
+<script src="i18n.js" defer></script>
+<script src="plexus.js" defer></script>
+<script src="cursor.js" defer></script>
+<script src="cookies.js" defer></script>
+<script src="filkai.js" defer></script>
+<script>
+  // Word cycler (respects selected language)
+  const cyclerWords = {
+    pt: ['inovação', 'design', 'tecnologia', 'dados'],
+    en: ['innovation', 'design', 'technology', 'data'],
+    es: ['innovación', 'diseño', 'tecnología', 'datos']
+  };
+  const curLang = () => localStorage.getItem('filka-lang') || 'pt';
+  let idx = 0;
+  const cyc = document.getElementById('cycler');
+  if (cyc) {
+    const em = cyc.querySelector('em');
+    em.textContent = cyclerWords[curLang()][idx] || cyclerWords.pt[idx];
+    document.addEventListener('filka:langchange', (e) => {
+      const words = cyclerWords[e.detail.lang] || cyclerWords.pt;
+      em.textContent = words[idx];
+    });
+    setInterval(() => {
+      idx = (idx + 1) % 4;
+      const words = cyclerWords[curLang()] || cyclerWords.pt;
+      em.style.transform = 'translateY(-10px)'; em.style.opacity = '0';
+      setTimeout(() => {
+        em.textContent = words[idx];
+        em.style.transform = 'translateY(10px)';
+        requestAnimationFrame(() => { em.style.transform = 'translateY(0)'; em.style.opacity = '1'; });
+      }, 420);
+    }, 2400);
+  }
+
+  // Count-up animation for big numbers
+  (function(){
+    const els = document.querySelectorAll('.bignum__value[data-count]');
+    if (!els.length) return;
+    const easeOut = t => 1 - Math.pow(1 - t, 3);
+    const animate = (el) => {
+      if (el.dataset.done) return;
+      el.dataset.done = '1';
+      const target = parseFloat(el.dataset.count);
+      const decimals = parseInt(el.dataset.decimals || '0', 10);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const dur = 1700;
+      let start = null;
+      const step = (ts) => {
+        if (start === null) start = ts;
+        const p = Math.min((ts - start) / dur, 1);
+        el.textContent = prefix + (target * easeOut(p)).toFixed(decimals) + suffix;
+        if (p < 1) requestAnimationFrame(step);
+        else el.textContent = prefix + target.toFixed(decimals) + suffix;
+      };
+      requestAnimationFrame(step);
+    };
+    const check = () => {
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      els.forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (r.top < vh * 0.85 && r.bottom > 0) animate(el);
+      });
+    };
+    window.addEventListener('scroll', check, { passive: true });
+    window.addEventListener('resize', check, { passive: true });
+    check();
+  })();
+</script>
+
+</body>
+</html>
