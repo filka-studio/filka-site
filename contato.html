@@ -5,11 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Iniciar projeto · Filka</title>
 <meta name="description" content="Conte o que o seu negócio precisa. A gente responde em até 1 dia útil, por WhatsApp ou e-mail." />
-<link rel="icon" type="image/png" href="assets/filka-logo-gradient.png" />
+<link rel="icon" href="favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Baumans&family=Cabin:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="css/styles.css" />
 <style>
   /* ===== Form page ===== */
   .fp-nav {
@@ -39,7 +42,7 @@
   .fp-hero__bg { position: absolute; inset: 0; z-index: 0; }
   .fp-hero__bg::before {
     content:""; position: absolute; inset: -2px;
-    background-image: url("assets/brand-bg.png");
+    background-image: url("assets/img/brand-bg.webp");
     background-size: cover; background-position: center;
   }
   .fp-hero__bg::after {
@@ -158,7 +161,7 @@
 <header class="fp-hero">
   <div class="fp-hero__bg" aria-hidden="true"></div>
   <nav class="fp-nav">
-    <a class="fp-nav__brand" href="index.html" aria-label="Filka, início"><img src="assets/filka-wordmark-white.png" alt="filka," /></a>
+    <a class="fp-nav__brand" href="index.html" aria-label="Filka, início"><img src="assets/img/filka-wordmark-white.png" alt="filka," /></a>
     <a class="fp-back" href="index.html">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
       Voltar para a home
@@ -359,8 +362,8 @@
     });
   })();
 </script>
-<script src="cookies.js" defer></script>
-<script src="i18n.js" defer></script>
-<script src="cursor.js" defer></script>
+<script src="js/cookies.js" defer></script>
+<script src="js/i18n.js" defer></script>
+<script src="js/cursor.js" defer></script>
 </body>
 </html>

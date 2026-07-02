@@ -336,7 +336,7 @@ h1 em, h2 em, h3 em { color: inherit; font-family: inherit; }
 }
 .hero__bg {
   position: absolute; inset: 0; z-index: 0;
-  background-image: url("assets/brand-bg.png");
+  background-image: url("../assets/img/brand-bg.webp");
   background-size: cover; background-position: center right;
   background-repeat: no-repeat; pointer-events: none;
 }
@@ -867,7 +867,7 @@ h1 em, h2 em, h3 em { color: inherit; font-family: inherit; }
 }
 .cta-box::before {
   content:""; position: absolute; inset: -2px; z-index: 0;
-  background-image: url("assets/brand-bg.png");
+  background-image: url("../assets/img/brand-bg.webp");
   background-size: cover; background-position: center;
   opacity: .9;
 }
@@ -980,7 +980,7 @@ h1 em, h2 em, h3 em { color: inherit; font-family: inherit; }
 .page-head { padding: 180px 0 90px; background: var(--paper); position: relative; overflow: hidden; }
 .page-head__bg {
   position: absolute; inset: 0; z-index: 0;
-  background-image: url("assets/brand-bg.png");
+  background-image: url("../assets/img/brand-bg.webp");
   background-size: cover; background-position: center top;
   opacity: .42;
   -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 92%);

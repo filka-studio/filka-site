@@ -6,12 +6,15 @@
 <title>Página não encontrada · Filka</title>
 <meta name="description" content="Esta página ainda está em construção. Volte ao início ou fale com a gente." />
 <meta name="robots" content="noindex" />
-<link rel="icon" type="image/png" href="assets/filka-logo-gradient.png" />
+<link rel="icon" href="favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Cabin:wght@400;500;600&family=Baumans&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="css/styles.css" />
 <style>
   /* ===== 404 page ===== */
   .nf {
@@ -21,7 +24,7 @@
   }
   .nf__bg {
     position: absolute; inset: 0; z-index: 0;
-    background-image: url("assets/brand-bg.png");
+    background-image: url("assets/img/brand-bg.webp");
     background-size: cover; background-position: center right;
     background-repeat: no-repeat; pointer-events: none;
   }
@@ -119,7 +122,7 @@
 
 <header class="nf-nav">
   <a class="nf-nav__brand" href="index.html" aria-label="Filka">
-    <img src="assets/filka-wordmark-white.png" alt="Filka" />
+    <img src="assets/img/filka-wordmark-white.png" alt="Filka" />
   </a>
   <a class="nf-back" href="index.html">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
@@ -147,8 +150,8 @@
   </div>
 </section>
 
-<script src="i18n.js" defer></script>
-<script src="plexus.js" defer></script>
-<script src="cursor.js" defer></script>
+<script src="js/i18n.js" defer></script>
+<script src="js/plexus.js" defer></script>
+<script src="js/cursor.js" defer></script>
 </body>
 </html>

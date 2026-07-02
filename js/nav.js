@@ -8,7 +8,7 @@
   const NAV_HTML = `
     <nav class="nav" id="nav">
       <a href="index.html" class="nav__brand" aria-label="Filka">
-        <img src="assets/filka-wordmark-white.png" alt="Filka" />
+        <img src="assets/img/filka-wordmark-white.png" alt="Filka" />
       </a>
       <div class="nav__menu">
         <a href="index.html#servicos">Serviços</a>
@@ -35,7 +35,7 @@
 
     <div class="mobile-sheet" id="mobileSheet" aria-hidden="true">
       <div class="mobile-sheet__top">
-        <a href="index.html" class="nav__brand"><img src="assets/filka-wordmark-white.png" alt="Filka" /></a>
+        <a href="index.html" class="nav__brand"><img src="assets/img/filka-wordmark-white.png" alt="Filka" /></a>
         <button class="nav__burger" id="closeSheet">
           Fechar
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
@@ -59,7 +59,7 @@
       <div class="container">
         <div class="footer__grid">
           <div class="footer__brand">
-            <img src="assets/filka-wordmark-white.png" alt="Filka" />
+            <img src="assets/img/filka-wordmark-white.png" alt="Filka" />
             <p>Integramos programação e design para transformar visão em produto. Alta qualidade, agilidade e cuidado em cada entrega.</p>
           </div>
           <div>
