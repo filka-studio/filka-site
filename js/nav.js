@@ -12,6 +12,7 @@
       </a>
       <div class="nav__menu">
         <a href="index.html#servicos">Serviços</a>
+        <a href="index.html#projetos">Projetos</a>
         <a href="index.html#processo">Processo</a>
         <a href="index.html#precos">Preços</a>
         <a href="index.html#contato">Contato</a>
@@ -42,6 +43,7 @@
         </button>
       </div>
       <a href="index.html#servicos">Serviços</a>
+      <a href="index.html#projetos">Projetos</a>
       <a href="index.html#processo">Processo</a>
       <a href="index.html#precos">Preços</a>
       <a href="index.html#contato">Contato</a>
@@ -55,48 +57,51 @@
   `;
 
   const FOOTER_HTML = `
-    <footer class="footer">
+    <section class="contact-section" id="contato">
       <div class="container">
-        <div class="footer__grid">
-          <div class="footer__brand">
-            <img src="assets/img/filka-wordmark-white.png" alt="Filka" />
-            <p>Integramos programação e design para transformar visão em produto. Alta qualidade, agilidade e cuidado em cada entrega.</p>
+        <div class="cta-box reveal">
+          <div class="contact-top">
+            <div class="contact-lead">
+              <div class="eyebrow eyebrow--light">vamos conversar</div>
+              <h2>Pronto para fazer seus dados <span class="contact-q">responderem?</span></h2>
+            </div>
+            <div class="contact-info">
+              <div class="contact-info__item">
+                <span class="contact-info__lab">diga oi!</span>
+                <a class="contact-info__val" href="mailto:filkastudio@outlook.com.br">filkastudio@outlook.com.br</a>
+              </div>
+              <div class="contact-info__social">
+                <span class="contact-info__lab">redes sociais</span>
+                <div class="contact-social">
+                  <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+                  <a href="https://www.linkedin.com/company/filka/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+                </div>
+              </div>
+              <p class="contact-info__note">Vamos construir algo que roda.</p>
+              <a class="btn btn--light" href="contato.html">
+                Iniciar projeto
+                <span class="arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              </a>
+            </div>
           </div>
-          <div>
-            <h4>Navegar</h4>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="produtos.html">Produtos</a></li>
-              <li><a href="projetos.html">Projetos</a></li>
-              <li><a href="cases.html">Cases</a></li>
-              <li><a href="sobre.html">Sobre</a></li>
-            </ul>
+
+          <div class="contact-wordmark">
+            <img src="assets/img/filka-wordmark-hq.png" alt="filka," />
           </div>
-          <div>
-            <h4>Serviços</h4>
-            <ul>
-              <li><a href="produtos.html#engenharia">Engenharia de Software</a></li>
-              <li><a href="produtos.html#analytics">Analytics Engineering</a></li>
-              <li><a href="produtos.html#design">Design Digital</a></li>
-              <li><a href="produtos.html#ia">Agentes & IA</a></li>
-            </ul>
+
+          <div class="contact-bottom">
+            <span class="contact-bottom__legal">© ${new Date().getFullYear()} Filka. Todos os direitos reservados. </span>
+            <span class="contact-bottom__cnpj">CNPJ 56.302.887/0001-27</span>
+            <div class="contact-links__group">
+              <a href="privacidade.html">Política de privacidade</a>
+              <a href="termos.html">Termos de uso</a>
+              <a href="#" data-cookie-settings>Cookies</a>
+              <a href="trabalhe.html">Trabalhe conosco</a>
+            </div>
           </div>
-          <div>
-            <h4>Contato</h4>
-            <ul>
-              <li><a href="mailto:fmartins.nascimento@outlook.com">fmartins.nascimento<br/>@outlook.com</a></li>
-              <li><a href="tel:+5511959409990">+55 11 95940-9990</a></li>
-              <li><a href="https://www.linkedin.com/company/filka/" target="_blank" rel="noopener">LinkedIn</a></li>
-              <li><a href="https://calendar.app.google/s7fpLVRSq7ARySYF6" target="_blank" rel="noopener">Agendar reunião</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer__bottom">
-          <span>© ${new Date().getFullYear()} Filka — Inovando com a Tecnologia.</span>
-          <span>São Paulo / BR · Atendimento remoto</span>
         </div>
       </div>
-    </footer>
+    </section>
   `;
 
   // Inject

@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Política de Privacidade — Filka</title>
+<meta name="description" content="Como a Filka coleta, usa e protege seus dados pessoais, em conformidade com a LGPD." />
+<meta name="robots" content="noindex" />
+<link rel="icon" href="favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Cabin:wght@400;500;600&family=Baumans&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="css/filkai.css" />
+<style>
+  /* ===== Legal / policy page ===== */
+  .legal-hero {
+    position: relative; overflow: hidden;
+    padding: 168px 0 66px; background: var(--paper);
+    border-bottom: 1px solid var(--hairline-soft);
+  }
+  .legal-hero__tech {
+    position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,.07) 1px, transparent 1px);
+    background-size: 120px 120px; background-position: center; opacity: .5;
+    -webkit-mask-image: radial-gradient(120% 120% at 80% 0%, #000 20%, transparent 78%);
+    mask-image: radial-gradient(120% 120% at 80% 0%, #000 20%, transparent 78%);
+  }
+  .legal-hero__in { position: relative; z-index: 1; }
+  .legal-hero h1 {
+    font-family: var(--font-head); font-weight: 400; letter-spacing: -0.03em;
+    font-size: clamp(38px, 6vw, 76px); line-height: 1; margin: 14px 0 0; max-width: 16ch;
+  }
+  .legal-hero h1 .grad-text { background: var(--grad-css); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .legal-hero__meta {
+    margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px 26px;
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: .04em;
+    color: var(--ink-mute);
+  }
+  .legal-hero__meta b { color: var(--ink-soft); font-weight: 500; }
+
+  .legal-wrap {
+    display: grid; grid-template-columns: 240px 1fr; gap: 64px;
+    max-width: 1120px; margin: 0 auto; padding: 74px 40px 40px;
+  }
+  @media (max-width: 860px) {
+    .legal-wrap { grid-template-columns: 1fr; gap: 30px; padding: 44px 22px 20px; }
+  }
+
+  /* Table of contents */
+  .legal-toc { position: sticky; top: 110px; align-self: start; }
+  .legal-toc__lab {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: .16em;
+    text-transform: lowercase; color: var(--ink-mute); margin: 0 0 16px;
+  }
+  .legal-toc ol { list-style: none; margin: 0; padding: 0; counter-reset: toc; display: flex; flex-direction: column; gap: 3px; }
+  .legal-toc a {
+    display: flex; gap: 10px; align-items: baseline;
+    padding: 7px 10px; border-radius: 8px;
+    font-size: 13.5px; line-height: 1.35; color: var(--ink-soft);
+    transition: background .2s, color .2s;
+  }
+  .legal-toc a::before {
+    counter-increment: toc; content: counter(toc, decimal-leading-zero);
+    font-family: var(--font-mono); font-size: 10.5px; color: var(--ink-mute); flex: none;
+  }
+  .legal-toc a:hover { background: rgba(255,255,255,.05); color: var(--ink); }
+  .legal-toc a.active { background: rgba(236,174,120,.12); color: var(--filka-peach); }
+  .legal-toc a.active::before { color: var(--filka-peach); }
+  @media (max-width: 860px) {
+    .legal-toc { position: static; border: 1px solid var(--hairline-soft); border-radius: 14px; padding: 20px; }
+  }
+
+  /* Article body */
+  .legal-body { max-width: 68ch; }
+  .legal-body .intro { font-size: clamp(16px, 1.5vw, 18.5px); line-height: 1.7; color: var(--ink-soft); margin: 0 0 8px; }
+  .legal-sec { padding: 34px 0; border-top: 1px solid var(--hairline-soft); scroll-margin-top: 110px; }
+  .legal-sec:first-of-type { border-top: none; padding-top: 6px; }
+  .legal-sec h2 {
+    font-family: var(--font-head); font-weight: 400; letter-spacing: -0.02em;
+    font-size: clamp(23px, 2.6vw, 30px); line-height: 1.1; margin: 0 0 16px;
+    display: flex; gap: 14px; align-items: baseline;
+  }
+  .legal-sec h2 .num { font-family: var(--font-mono); font-size: 13px; color: var(--filka-peach); flex: none; }
+  .legal-sec h3 {
+    font-family: var(--font-head); font-weight: 500; font-size: 16.5px;
+    letter-spacing: -0.01em; margin: 24px 0 8px; color: var(--ink);
+  }
+  .legal-body p { font-size: 15.5px; line-height: 1.72; color: var(--ink-soft); margin: 0 0 14px; }
+  .legal-body a { color: var(--filka-peach); text-decoration: none; border-bottom: 1px solid rgba(236,174,120,.35); }
+  .legal-body a:hover { border-bottom-color: var(--filka-peach); }
+  .legal-body strong { color: var(--ink); font-weight: 500; }
+  .legal-body ul { margin: 6px 0 16px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .legal-body ul li { position: relative; padding-left: 22px; font-size: 15.5px; line-height: 1.6; color: var(--ink-soft); }
+  .legal-body ul li::before {
+    content: ""; position: absolute; left: 4px; top: 10px;
+    width: 5px; height: 5px; border-radius: 50%; background: var(--filka-peach); opacity: .8;
+  }
+  .legal-body ul li strong { color: var(--ink); }
+
+  .legal-cta {
+    margin-top: 30px; padding: 26px 28px; border-radius: 16px;
+    border: 1px solid var(--hairline); background: var(--paper-soft);
+    display: flex; flex-wrap: wrap; gap: 16px 26px; align-items: center; justify-content: space-between;
+  }
+  .legal-cta p { margin: 0; font-size: 15px; color: var(--ink-soft); }
+  .legal-cta a.mail { color: var(--filka-peach); border-bottom: 1px solid rgba(236,174,120,.4); white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<!-- Nav mount (injected by nav.js) -->
+<div id="nav-mount"></div>
+
+<section class="legal-hero" data-screen-label="Privacidade">
+  <div class="legal-hero__tech" aria-hidden="true"></div>
+  <div class="container legal-hero__in">
+    <div class="eyebrow eyebrow--light">documento legal</div>
+    <h1>Política de <span class="grad-text">Privacidade</span></h1>
+    <div class="legal-hero__meta">
+      <span>Última atualização: <b>3 de julho de 2026</b></span>
+      <span>Vigência: <b>imediata</b></span>
+      <span>Base legal: <b>LGPD (Lei nº 13.709/2018)</b></span>
+    </div>
+  </div>
+</section>
+
+<div class="legal-wrap">
+  <!-- TOC -->
+  <nav class="legal-toc" aria-label="Índice">
+    <p class="legal-toc__lab">nesta página</p>
+    <ol>
+      <li><a href="#quem-somos">Quem somos</a></li>
+      <li><a href="#dados">Dados que coletamos</a></li>
+      <li><a href="#finalidades">Como usamos os dados</a></li>
+      <li><a href="#base-legal">Bases legais</a></li>
+      <li><a href="#cookies">Cookies</a></li>
+      <li><a href="#compartilhamento">Compartilhamento</a></li>
+      <li><a href="#armazenamento">Armazenamento e segurança</a></li>
+      <li><a href="#direitos">Seus direitos</a></li>
+      <li><a href="#retencao">Retenção de dados</a></li>
+      <li><a href="#alteracoes">Alterações desta política</a></li>
+      <li><a href="#contato">Contato e encarregado</a></li>
+    </ol>
+  </nav>
+
+  <!-- Body -->
+  <article class="legal-body">
+    <p class="intro">
+      Esta política explica, de forma clara e transparente, como a <strong>Filka</strong> coleta, utiliza,
+      armazena e protege os dados pessoais de quem visita o nosso site, entra em contato ou contrata os
+      nossos serviços. Levamos a sua privacidade a sério e tratamos as suas informações sempre de acordo
+      com a Lei Geral de Proteção de Dados (LGPD). Recomendamos a leitura com atenção, para que você saiba
+      exatamente o que fazemos com os seus dados e quais são os seus direitos.
+    </p>
+
+    <section class="legal-sec" id="quem-somos">
+      <h2><span class="num">01</span> Quem somos</h2>
+      <p>
+        A <strong>Filka</strong> (CNPJ 56.302.887/0001-27) é um estúdio que reúne engenharia de software,
+        analytics, design digital e agentes de IA. Para os dados tratados aqui no site, somos o que a lei
+        chama de <strong>controlador</strong>. Na prática, isso significa que somos nós que definimos por
+        que os seus dados são usados e de que forma isso acontece. Se você tiver qualquer dúvida sobre esse
+        tratamento, pode falar com a gente a qualquer momento pelos canais no fim desta página.
+      </p>
+    </section>
+
+    <section class="legal-sec" id="dados">
+      <h2><span class="num">02</span> Dados que coletamos</h2>
+      <p>
+        Coletamos apenas os dados necessários para atender você bem, sem exageros. Dependendo de como você
+        interage com a gente, isso costuma incluir:
+      </p>
+      <ul>
+        <li><strong>Dados que você nos fornece:</strong> nome, e-mail, telefone, empresa e o conteúdo das mensagens que você envia pelo formulário de contato ou diretamente por e-mail.</li>
+        <li><strong>Dados de navegação:</strong> endereço IP, tipo de dispositivo e de navegador, páginas que você visitou e quanto tempo passou em cada uma. Essas informações vêm dos cookies e das ferramentas de análise que usamos para entender o uso do site.</li>
+        <li><strong>Dados de projeto:</strong> as informações que você compartilha conosco ao longo de uma contratação, na medida em que precisamos delas para executar o trabalho combinado.</li>
+      </ul>
+      <p>
+        Não coletamos de propósito dados pessoais sensíveis, nem informações de crianças e adolescentes.
+        Se isso acontecer por engano, apagamos assim que identificamos.
+      </p>
+    </section>
+
+    <section class="legal-sec" id="finalidades">
+      <h2><span class="num">03</span> Como usamos os dados</h2>
+      <p>
+        Usamos os seus dados de forma responsável e sempre com um objetivo claro. Na prática, eles nos
+        permitem:
+      </p>
+      <ul>
+        <li>Responder às suas mensagens e preparar propostas sob medida para o que você precisa;</li>
+        <li>Executar e acompanhar os serviços que você contratou, do começo ao fim;</li>
+        <li>Manter você informado sobre o andamento do projeto e sobre a nossa relação de trabalho;</li>
+        <li>Melhorar continuamente o desempenho, a segurança e a experiência de quem usa o site;</li>
+        <li>Cumprir as obrigações legais, contratuais e regulatórias que se aplicam à nossa atividade.</li>
+      </ul>
+    </section>
+
+    <section class="legal-sec" id="base-legal">
+      <h2><span class="num">04</span> Bases legais</h2>
+      <p>
+        Todo uso de dados que fazemos se apoia em uma base legal prevista na LGPD, ou seja, um motivo
+        legítimo para tratar aquela informação. Na maior parte dos casos, esse motivo é a
+        <strong>execução de contrato</strong>, incluindo as conversas que acontecem antes dele. Também nos
+        apoiamos no <strong>legítimo interesse</strong> de manter o site seguro e funcionando bem, no
+        <strong>cumprimento de obrigações legais</strong> e no seu <strong>consentimento</strong>, quando
+        ele for realmente necessário. É o que acontece, por exemplo, com os cookies que não são essenciais:
+        eles só entram em ação depois que você concorda.
+      </p>
+    </section>
+
+    <section class="legal-sec" id="cookies">
+      <h2><span class="num">05</span> Cookies</h2>
+      <p>
+        Usamos cookies para manter o site funcionando, lembrar as suas preferências (como o idioma que você
+        escolheu) e entender como as pessoas navegam por aqui, para poder melhorar a experiência. Você tem
+        controle sobre isso e pode ajustar as suas preferências quando quiser, seja pelo aviso de cookies,
+        seja nas configurações do próprio navegador. Os únicos que não podem ser desativados são os cookies
+        essenciais, porque sem eles o site simplesmente não funciona como deveria.
+      </p>
+    </section>
+
+    <section class="legal-sec" id="compartilhamento">
+      <h2><span class="num">06</span> Compartilhamento</h2>
+      <p>
+        Nós não vendemos os seus dados, ponto. Eles só são compartilhados com <strong>parceiros que nos
+        ajudam a operar</strong>, como serviços de hospedagem, e-mail e análise, e mesmo assim sempre no
+        mínimo necessário e com compromisso de confidencialidade. Fora essas situações, só compartilhamos
+        informações quando a lei exige ou quando uma <strong>autoridade competente</strong> solicita
+        formalmente.
+      </p>
+    </section>
+
+    <section class="legal-sec" id="armazenamento">
+      <h2><span class="num">07</span> Armazenamento e segurança</h2>
+      <p>
+        Levamos a segurança a sério e adotamos medidas técnicas e organizacionais para proteger os seus
+        dados contra acesso não autorizado, perda ou uso indevido. Parte das informações pode ser
+        processada em servidores localizados fora do país, mas sempre com garantias adequadas de proteção.
+        É importante ser honesto: nenhum sistema na internet é 100% infalível. Ainda assim, trabalhamos
+        continuamente para manter as suas informações protegidas e reduzir qualquer risco ao mínimo.
+      </p>
+    </section>
+
+    <section class="legal-sec" id="direitos">
+      <h2><span class="num">08</span> Seus direitos</h2>
+      <p>
+        Os dados são seus, e a lei garante que você tenha controle sobre eles. A qualquer momento, você
+        pode:
+      </p>
+      <ul>
+        <li>Confirmar se tratamos os seus dados e ter acesso a quais informações guardamos;</li>
+        <li>Corrigir dados que estejam errados, incompletos ou desatualizados;</li>
+        <li>Pedir a anonimização, o bloqueio ou a exclusão de dados que não sejam mais necessários;</li>
+        <li>Solicitar a portabilidade, ou seja, levar os seus dados para outro fornecedor;</li>
+        <li>Retirar o consentimento e se opor a determinados tratamentos, dentro dos limites da lei.</li>
+      </ul>
+      <p>
+        Para exercer qualquer um desses direitos, basta entrar em contato com a gente pelos canais
+        indicados no fim desta página. É simples e não tem custo.
+      </p>
+    </section>
+
+    <section class="legal-sec" id="retencao">
+      <h2><span class="num">09</span> Retenção de dados</h2>
+      <p>
+        Guardamos os seus dados apenas pelo tempo necessário para cumprir as finalidades descritas nesta
+        política e para atender às obrigações legais que se aplicam a nós. Quando esse período termina, as
+        informações são excluídas ou anonimizadas de forma segura, de modo que não seja mais possível
+        identificar você a partir delas.
+      </p>
+    </section>
+
+    <section class="legal-sec" id="alteracoes">
+      <h2><span class="num">10</span> Alterações desta política</h2>
+      <p>
+        De tempos em tempos, esta política pode ser atualizada, seja porque mudamos algum processo, seja
+        porque a legislação muda. Sempre que isso acontecer, vamos revisar a data de “última atualização”
+        no topo da página. Por isso, vale voltar aqui de vez em quando para acompanhar as novidades.
+      </p>
+    </section>
+
+    <section class="legal-sec" id="contato">
+      <h2><span class="num">11</span> Contato e encarregado</h2>
+      <p>
+        Ficou com alguma dúvida sobre esta política ou quer exercer algum dos seus direitos? Fale com o
+        nosso encarregado de dados (DPO). Estamos à disposição para ajudar no que for preciso.
+      </p>
+      <div class="legal-cta">
+        <p>Envie a sua solicitação e retornamos em até 1 dia útil.</p>
+        <a class="mail" href="mailto:filkastudio@outlook.com.br">filkastudio@outlook.com.br</a>
+      </div>
+    </section>
+  </article>
+</div>
+
+<!-- Footer: same contact section as the home page -->
+<section class="contact-section" id="contato">
+  <div class="container">
+    <div class="cta-box reveal">
+      <div class="contact-top">
+        <div class="contact-lead">
+          <div class="eyebrow eyebrow--light">vamos conversar</div>
+          <h2>Pronto para fazer seus dados <span class="contact-q">responderem?</span></h2>
+        </div>
+        <div class="contact-info">
+          <div class="contact-info__item">
+            <span class="contact-info__lab">diga oi!</span>
+            <a class="contact-info__val" href="mailto:filkastudio@outlook.com.br">filkastudio@outlook.com.br</a>
+          </div>
+          <div class="contact-info__social">
+            <span class="contact-info__lab">redes sociais</span>
+            <div class="contact-social">
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+              <a href="https://www.linkedin.com/company/filka/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+            </div>
+          </div>
+          <p class="contact-info__note">Vamos construir algo que roda.</p>
+          <a class="btn btn--light" href="contato.html">
+            Iniciar projeto
+            <span class="arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-wordmark">
+        <img src="assets/img/filka-wordmark-hq.png" alt="filka," />
+      </div>
+
+      <div class="contact-bottom">
+        <span class="contact-bottom__legal">© 2026 Filka. Todos os direitos reservados. </span>
+        <span class="contact-bottom__cnpj">CNPJ 56.302.887/0001-27</span>
+        <div class="contact-links__group">
+          <a href="privacidade.html">Política de privacidade</a>
+          <a href="termos.html">Termos de uso</a>
+          <a href="#" data-cookie-settings>Cookies</a>
+          <a href="trabalhe.html">Trabalhe conosco</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="js/nav.js" defer></script>
+<script src="js/i18n.js" defer></script>
+<script src="js/cookies.js" defer></script>
+<script src="js/filkai.js" defer></script>
+<script src="js/privacy-i18n.js" defer></script>
+</body>
+</html>

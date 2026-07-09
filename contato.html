@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Iniciar projeto · Filka</title>
-<meta name="description" content="Conte o que o seu negócio precisa. A gente responde em até 1 dia útil, por WhatsApp ou e-mail." />
+<meta name="description" content="Conte o que o seu negócio precisa. A gente responde em até 1 dia útil, por e-mail." />
 <link rel="icon" href="favicon.ico" sizes="32x32" />
 <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
 <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
@@ -174,16 +174,12 @@
       <div class="fp-hero__intro">
         <div class="eyebrow eyebrow--light" style="color: rgba(255,255,255,.6);">iniciar projeto</div>
         <h1>Vamos começar a conversa</h1>
-        <p>Conte o que o seu negócio precisa. A gente responde em até 1 dia útil, por WhatsApp ou e-mail.</p>
+        <p>Conte o que o seu negócio precisa. A gente responde em até 1 dia útil, por e-mail.</p>
 
         <div class="fp-contact">
           <div class="fp-contact__item">
             <span class="fp-contact__lab">E-mail</span>
-            <a class="fp-contact__val" href="mailto:fmartins.nascimento@outlook.com">fmartins.nascimento@outlook.com</a>
-          </div>
-          <div class="fp-contact__item">
-            <span class="fp-contact__lab">WhatsApp</span>
-            <a class="fp-contact__val" href="https://wa.me/5511959409990" target="_blank" rel="noopener">+55 (11) 95940-9990</a>
+            <a class="fp-contact__val" href="mailto:filkastudio@outlook.com.br">filkastudio@outlook.com.br</a>
           </div>
           <div class="fp-contact__item">
             <span class="fp-contact__lab">Atendimento</span>
@@ -205,7 +201,7 @@
 
       <!-- Right: form -->
       <div class="fp-form">
-        <form id="projForm" action="https://formsubmit.co/ajax/fmartins.nascimento@outlook.com" method="POST">
+        <form id="projForm" action="https://formsubmit.co/ajax/filkastudio@outlook.com.br" method="POST">
           <input type="hidden" name="_subject" value="Novo contato pelo site da Filka" />
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_captcha" value="false" />
@@ -271,13 +267,13 @@
             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
           </div>
           <h2 class="fp-success__title"><span style="color: #ffffffc7;">Mensagem recebida!</span></h2>
-          <p class="fp-success__text">Obrigado pelo contato, Karina. Já recebemos as suas informações e vamos responder em até 1 dia útil, por e-mail ou WhatsApp.
+          <p class="fp-success__text">Obrigado pelo contato, Karina. Já recebemos as suas informações e vamos responder em até 1 dia útil por e-mail.
 
 </p>
-          <p class="fp-success__hint">Enquanto isso, se preferir adiantar a conversa, fale com a gente agora mesmo:</p>
+          <p class="fp-success__hint">Enquanto isso, se quiser, dê uma olhada no que já construímos:</p>
           <div class="fp-success__actions">
-            <a class="btn btn--dark" href="https://wa.me/5511959409990" target="_blank" rel="noopener">
-              Chamar no WhatsApp
+            <a class="btn btn--dark" href="cases.html">
+              Ver nossos cases
               <span class="arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
             </a>
             <button type="button" class="fp-success__again" id="projAgain">Enviar outra mensagem</button>
@@ -342,11 +338,11 @@
         } else {
           msg.style.color = '#E08A6E';
           msg.textContent = (data.errors && data.errors[0] && data.errors[0].message)
-            || 'Não foi possível enviar agora. Tente de novo ou fale no WhatsApp.';
+            || 'Não foi possível enviar agora. Tente de novo ou escreva para o nosso e-mail.';
         }
       } catch (err) {
         msg.style.color = '#E08A6E';
-        msg.textContent = 'Sem conexão. Tente de novo ou fale no WhatsApp.';
+        msg.textContent = 'Sem conexão. Tente de novo ou escreva para o nosso e-mail.';
       } finally {
         label.textContent = labelDefault;
         submitBtn.disabled = false;
@@ -364,6 +360,5 @@
 </script>
 <script src="js/cookies.js" defer></script>
 <script src="js/i18n.js" defer></script>
-<script src="js/cursor.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Trabalhe Conosco — Filka</title>
+<meta name="description" content="Faça parte da Filka. Veja as vagas no LinkedIn ou envie uma candidatura espontânea com currículo." />
+<link rel="icon" href="favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Cabin:wght@400;500;600&family=Baumans&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="css/filkai.css" />
+<style>
+  .careers {
+    position: relative; overflow: hidden;
+    padding: 160px 0 100px; background: var(--paper);
+    min-height: calc(100vh - 60px);
+  }
+  .careers__tech {
+    position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,.07) 1px, transparent 1px);
+    background-size: 120px 120px; background-position: center; opacity: .5;
+    -webkit-mask-image: radial-gradient(120% 120% at 80% 0%, #000 20%, transparent 78%);
+    mask-image: radial-gradient(120% 120% at 80% 0%, #000 20%, transparent 78%);
+  }
+  .careers__in { position: relative; z-index: 1; }
+
+  .careers__head { max-width: 620px; }
+  .careers__head h1 {
+    font-family: var(--font-head); font-weight: 400; letter-spacing: -0.03em;
+    font-size: clamp(40px, 6.5vw, 82px); line-height: .98; margin: 16px 0 22px;
+  }
+  .careers__head h1 .grad-text { background: var(--grad-css); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .careers__lede { font-size: clamp(16px, 1.5vw, 19px); line-height: 1.68; color: var(--ink-soft); margin: 0; }
+
+  .careers__grid {
+    margin-top: 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 22px;
+    align-items: start;
+  }
+  @media (max-width: 820px) { .careers__grid { grid-template-columns: 1fr; } }
+
+  .ccard {
+    border: 1px solid var(--hairline); border-radius: 20px;
+    background: var(--paper-soft); padding: 34px 32px;
+    display: flex; flex-direction: column;
+  }
+  .ccard__tag {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: .16em;
+    text-transform: lowercase; color: var(--ink-mute); margin: 0 0 14px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .ccard__tag::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--filka-peach); }
+  .ccard h2 {
+    font-family: var(--font-head); font-weight: 400; letter-spacing: -0.02em;
+    font-size: clamp(22px, 2.6vw, 30px); line-height: 1.08; margin: 0 0 12px;
+  }
+  .ccard p { font-size: 15px; line-height: 1.62; color: var(--ink-soft); margin: 0 0 22px; }
+  .ccard__spacer { flex: 1; }
+
+  /* Job list (LinkedIn card) */
+  .joblist { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+  .job {
+    display: flex; align-items: center; justify-content: space-between; gap: 14px;
+    border: 1px solid var(--hairline); border-radius: 12px;
+    background: var(--paper); padding: 13px 15px;
+    transition: border-color .2s, background .2s, transform .2s;
+  }
+  .job:hover { border-color: rgba(236,174,120,.5); background: #14111d; transform: translateX(2px); }
+  .job__info { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+  .job__role { font-family: var(--font-head); font-weight: 500; font-size: 15.5px; letter-spacing: -0.01em; color: var(--ink); }
+  .job__type { font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em; color: var(--ink-mute); }
+  .job__go {
+    flex: none; width: 34px; height: 34px; border-radius: 50%;
+    display: grid; place-items: center;
+    color: var(--ink-soft); border: 1px solid var(--hairline);
+    transition: color .2s, border-color .2s, background .2s;
+  }
+  .job:hover .job__go { color: var(--filka-peach); border-color: var(--filka-peach); }
+
+  /* Form */
+  .cform { display: flex; flex-direction: column; gap: 16px; }
+  .cfield { display: flex; flex-direction: column; gap: 7px; }
+  .cfield label {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  .cfield input[type="text"],
+  .cfield input[type="email"],
+  .cfield textarea {
+    width: 100%; background: var(--paper); color: var(--ink);
+    border: 1px solid var(--hairline); border-radius: 11px;
+    padding: 13px 15px; font-family: var(--font-body); font-size: 15px;
+    transition: border-color .2s, background .2s; resize: vertical;
+  }
+  .cfield input:focus, .cfield textarea:focus {
+    outline: none; border-color: var(--filka-peach); background: #14111d;
+  }
+  .cfield textarea { min-height: 118px; line-height: 1.55; }
+  .cfield input::placeholder, .cfield textarea::placeholder { color: var(--ink-mute); }
+
+  /* File input */
+  .cfile {
+    display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    border: 1px dashed var(--hairline); border-radius: 11px; padding: 13px 15px;
+    background: var(--paper); transition: border-color .2s;
+  }
+  .cfile:hover { border-color: rgba(236,174,120,.5); }
+  .cfile input[type="file"] { display: none; }
+  .cfile__btn {
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: .04em;
+    color: var(--ink); border: 1px solid var(--hairline); border-radius: 8px;
+    padding: 8px 14px; cursor: pointer; white-space: nowrap; transition: background .2s, border-color .2s;
+  }
+  .cfile__btn:hover { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.4); }
+  .cfile__name { font-size: 13px; color: var(--ink-soft); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+  .cform__submit {
+    margin-top: 4px; width: 100%; justify-content: center; cursor: pointer;
+    border: none; font-family: var(--font-body);
+  }
+  .cform__note {
+    font-size: 12.5px; line-height: 1.5; color: var(--ink-mute); margin: 4px 0 0;
+  }
+  .cform__note a { color: var(--filka-peach); border-bottom: 1px solid rgba(236,174,120,.4); }
+  .cform__msg { font-size: 13.5px; margin: 4px 0 0; min-height: 1em; }
+
+  .ccard--success { align-items: flex-start; justify-content: center; }
+  .ccard[hidden] { display: none !important; }
+  .csuccess__icon {
+    width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center;
+    background: rgba(236,174,120,.14); color: var(--filka-peach); margin: 0 0 18px;
+  }
+  .csuccess h2 { margin: 0 0 10px; }
+  .csuccess p { margin: 0; }
+
+  @media (max-width: 640px) {
+    .careers { padding: 130px 0 70px; }
+    .ccard { padding: 28px 22px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Nav mount (injected by nav.js) -->
+<div id="nav-mount"></div>
+
+<section class="careers" data-screen-label="Trabalhe Conosco">
+  <div class="careers__tech" aria-hidden="true"></div>
+  <div class="container careers__in">
+    <div class="careers__head">
+      <div class="eyebrow eyebrow--light">trabalhe conosco</div>
+      <h1>Faça parte da <span class="grad-text">Filka</span>.</h1>
+      <p class="careers__lede">
+        Somos um time enxuto e seletivo. Nem sempre temos vagas abertas, mas estamos sempre de olho em gente
+        talentosa que compartilha da nossa forma de trabalhar. Se é o seu caso, adoraríamos te conhecer.
+      </p>
+    </div>
+
+    <div class="careers__grid">
+      <!-- Path A: LinkedIn -->
+      <div class="ccard">
+        <p class="ccard__tag">vagas abertas</p>
+        <h2>Oportunidades no LinkedIn</h2>
+        <p>Veja as posições que estão abertas agora e candidate-se direto pelo nosso LinkedIn.</p>
+
+        <ul class="joblist">
+          <li class="job">
+            <div class="job__info">
+              <span class="job__role">Software Engineer</span>
+              <span class="job__type">PJ · Remoto</span>
+            </div>
+            <a class="job__go" href="https://www.linkedin.com/company/filka/jobs/" target="_blank" rel="noopener" aria-label="Ver vaga Software Engineer no LinkedIn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </a>
+          </li>
+          <li class="job">
+            <div class="job__info">
+              <span class="job__role">Sales Executive</span>
+              <span class="job__type">PJ · Remoto</span>
+            </div>
+            <a class="job__go" href="https://www.linkedin.com/company/filka/jobs/" target="_blank" rel="noopener" aria-label="Ver vaga Sales Executive no LinkedIn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </a>
+          </li>
+          <li class="job">
+            <div class="job__info">
+              <span class="job__role">Marketing Assistant</span>
+              <span class="job__type">PJ · Remoto</span>
+            </div>
+            <a class="job__go" href="https://www.linkedin.com/company/filka/jobs/" target="_blank" rel="noopener" aria-label="Ver vaga Marketing Assistant no LinkedIn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </a>
+          </li>
+        </ul>
+
+        <a class="btn btn--accent" href="https://www.linkedin.com/company/filka/jobs/" target="_blank" rel="noopener" style="align-self: flex-start; margin-top: 22px;">
+          Ver mais no LinkedIn
+          <span class="arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </a>
+      </div>
+
+      <!-- Path B: Spontaneous application -->
+      <div class="ccard" id="applyCard">
+        <p class="ccard__tag">candidatura espontânea</p>
+        <h2>Deixe o seu currículo</h2>
+        <p>Não encontrou uma vaga? Mande a sua carta de apresentação e anexe o currículo. Guardamos o seu contato para quando surgir a oportunidade certa.</p>
+
+        <form class="cform" id="applyForm"
+              action="https://formsubmit.co/filkastudio@outlook.com.br"
+              method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="_subject" value="Nova candidatura — Trabalhe Conosco (Filka)" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" id="applyNext" value="" />
+
+          <div class="cfield">
+            <label for="cand-nome">Nome</label>
+            <input type="text" id="cand-nome" name="Nome" placeholder="Seu nome" required />
+          </div>
+          <div class="cfield">
+            <label for="cand-email">E-mail</label>
+            <input type="email" id="cand-email" name="E-mail" placeholder="voce@email.com" required
+                   pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                   oninvalid="this.setCustomValidity(({en:'Enter a valid email, e.g.: you@email.com',es:'Escribe un correo válido, por ejemplo: tu@email.com'}[localStorage.getItem('filka-lang')])||'Digite um e-mail válido, por exemplo: voce@email.com')"
+                   oninput="this.setCustomValidity('')" />
+          </div>
+          <div class="cfield">
+            <label for="cand-carta">Carta de apresentação</label>
+            <textarea id="cand-carta" name="Carta de apresentação" placeholder="Conte um pouco sobre você e por que quer trabalhar com a gente..." required></textarea>
+          </div>
+          <div class="cfield">
+            <label for="cand-cv">Currículo (PDF, DOC)</label>
+            <div class="cfile">
+              <label class="cfile__btn" for="cand-cv">Escolher arquivo</label>
+              <input type="file" id="cand-cv" name="Currículo" accept=".pdf,.doc,.docx" />
+              <span class="cfile__name" id="cvName">Nenhum arquivo selecionado</span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn--light cform__submit" id="applySubmit">
+            <span class="cform__submit-label">Enviar candidatura</span>
+            <span class="arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </button>
+          <p class="cform__msg" id="applyMsg"></p>
+          <p class="cform__note">Prefere e-mail? Escreva para <a href="mailto:filkastudio@outlook.com.br">filkastudio@outlook.com.br</a></p>
+        </form>
+      </div>
+
+      <!-- Success state (hidden until sent) -->
+      <div class="ccard ccard--success csuccess" id="applySuccess" hidden style="grid-column: 2;">
+        <div class="csuccess__icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <h2>Candidatura enviada!</h2>
+        <p>Obrigado pelo interesse! Recebemos a sua candidatura e vamos guardar o seu contato com carinho.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer mount (injected by nav.js) -->
+<div id="footer-mount"></div>
+
+<script src="js/nav.js" defer></script>
+<script src="js/i18n.js" defer></script>
+<script src="js/cookies.js" defer></script>
+<script src="js/filkai.js" defer></script>
+<script>
+  (function () {
+    const form = document.getElementById('applyForm');
+    const fileInput = document.getElementById('cand-cv');
+    const fileName = document.getElementById('cvName');
+    const nextField = document.getElementById('applyNext');
+    const card = document.getElementById('applyCard');
+    const success = document.getElementById('applySuccess');
+
+    // Show chosen file name
+    if (fileInput) fileInput.addEventListener('change', () => {
+      fileName.textContent = fileInput.files && fileInput.files[0]
+        ? fileInput.files[0].name
+        : (localStorage.getItem('filka-lang') === 'en' ? 'No file selected'
+          : localStorage.getItem('filka-lang') === 'es' ? 'Ningún archivo seleccionado'
+          : 'Nenhum arquivo selecionado');
+    });
+
+    // FormSubmit needs an absolute _next URL; build it at runtime so it works once deployed
+    if (nextField) {
+      const base = location.origin + location.pathname;
+      nextField.value = base + '?enviado=1';
+    }
+
+    // After redirect back, show the success state
+    if (new URLSearchParams(location.search).get('enviado') === '1') {
+      if (card) card.hidden = true;
+      if (success) { success.hidden = false; success.style.gridColumn = ''; }
+      history.replaceState(null, '', location.pathname);
+    }
+  })();
+</script>
+</body>
+</html>

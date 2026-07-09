@@ -7,6 +7,7 @@
     en: {
       // Nav
       "Serviços": "Services",
+      "Projetos": "Projects",
       "Processo": "Process",
       "Preços": "Pricing",
       "Contato": "Contact",
@@ -38,6 +39,29 @@
       "o que fazemos": "what we do",
       "Da arquitetura ao último pixel,": "From architecture to the last pixel,",
       "tudo no mesmo lugar.": "all in one place.",
+      // Projects showcase
+      "o que entregamos": "what we deliver",
+      "Projetos que já estão": "Projects already",
+      "no ar.": "live.",
+      "site institucional": "company website",
+      "site & marca": "site & brand",
+      "produto digital": "digital product",
+      "Ver mais projetos": "See more projects",
+      // Projects page
+      "projetos": "projects",
+      "O que já": "Work that",
+      "está no ar.": "speaks for itself.",
+      "Trabalho que": "Projects that",
+      "fala por nós.": "speak for themselves.",
+      "Projetos que": "Projects that",
+      "falam por nós.": "speak for themselves.",
+      "Uma amostra do que construímos, de sites institucionais a produtos digitais. Clique em qualquer projeto para pré-visualizar aqui mesmo.":
+        "A sample of what we've built, from company websites to digital products. Click any project to preview it right here.",
+      "E muitos outros em andamento. Nossos trabalhos de design vivem no Behance.":
+        "And many more in progress. Our design work lives on Behance.",
+      "Ver design no Behance": "See design on Behance",
+      "Ver mais no GitHub": "See more on GitHub",
+      "Design no Behance": "Design on Behance",
       "Dados & IA": "Data & AI",
       "Diagnóstico, pipelines, AI/BI Genie e automações sob medida. Levamos o dado bruto até a decisão, com governança e um Salesforce que conversa com o resto.":
         "Assessments, pipelines, AI/BI Genie and custom automation. We take raw data all the way to the decision, with governance and a Salesforce that talks to everything else.",
@@ -205,8 +229,8 @@
       // Form page (contato)
       "iniciar projeto": "start a project",
       "Vamos começar a conversa": "Let's start the conversation",
-      "Conte o que o seu negócio precisa. A gente responde em até 1 dia útil, por WhatsApp ou e-mail.":
-        "Tell us what your business needs. We reply within 1 business day, by WhatsApp or email.",
+      "Conte o que o seu negócio precisa. A gente responde em até 1 dia útil, por e-mail.":
+        "Tell us what your business needs. We reply within 1 business day, by email.",
       "E-mail": "Email",
       "WhatsApp": "WhatsApp",
       "Atendimento": "Availability",
@@ -233,16 +257,48 @@
         "E.g.: we've had Databricks for a year, but the business still relies on an analyst for everything...",
       "Enviar mensagem": "Send message",
       "Mensagem recebida!": "Message received!",
-      "Obrigado pelo contato, Karina. Já recebemos as suas informações e vamos responder em até 1 dia útil, por e-mail ou WhatsApp.":
-        "Thanks for reaching out. We've got your details and will reply within 1 business day, by email or WhatsApp.",
-      "Enquanto isso, se preferir adiantar a conversa, fale com a gente agora mesmo:":
-        "In the meantime, if you'd like to get started right away, talk to us now:",
-      "Chamar no WhatsApp": "Message on WhatsApp",
-      "Enviar outra mensagem": "Send another message"
+      "Obrigado pelo contato, Karina. Já recebemos as suas informações e vamos responder em até 1 dia útil por e-mail.":
+        "Thanks for reaching out. We've got your details and will reply within 1 business day by email.",
+      "Enquanto isso, se quiser, dê uma olhada no que já construímos:":
+        "In the meantime, feel free to take a look at what we've built:",
+      "Ver nossos cases": "See our work",
+      "Enviar outra mensagem": "Send another message",
+      // Careers page (trabalhe)
+      "trabalhe conosco": "work with us",
+      "Faça parte da": "Be part of",
+      "Somos um time enxuto e seletivo. Nem sempre temos vagas abertas, mas estamos sempre de olho em gente talentosa que compartilha da nossa forma de trabalhar. Se é o seu caso, adoraríamos te conhecer.":
+        "We're a small, selective team. We don't always have open positions, but we're always on the lookout for talented people who share the way we work. If that's you, we'd love to meet you.",
+      "vagas abertas": "open positions",
+      "Oportunidades no LinkedIn": "Opportunities on LinkedIn",
+      "Veja as posições que estão abertas agora e candidate-se direto pelo nosso LinkedIn.":
+        "See the positions open right now and apply directly through our LinkedIn.",
+      "Ver vagas no LinkedIn": "See jobs on LinkedIn",
+      "Ver mais no LinkedIn": "See more on LinkedIn",
+      "Software Engineer": "Software Engineer",
+      "Sales Executive": "Sales Executive",
+      "Marketing Assistant": "Marketing Assistant",
+      "PJ · Remoto": "Contractor · Remote",
+      "candidatura espontânea": "open application",
+      "Deixe o seu currículo": "Leave your résumé",
+      "Não encontrou uma vaga? Mande a sua carta de apresentação e anexe o currículo. Guardamos o seu contato para quando surgir a oportunidade certa.":
+        "Didn't find a role? Send your cover letter and attach your résumé. We'll keep your details on file for when the right opportunity comes up.",
+      "Nome": "Name",
+      "Carta de apresentação": "Cover letter",
+      "Conte um pouco sobre você e por que quer trabalhar com a gente...":
+        "Tell us a bit about yourself and why you'd like to work with us...",
+      "Currículo (PDF, DOC)": "Résumé (PDF, DOC)",
+      "Escolher arquivo": "Choose file",
+      "Nenhum arquivo selecionado": "No file selected",
+      "Enviar candidatura": "Send application",
+      "Prefere e-mail? Escreva para": "Prefer email? Write to",
+      "Candidatura enviada!": "Application sent!",
+      "Obrigado pelo interesse! Recebemos a sua candidatura e vamos guardar o seu contato com carinho.":
+        "Thanks for your interest! We got your application and we'll keep your details on file."
     },
     es: {
       // Nav
       "Serviços": "Servicios",
+      "Projetos": "Proyectos",
       "Processo": "Proceso",
       "Preços": "Precios",
       "Contato": "Contacto",
@@ -274,6 +330,29 @@
       "o que fazemos": "lo que hacemos",
       "Da arquitetura ao último pixel,": "De la arquitectura al último píxel,",
       "tudo no mesmo lugar.": "todo en un solo lugar.",
+      // Projects showcase
+      "o que entregamos": "lo que entregamos",
+      "Projetos que já estão": "Proyectos que ya están",
+      "no ar.": "en línea.",
+      "site institucional": "sitio institucional",
+      "site & marca": "sitio y marca",
+      "produto digital": "producto digital",
+      "Ver mais projetos": "Ver más proyectos",
+      // Projects page
+      "projetos": "proyectos",
+      "O que já": "Lo que ya",
+      "está no ar.": "está en línea.",
+      "Trabalho que": "Proyectos que",
+      "fala por nós.": "hablan por nosotros.",
+      "Projetos que": "Proyectos que",
+      "falam por nós.": "hablan por nosotros.",
+      "Uma amostra do que construímos, de sites institucionais a produtos digitais. Clique em qualquer projeto para pré-visualizar aqui mesmo.":
+        "Una muestra de lo que hemos construido, de sitios institucionales a productos digitales. Haz clic en cualquier proyecto para previsualizarlo aquí mismo.",
+      "E muitos outros em andamento. Nossos trabalhos de design vivem no Behance.":
+        "Y muchos más en marcha. Nuestros trabajos de diseño viven en Behance.",
+      "Ver design no Behance": "Ver diseño en Behance",
+      "Ver mais no GitHub": "Ver más en GitHub",
+      "Design no Behance": "Diseño en Behance",
       "Dados & IA": "Datos e IA",
       "Diagnóstico, pipelines, AI/BI Genie e automações sob medida. Levamos o dado bruto até a decisão, com governança e um Salesforce que conversa com o resto.":
         "Diagnóstico, pipelines, AI/BI Genie y automatizaciones a medida. Llevamos el dato bruto hasta la decisión, con gobernanza y un Salesforce que conversa con el resto.",
@@ -441,8 +520,8 @@
       // Form page (contato)
       "iniciar projeto": "iniciar proyecto",
       "Vamos começar a conversa": "Empecemos la conversación",
-      "Conte o que o seu negócio precisa. A gente responde em até 1 dia útil, por WhatsApp ou e-mail.":
-        "Cuéntanos qué necesita tu negocio. Respondemos en hasta 1 día hábil, por WhatsApp o correo.",
+      "Conte o que o seu negócio precisa. A gente responde em até 1 dia útil, por e-mail.":
+        "Cuéntanos qué necesita tu negocio. Respondemos en hasta 1 día hábil, por correo.",
       "E-mail": "Correo",
       "WhatsApp": "WhatsApp",
       "Atendimento": "Atención",
@@ -469,12 +548,43 @@
         "Ej.: tenemos Databricks hace 1 año, pero el negocio todavía depende de un analista para todo...",
       "Enviar mensagem": "Enviar mensaje",
       "Mensagem recebida!": "¡Mensaje recibido!",
-      "Obrigado pelo contato, Karina. Já recebemos as suas informações e vamos responder em até 1 dia útil, por e-mail ou WhatsApp.":
-        "Gracias por escribirnos. Ya tenemos tus datos y responderemos en hasta 1 día hábil, por correo o WhatsApp.",
-      "Enquanto isso, se preferir adiantar a conversa, fale com a gente agora mesmo:":
-        "Mientras tanto, si prefieres adelantar la conversación, habla con nosotros ahora mismo:",
-      "Chamar no WhatsApp": "Escribir por WhatsApp",
-      "Enviar outra mensagem": "Enviar otro mensaje"
+      "Obrigado pelo contato, Karina. Já recebemos as suas informações e vamos responder em até 1 dia útil por e-mail.":
+        "Gracias por escribirnos. Ya tenemos tus datos y responderemos en hasta 1 día hábil por correo.",
+      "Enquanto isso, se quiser, dê uma olhada no que já construímos:":
+        "Mientras tanto, si quieres, echa un vistazo a lo que hemos construido:",
+      "Ver nossos cases": "Ver nuestros casos",
+      "Enviar outra mensagem": "Enviar otro mensaje",
+      // Careers page (trabalhe)
+      "trabalhe conosco": "trabaja con nosotros",
+      "Faça parte da": "Forma parte de",
+      "Somos um time enxuto e seletivo. Nem sempre temos vagas abertas, mas estamos sempre de olho em gente talentosa que compartilha da nossa forma de trabalhar. Se é o seu caso, adoraríamos te conhecer.":
+        "Somos un equipo reducido y selectivo. No siempre tenemos vacantes abiertas, pero siempre estamos atentos a gente talentosa que comparte nuestra forma de trabajar. Si es tu caso, nos encantaría conocerte.",
+      "vagas abertas": "vacantes abiertas",
+      "Oportunidades no LinkedIn": "Oportunidades en LinkedIn",
+      "Veja as posições que estão abertas agora e candidate-se direto pelo nosso LinkedIn.":
+        "Mira las posiciones abiertas ahora y postúlate directamente por nuestro LinkedIn.",
+      "Ver vagas no LinkedIn": "Ver vacantes en LinkedIn",
+      "Ver mais no LinkedIn": "Ver más en LinkedIn",
+      "Software Engineer": "Software Engineer",
+      "Sales Executive": "Sales Executive",
+      "Marketing Assistant": "Marketing Assistant",
+      "PJ · Remoto": "Autónomo · Remoto",
+      "candidatura espontânea": "candidatura espontánea",
+      "Deixe o seu currículo": "Deja tu currículum",
+      "Não encontrou uma vaga? Mande a sua carta de apresentação e anexe o currículo. Guardamos o seu contato para quando surgir a oportunidade certa.":
+        "¿No encontraste una vacante? Envía tu carta de presentación y adjunta tu currículum. Guardamos tu contacto para cuando surja la oportunidad adecuada.",
+      "Nome": "Nombre",
+      "Carta de apresentação": "Carta de presentación",
+      "Conte um pouco sobre você e por que quer trabalhar com a gente...":
+        "Cuéntanos un poco sobre ti y por qué te gustaría trabajar con nosotros...",
+      "Currículo (PDF, DOC)": "Currículum (PDF, DOC)",
+      "Escolher arquivo": "Elegir archivo",
+      "Nenhum arquivo selecionado": "Ningún archivo seleccionado",
+      "Enviar candidatura": "Enviar candidatura",
+      "Prefere e-mail? Escreva para": "¿Prefieres correo? Escribe a",
+      "Candidatura enviada!": "¡Candidatura enviada!",
+      "Obrigado pelo interesse! Recebemos a sua candidatura e vamos guardar o seu contato com carinho.":
+        "¡Gracias por tu interés! Recibimos tu candidatura y guardaremos tu contacto."
     }
   };
 

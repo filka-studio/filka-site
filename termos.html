@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Termos de Uso — Filka</title>
+<meta name="description" content="As regras e condições para uso do site e dos serviços da Filka." />
+<meta name="robots" content="noindex" />
+<link rel="icon" href="favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Cabin:wght@400;500;600&family=Baumans&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="css/filkai.css" />
+<style>
+  /* ===== Legal / policy page ===== */
+  .legal-hero {
+    position: relative; overflow: hidden;
+    padding: 168px 0 66px; background: var(--paper);
+    border-bottom: 1px solid var(--hairline-soft);
+  }
+  .legal-hero__tech {
+    position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,.07) 1px, transparent 1px);
+    background-size: 120px 120px; background-position: center; opacity: .5;
+    -webkit-mask-image: radial-gradient(120% 120% at 80% 0%, #000 20%, transparent 78%);
+    mask-image: radial-gradient(120% 120% at 80% 0%, #000 20%, transparent 78%);
+  }
+  .legal-hero__in { position: relative; z-index: 1; }
+  .legal-hero h1 {
+    font-family: var(--font-head); font-weight: 400; letter-spacing: -0.03em;
+    font-size: clamp(38px, 6vw, 76px); line-height: 1; margin: 14px 0 0; max-width: 16ch;
+  }
+  .legal-hero h1 .grad-text { background: var(--grad-css); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .legal-hero__meta {
+    margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px 26px;
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: .04em;
+    color: var(--ink-mute);
+  }
+  .legal-hero__meta b { color: var(--ink-soft); font-weight: 500; }
+
+  .legal-wrap {
+    display: grid; grid-template-columns: 240px 1fr; gap: 64px;
+    max-width: 1120px; margin: 0 auto; padding: 74px 40px 40px;
+  }
+  @media (max-width: 860px) {
+    .legal-wrap { grid-template-columns: 1fr; gap: 30px; padding: 44px 22px 20px; }
+  }
+
+  /* Table of contents */
+  .legal-toc { position: sticky; top: 110px; align-self: start; }
+  .legal-toc__lab {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: .16em;
+    text-transform: lowercase; color: var(--ink-mute); margin: 0 0 16px;
+  }
+  .legal-toc ol { list-style: none; margin: 0; padding: 0; counter-reset: toc; display: flex; flex-direction: column; gap: 3px; }
+  .legal-toc a {
+    display: flex; gap: 10px; align-items: baseline;
+    padding: 7px 10px; border-radius: 8px;
+    font-size: 13.5px; line-height: 1.35; color: var(--ink-soft);
+    transition: background .2s, color .2s;
+  }
+  .legal-toc a::before {
+    counter-increment: toc; content: counter(toc, decimal-leading-zero);
+    font-family: var(--font-mono); font-size: 10.5px; color: var(--ink-mute); flex: none;
+  }
+  .legal-toc a:hover { background: rgba(255,255,255,.05); color: var(--ink); }
+  .legal-toc a.active { background: rgba(236,174,120,.12); color: var(--filka-peach); }
+  .legal-toc a.active::before { color: var(--filka-peach); }
+  @media (max-width: 860px) {
+    .legal-toc { position: static; border: 1px solid var(--hairline-soft); border-radius: 14px; padding: 20px; }
+  }
+
+  /* Article body */
+  .legal-body { max-width: 68ch; }
+  .legal-body .intro { font-size: clamp(16px, 1.5vw, 18.5px); line-height: 1.7; color: var(--ink-soft); margin: 0 0 8px; }
+  .legal-sec { padding: 34px 0; border-top: 1px solid var(--hairline-soft); scroll-margin-top: 110px; }
+  .legal-sec:first-of-type { border-top: none; padding-top: 6px; }
+  .legal-sec h2 {
+    font-family: var(--font-head); font-weight: 400; letter-spacing: -0.02em;
+    font-size: clamp(23px, 2.6vw, 30px); line-height: 1.1; margin: 0 0 16px;
+    display: flex; gap: 14px; align-items: baseline;
+  }
+  .legal-sec h2 .num { font-family: var(--font-mono); font-size: 13px; color: var(--filka-peach); flex: none; }
+  .legal-sec h3 {
+    font-family: var(--font-head); font-weight: 500; font-size: 16.5px;
+    letter-spacing: -0.01em; margin: 24px 0 8px; color: var(--ink);
+  }
+  .legal-body p { font-size: 15.5px; line-height: 1.72; color: var(--ink-soft); margin: 0 0 14px; }
+  .legal-body a { color: var(--filka-peach); text-decoration: none; border-bottom: 1px solid rgba(236,174,120,.35); }
+  .legal-body a:hover { border-bottom-color: var(--filka-peach); }
+  .legal-body strong { color: var(--ink); font-weight: 500; }
+  .legal-body ul { margin: 6px 0 16px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .legal-body ul li { position: relative; padding-left: 22px; font-size: 15.5px; line-height: 1.6; color: var(--ink-soft); }
+  .legal-body ul li::before {
+    content: ""; position: absolute; left: 4px; top: 10px;
+    width: 5px; height: 5px; border-radius: 50%; background: var(--filka-peach); opacity: .8;
+  }
+  .legal-body ul li strong { color: var(--ink); }
+
+  .legal-cta {
+    margin-top: 30px; padding: 26px 28px; border-radius: 16px;
+    border: 1px solid var(--hairline); background: var(--paper-soft);
+    display: flex; flex-wrap: wrap; gap: 16px 26px; align-items: center; justify-content: space-between;
+  }
+  .legal-cta p { margin: 0; font-size: 15px; color: var(--ink-soft); }
+  .legal-cta a.mail { color: var(--filka-peach); border-bottom: 1px solid rgba(236,174,120,.4); white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<!-- Nav mount (injected by nav.js) -->
+<div id="nav-mount"></div>
+
+<section class="legal-hero" data-screen-label="Termos">
+  <div class="legal-hero__tech" aria-hidden="true"></div>
+  <div class="container legal-hero__in">
+    <div class="eyebrow eyebrow--light">documento legal</div>
+    <h1>Termos de <span class="grad-text">Uso</span></h1>
+    <div class="legal-hero__meta">
+      <span>Última atualização: <b>3 de julho de 2026</b></span>
+      <span>Vigência: <b>imediata</b></span>
+      <span>Aplicável a: <b>site e serviços Filka</b></span>
+    </div>
+  </div>
+</section>
+
+<div class="legal-wrap">
+  <!-- TOC -->
+  <nav class="legal-toc" aria-label="Índice">
+    <p class="legal-toc__lab">nesta página</p>
+    <ol>
+      <li><a href="#aceitacao">Aceitação dos termos</a></li>
+      <li><a href="#servicos">Nossos serviços</a></li>
+      <li><a href="#responsabilidades">Responsabilidades do cliente</a></li>
+      <li><a href="#propriedade">Propriedade intelectual</a></li>
+      <li><a href="#portfolio">Uso da marca em portfólio</a></li>
+      <li><a href="#pagamentos">Pagamentos e prazos</a></li>
+      <li><a href="#limitacao">Limitação de responsabilidade</a></li>
+      <li><a href="#confidencialidade">Confidencialidade</a></li>
+      <li><a href="#rescisao">Rescisão</a></li>
+      <li><a href="#alteracoes">Alterações destes termos</a></li>
+      <li><a href="#foro">Lei aplicável e foro</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ol>
+  </nav>
+
+  <!-- Body -->
+  <article class="legal-body">
+    <p class="intro">
+      Estes Termos de Uso reúnem as regras para navegar no site da <strong>Filka</strong> e para contratar
+      os nossos serviços. Escrevemos tudo da forma mais direta possível, sem juridiquês desnecessário, para
+      que fique claro o que você pode esperar da gente e o que a gente espera de você. Ao usar o site ou
+      fechar um projeto conosco, você concorda com o que está aqui.
+    </p>
+
+    <section class="legal-sec" id="aceitacao">
+      <h2><span class="num">01</span> Aceitação dos termos</h2>
+      <p>
+        Ao acessar este site ou contratar qualquer serviço da Filka, você declara que leu, entendeu e
+        concorda com estes termos. Se você não concordar com algum ponto, é melhor não seguir com o uso do
+        site nem com a contratação. Quando o serviço envolver uma proposta ou contrato específico, as
+        condições daquele documento valem em conjunto com estes termos, e prevalecem em caso de conflito.
+      </p>
+    </section>
+
+    <section class="legal-sec" id="servicos">
+      <h2><span class="num">02</span> Nossos serviços</h2>
+      <p>
+        A <strong>Filka</strong> oferece serviços de engenharia de software, analytics, design digital e
+        agentes de IA. O escopo, os prazos e os valores de cada trabalho são definidos caso a caso, na
+        proposta que enviamos antes de começar. O conteúdo deste site tem caráter informativo e pode ser
+        atualizado a qualquer momento, sem aviso prévio, conforme a nossa oferta evolui.
+      </p>
+    </section>
+
+    <section class="legal-sec" id="responsabilidades">
+      <h2><span class="num">03</span> Responsabilidades do cliente</h2>
+      <p>
+        Para que o trabalho flua bem, contamos com a sua colaboração. Isso inclui:
+      </p>
+      <ul>
+        <li>Fornecer informações corretas, completas e no tempo combinado;</li>
+        <li>Disponibilizar acessos, materiais e aprovações necessários para o andamento do projeto;</li>
+        <li>Usar os nossos serviços e entregas de forma lícita e de acordo com estes termos;</li>
+        <li>Garantir que possui os direitos sobre os conteúdos e as marcas que nos envia.</li>
+      </ul>
+      <p>
+        Atrasos ou falta de retorno da sua parte podem afetar prazos e custos, sempre de forma transparente
+        e comunicada com antecedência.
+      </p>
+    </section>
+
+    <section class="legal-sec" id="propriedade">
+      <h2><span class="num">04</span> Propriedade intelectual</h2>
+      <p>
+        As entregas finais de cada projeto passam a ser suas depois de quitado o pagamento acordado, salvo
+        se a proposta disser algo diferente. Já os nossos métodos, ferramentas internas, componentes
+        reutilizáveis e conhecimento acumulado continuam sendo da Filka, e podemos reaproveitá-los em outros
+        trabalhos. A marca, o site e os materiais da própria Filka são protegidos e não podem ser copiados
+        sem a nossa autorização.
+      </p>
+    </section>
+
+    <section class="legal-sec" id="portfolio">
+      <h2><span class="num">05</span> Uso da marca em portfólio</h2>
+      <p>
+        Temos orgulho do que construímos, e mostrar isso faz parte do nosso trabalho. Por isso, ao contratar
+        a Filka, você concorda que <strong>podemos usar o nome, a logomarca e imagens da sua empresa</strong>
+        para divulgar que prestamos serviço a você. Isso pode aparecer no nosso portfólio, no site, em cases,
+        em apresentações comerciais e nas redes sociais, sempre de forma respeitosa e alinhada à sua marca.
+      </p>
+      <p>
+        Nunca vamos divulgar informações confidenciais ou dados sensíveis do seu negócio nesse contexto: o
+        uso se limita a identificar você como cliente e a apresentar, em linhas gerais, o que fizemos juntos.
+        Se por algum motivo você preferir não aparecer, é só nos avisar por escrito, que respeitamos a sua
+        decisão e retiramos a referência.
+      </p>
+    </section>
+
+    <section class="legal-sec" id="pagamentos">
+      <h2><span class="num">06</span> Pagamentos e prazos</h2>
+      <p>
+        As condições de pagamento, incluindo valores, parcelas e datas, ficam definidas na proposta de cada
+        projeto. O início e a continuidade do trabalho podem depender da confirmação do pagamento nas etapas
+        combinadas. Eventuais atrasos podem suspender as entregas até a regularização, sem prejuízo dos
+        prazos já pactuados.
+      </p>
+    </section>
+
+    <section class="legal-sec" id="limitacao">
+      <h2><span class="num">07</span> Limitação de responsabilidade</h2>
+      <p>
+        A gente se dedica ao máximo para entregar um trabalho de qualidade, mas alguns fatores fogem do nosso
+        controle. A Filka não se responsabiliza por prejuízos indiretos, lucros cessantes ou por problemas
+        causados por serviços de terceiros, uso indevido das entregas ou informações incorretas fornecidas
+        pelo cliente. O site é oferecido no estado em que se encontra, e não garantimos que estará sempre
+        disponível ou livre de falhas.
+      </p>
+    </section>
+
+    <section class="legal-sec" id="confidencialidade">
+      <h2><span class="num">08</span> Confidencialidade</h2>
+      <p>
+        Tudo o que você compartilha conosco durante um projeto é tratado com sigilo. Só usamos essas
+        informações para executar o trabalho combinado e não as repassamos a terceiros, exceto quando for
+        indispensável para a entrega ou quando a lei exigir. Essa mesma discrição vale para os dois lados:
+        esperamos que o material e o conhecimento que compartilhamos com você também sejam mantidos em
+        confiança.
+      </p>
+    </section>
+
+    <section class="legal-sec" id="rescisao">
+      <h2><span class="num">09</span> Rescisão</h2>
+      <p>
+        Qualquer uma das partes pode encerrar o contrato nas condições previstas na proposta, mediante aviso
+        por escrito. Em caso de encerramento, os valores referentes ao trabalho já realizado permanecem
+        devidos. Também podemos suspender ou encerrar o acesso ao site e aos serviços se identificarmos uso
+        indevido ou violação destes termos.
+      </p>
+    </section>
+
+    <section class="legal-sec" id="alteracoes">
+      <h2><span class="num">10</span> Alterações destes termos</h2>
+      <p>
+        De tempos em tempos, estes termos podem ser atualizados, seja porque mudamos algum processo, seja
+        porque a legislação muda. Sempre que isso acontecer, vamos revisar a data de “última atualização” no
+        topo da página. Por isso, vale voltar aqui de vez em quando para acompanhar as novidades.
+      </p>
+    </section>
+
+    <section class="legal-sec" id="foro">
+      <h2><span class="num">11</span> Lei aplicável e foro</h2>
+      <p>
+        Estes termos são regidos pelas leis brasileiras. Qualquer questão que não puder ser resolvida de
+        forma amigável será tratada no foro da comarca de São Paulo (SP), salvo disposição legal em
+        contrário. Antes disso, porém, a gente sempre prefere conversar e chegar a um acordo.
+      </p>
+    </section>
+
+    <section class="legal-sec" id="contato">
+      <h2><span class="num">12</span> Contato</h2>
+      <p>
+        Ficou com alguma dúvida sobre estes termos? Fale com a gente. Estamos à disposição para esclarecer o
+        que for preciso antes de você seguir em frente.
+      </p>
+      <div class="legal-cta">
+        <p>Envie a sua mensagem e retornamos em até 1 dia útil.</p>
+        <a class="mail" href="mailto:filkastudio@outlook.com.br">filkastudio@outlook.com.br</a>
+      </div>
+    </section>
+  </article>
+</div>
+
+<!-- Footer: same contact section as the home page -->
+<section class="contact-section" id="contato">
+  <div class="container">
+    <div class="cta-box reveal">
+      <div class="contact-top">
+        <div class="contact-lead">
+          <div class="eyebrow eyebrow--light">vamos conversar</div>
+          <h2>Pronto para fazer seus dados <span class="contact-q">responderem?</span></h2>
+        </div>
+        <div class="contact-info">
+          <div class="contact-info__item">
+            <span class="contact-info__lab">diga oi!</span>
+            <a class="contact-info__val" href="mailto:filkastudio@outlook.com.br">filkastudio@outlook.com.br</a>
+          </div>
+          <div class="contact-info__social">
+            <span class="contact-info__lab">redes sociais</span>
+            <div class="contact-social">
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+              <a href="https://www.linkedin.com/company/filka/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+            </div>
+          </div>
+          <p class="contact-info__note">Vamos construir algo que roda.</p>
+          <a class="btn btn--light" href="contato.html">
+            Iniciar projeto
+            <span class="arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-wordmark">
+        <img src="assets/img/filka-wordmark-hq.png" alt="filka," />
+      </div>
+
+      <div class="contact-bottom">
+        <span class="contact-bottom__legal">© 2026 Filka. Todos os direitos reservados. </span>
+        <span class="contact-bottom__cnpj">CNPJ 56.302.887/0001-27</span>
+        <div class="contact-links__group">
+          <a href="privacidade.html">Política de privacidade</a>
+          <a href="termos.html">Termos de uso</a>
+          <a href="#" data-cookie-settings>Cookies</a>
+          <a href="trabalhe.html">Trabalhe conosco</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="js/nav.js" defer></script>
+<script src="js/i18n.js" defer></script>
+<script src="js/cookies.js" defer></script>
+<script src="js/filkai.js" defer></script>
+<script src="js/termos-i18n.js" defer></script>
+</body>
+</html>
