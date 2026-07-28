@@ -11,6 +11,7 @@ Site institucional da Filka. HTML, CSS e JavaScript puro (sem build).
 - `privacidade.html` — política de privacidade
 - `termos.html` — termos de uso
 - `404.html` — página de erro
+- `briefing.html` — briefing de projeto (privado, `noindex`, sem links no site — compartilhar a URL direto com o cliente)
 
 ## Ícones
 - `favicon.ico`, `favicon-16x16.png`, `favicon-32x32.png`, `apple-touch-icon.png` — gerados a partir de `brand-symmetric.png`
@@ -40,3 +41,5 @@ python3 -m http.server
 1. Suba todos estes arquivos para um repositório.
 2. Em Settings › Pages, aponte para a branch principal (raiz `/`).
 3. O site fica disponível na URL do GitHub Pages.
+
+Atenção: `briefing.html` tem `noindex` mas fica publicamente acessível a quem tiver a URL exata. Não há como restringir acesso via GitHub Pages sem autenticação adicional.

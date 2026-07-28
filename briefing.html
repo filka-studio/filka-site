@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Briefing de Projeto — Filka</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Baumans&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+<style>
+  body { background: var(--paper); }
+  .bfg-bar {
+    position: sticky; top: 0; z-index: 20; background: var(--paper);
+    border-bottom: 1px solid var(--hairline-soft);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px max(24px, calc((100% - 900px) / 2));
+  }
+  .bfg-bar__brand { display: flex; align-items: center; gap: 10px; }
+  .bfg-bar__brand img { height: 20px; width: auto; display: block; }
+  .bfg-bar__tag { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; color: var(--ink-mute); text-transform: lowercase; }
+
+  .bfg-wrap { max-width: 900px; margin: 0 auto; padding: 60px 24px 120px; }
+  .bfg-head h1 {
+    font-family: var(--font-head); font-weight: 400; letter-spacing: -0.03em;
+    font-size: clamp(32px, 5vw, 54px); line-height: 1.05; margin: 14px 0 16px;
+  }
+  .bfg-head p { font-size: 16px; line-height: 1.65; color: var(--ink-soft); max-width: 60ch; margin: 0; }
+
+  .bfg-form { margin-top: 56px; display: flex; flex-direction: column; gap: 52px; }
+  .bfg-section__num { font-family: var(--font-mono); font-size: 12px; color: var(--filka-peach); letter-spacing: .06em; margin: 0 0 6px; }
+  .bfg-section h2 { font-family: var(--font-head); font-weight: 500; font-size: 21px; letter-spacing: -0.01em; margin: 0 0 4px; }
+  .bfg-section > p.hint { font-size: 13.5px; color: var(--ink-mute); margin: 0 0 22px; }
+  .bfg-section { border-top: 1px solid var(--hairline-soft); padding-top: 32px; }
+  .bfg-section:first-child { border-top: none; padding-top: 0; }
+
+  .bfg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 640px) { .bfg-grid { grid-template-columns: 1fr; } }
+  .bfg-field { display: flex; flex-direction: column; gap: 7px; }
+  .bfg-field--full { grid-column: 1 / -1; }
+  .bfg-field label { font-family: var(--font-mono); font-size: 11px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink-soft); }
+  .bfg-field label .req { color: var(--filka-peach); }
+  .bfg-field input[type="text"], .bfg-field input[type="email"], .bfg-field input[type="url"],
+  .bfg-field select, .bfg-field textarea {
+    width: 100%; background: var(--paper-soft); color: var(--ink);
+    border: 1px solid var(--hairline); border-radius: 10px;
+    padding: 12px 14px; font-family: var(--font-body); font-size: 15px;
+    transition: border-color .2s, background .2s; resize: vertical;
+  }
+  .bfg-field textarea { min-height: 92px; line-height: 1.55; }
+  .bfg-field input:focus, .bfg-field select:focus, .bfg-field textarea:focus { outline: none; border-color: var(--filka-peach); background: #14111d; }
+  .bfg-field input::placeholder, .bfg-field textarea::placeholder { color: var(--ink-mute); }
+
+  .bfg-choices { display: flex; flex-wrap: wrap; gap: 9px; }
+  .bfg-chip { position: relative; }
+  .bfg-chip input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+  .bfg-chip span {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 13.5px; padding: 9px 15px; border-radius: 999px;
+    border: 1px solid var(--hairline); color: var(--ink-soft);
+    transition: border-color .2s, background .2s, color .2s;
+  }
+  .bfg-chip input:checked + span { border-color: var(--filka-peach); background: rgba(236,174,120,.12); color: var(--ink); }
+  .bfg-chip input:focus-visible + span { outline: 2px solid var(--filka-peach); outline-offset: 2px; }
+
+  .bfg-scale { display: flex; align-items: center; gap: 10px; }
+  .bfg-scale input[type="range"] { flex: 1; accent-color: var(--filka-peach); }
+  .bfg-scale__val { font-family: var(--font-mono); font-size: 13px; color: var(--filka-peach); width: 26px; text-align: right; }
+
+  .bfg-submit-row { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+  .bfg-submit { cursor: pointer; border: none; font-family: var(--font-body); }
+  .bfg-msg { font-size: 13.5px; min-height: 1em; }
+  .bfg-note { font-size: 12.5px; color: var(--ink-mute); max-width: 60ch; }
+
+  .bfg-success { display: none; text-align: center; padding: 90px 24px; }
+  .bfg-success.show { display: block; }
+  .bfg-success__icon { width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center; background: rgba(236,174,120,.14); color: var(--filka-peach); margin: 0 auto 22px; }
+  .bfg-success h2 { font-family: var(--font-head); font-weight: 400; font-size: 28px; margin: 0 0 10px; }
+  .bfg-success p { color: var(--ink-soft); max-width: 46ch; margin: 0 auto; line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<div class="bfg-bar">
+  <div class="bfg-bar__brand">
+    <img src="assets/img/filka-wordmark-white.png" alt="Filka" />
+    <span class="bfg-bar__tag">briefing de projeto</span>
+  </div>
+  <span class="bfg-bar__tag">uso interno</span>
+</div>
+
+<div class="bfg-wrap">
+  <div class="bfg-head" id="bfgIntro">
+    <div class="eyebrow eyebrow--light">antes de começar</div>
+    <h1>Conte pra gente<br />sobre o seu projeto.</h1>
+    <p>
+      Este briefing nos ajuda a entender o seu negócio antes da primeira reunião, para chegarmos com uma
+      proposta mais certeira. Leva uns 10 minutos. Não precisa ter todas as respostas prontas: o que não
+      souber, pode deixar em branco ou marcar "não sei ainda".
+    </p>
+  </div>
+
+  <form class="bfg-form" id="bfgForm" action="https://formsubmit.co/ajax/filkastudio@outlook.com.br" method="POST">
+    <input type="hidden" name="_subject" value="Novo briefing de projeto — Filka" />
+    <input type="hidden" name="_template" value="table" />
+    <input type="hidden" name="_captcha" value="false" />
+
+    <section class="bfg-section">
+      <p class="bfg-section__num">01</p>
+      <h2>Sobre a empresa</h2>
+      <div class="bfg-grid">
+        <div class="bfg-field">
+          <label for="empresa">Empresa <span class="req">*</span></label>
+          <input type="text" id="empresa" name="Empresa" placeholder="Nome da empresa" required />
+        </div>
+        <div class="bfg-field">
+          <label for="segmento">Segmento</label>
+          <input type="text" id="segmento" name="Segmento" placeholder="Ex.: varejo, educação, saúde..." />
+        </div>
+        <div class="bfg-field">
+          <label for="cnpj">CNPJ</label>
+          <input type="text" id="cnpj" name="CNPJ" placeholder="00.000.000/0000-00" inputmode="numeric" />
+        </div>
+        <div class="bfg-field">
+          <label>Porte da empresa</label>
+          <select name="Porte da empresa">
+            <option value="">Selecione</option>
+            <option>MEI / autônomo</option>
+            <option>Micro ou pequena empresa</option>
+            <option>Média empresa</option>
+            <option>Grande empresa / capital aberto</option>
+            <option>Não sei / prefiro não informar</option>
+          </select>
+        </div>
+        <div class="bfg-field">
+          <label for="contato-nome">Seu nome <span class="req">*</span></label>
+          <input type="text" id="contato-nome" name="Nome do contato" placeholder="Nome completo" required />
+        </div>
+        <div class="bfg-field">
+          <label for="contato-cargo">Cargo</label>
+          <input type="text" id="contato-cargo" name="Cargo" placeholder="Seu cargo na empresa" />
+        </div>
+        <div class="bfg-field">
+          <label for="contato-email">E-mail <span class="req">*</span></label>
+          <input type="email" id="contato-email" name="E-mail" placeholder="voce@empresa.com" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+" />
+        </div>
+        <div class="bfg-field">
+          <label for="contato-site">Site atual (se tiver)</label>
+          <input type="url" id="contato-site" name="Site atual" placeholder="https://" />
+        </div>
+      </div>
+    </section>
+
+    <section class="bfg-section">
+      <p class="bfg-section__num">02</p>
+      <h2>O projeto</h2>
+      <p class="hint">Selecione tudo o que se aplica.</p>
+      <div class="bfg-grid">
+        <div class="bfg-field bfg-field--full">
+          <label>Tipo de projeto</label>
+          <div class="bfg-choices">
+            <label class="bfg-chip"><input type="checkbox" name="Tipo — Site institucional" value="Sim" /><span>Site institucional</span></label>
+            <label class="bfg-chip"><input type="checkbox" name="Tipo — Landing page" value="Sim" /><span>Landing page</span></label>
+            <label class="bfg-chip"><input type="checkbox" name="Tipo — Portfólio" value="Sim" /><span>Portfólio</span></label>
+            <label class="bfg-chip"><input type="checkbox" name="Tipo — Produto digital / SaaS" value="Sim" /><span>Produto digital / SaaS</span></label>
+            <label class="bfg-chip"><input type="checkbox" name="Tipo — E-commerce" value="Sim" /><span>E-commerce</span></label>
+            <label class="bfg-chip"><input type="checkbox" name="Tipo — Dados & analytics" value="Sim" /><span>Dados & analytics</span></label>
+            <label class="bfg-chip"><input type="checkbox" name="Tipo — Automação / agentes de IA" value="Sim" /><span>Automação / agentes de IA</span></label>
+            <label class="bfg-chip"><input type="checkbox" name="Tipo — Identidade visual" value="Sim" /><span>Identidade visual</span></label>
+            <label class="bfg-chip"><input type="checkbox" name="Tipo — Ainda não sei" value="Sim" /><span>Ainda não sei</span></label>
+          </div>
+        </div>
+        <div class="bfg-field bfg-field--full">
+          <label for="problema">Qual problema esse projeto resolve? <span class="req">*</span></label>
+          <textarea id="problema" name="Problema a resolver" placeholder="Descreva o contexto: o que motivou esse projeto, o que não está funcionando hoje..." required></textarea>
+        </div>
+        <div class="bfg-field bfg-field--full">
+          <label for="objetivo">Como vocês vão saber que deu certo?</label>
+          <textarea id="objetivo" name="Definição de sucesso" placeholder="Ex.: aumentar conversão, reduzir tempo de atendimento, lançar um MVP..."></textarea>
+        </div>
+        <div class="bfg-field bfg-field--full">
+          <label for="publico">Quem é o público / usuário final?</label>
+          <textarea id="publico" name="Público-alvo" placeholder="Quem vai usar ou visitar isso?"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <section class="bfg-section">
+      <p class="bfg-section__num">03</p>
+      <h2>Referências e marca</h2>
+      <div class="bfg-grid">
+        <div class="bfg-field bfg-field--full">
+          <label for="referencias">Sites ou marcas que vocês admiram</label>
+          <textarea id="referencias" name="Referências" placeholder="Links ou nomes de marcas cujo estilo vocês gostam, e por quê"></textarea>
+        </div>
+        <div class="bfg-field bfg-field--full">
+          <label>Vocês já têm identidade visual definida?</label>
+          <div class="bfg-choices">
+            <label class="bfg-chip"><input type="radio" name="Identidade visual" value="Sim, completa (logo, cores, tipografia)" /><span>Sim, completa</span></label>
+            <label class="bfg-chip"><input type="radio" name="Identidade visual" value="Só o logo" /><span>Só o logo</span></label>
+            <label class="bfg-chip"><input type="radio" name="Identidade visual" value="Nada ainda" /><span>Nada ainda</span></label>
+          </div>
+        </div>
+        <div class="bfg-field bfg-field--full">
+          <label for="conteudo">Vocês já têm o conteúdo (textos, fotos, vídeos)?</label>
+          <textarea id="conteudo" name="Conteúdo disponível" placeholder="Ou isso também é algo que precisam de ajuda para produzir?"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <section class="bfg-section">
+      <p class="bfg-section__num">04</p>
+      <h2>Prazo e orçamento</h2>
+      <div class="bfg-grid">
+        <div class="bfg-field">
+          <label for="prazo">Prazo desejado</label>
+          <select id="prazo" name="Prazo desejado">
+            <option value="">Selecione</option>
+            <option>Até 1 mês</option>
+            <option>1 a 3 meses</option>
+            <option>3 a 6 meses</option>
+            <option>Sem prazo definido</option>
+          </select>
+        </div>
+        <div class="bfg-field">
+          <label for="orcamento">Faixa de orçamento</label>
+          <select id="orcamento" name="Faixa de orçamento">
+            <option value="">Selecione</option>
+            <option>Até R$ 10 mil</option>
+            <option>R$ 10 mil a R$ 30 mil</option>
+            <option>R$ 30 mil a R$ 60 mil</option>
+            <option>Acima de R$ 60 mil</option>
+            <option>Ainda não sei</option>
+          </select>
+        </div>
+        <div class="bfg-field bfg-field--full">
+          <label for="motivacao">Nível de urgência</label>
+          <div class="bfg-scale">
+            <input type="range" id="motivacao" min="1" max="5" value="3" />
+            <span class="bfg-scale__val" id="motivacaoVal">3</span>
+            <input type="hidden" name="Urgência (1-5)" id="motivacaoHidden" value="3" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bfg-section">
+      <p class="bfg-section__num">05</p>
+      <h2>Mais alguma coisa?</h2>
+      <div class="bfg-grid">
+        <div class="bfg-field bfg-field--full">
+          <label for="obs">Observações</label>
+          <textarea id="obs" name="Observações" placeholder="Qualquer outra informação que ache importante"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <div class="bfg-submit-row">
+      <button type="submit" class="btn btn--light bfg-submit" id="bfgSubmit">
+        <span id="bfgSubmitLabel">Enviar briefing</span>
+        <span class="arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </button>
+      <p class="bfg-msg" id="bfgMsg"></p>
+      <p class="bfg-note">Este link é privado e foi compartilhado diretamente com você. Não é indexado nem listado no site.</p>
+    </div>
+  </form>
+
+  <div class="bfg-success" id="bfgSuccess">
+    <div class="bfg-success__icon">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+    </div>
+    <h2>Briefing recebido!</h2>
+    <p>Obrigado por dedicar esse tempo. Vamos analisar tudo com calma e retornar em até 1 dia útil para marcar a conversa.</p>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const range = document.getElementById('motivacao');
+    const val = document.getElementById('motivacaoVal');
+    const hidden = document.getElementById('motivacaoHidden');
+    range.addEventListener('input', () => { val.textContent = range.value; hidden.value = range.value; });
+
+    const form = document.getElementById('bfgForm');
+    const submitBtn = document.getElementById('bfgSubmit');
+    const label = document.getElementById('bfgSubmitLabel');
+    const msg = document.getElementById('bfgMsg');
+    const intro = document.getElementById('bfgIntro');
+    const success = document.getElementById('bfgSuccess');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      const labelDefault = label.textContent;
+      label.textContent = 'Enviando…';
+      msg.textContent = '';
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok) {
+          form.hidden = true;
+          intro.style.display = 'none';
+          success.classList.add('show');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          msg.style.color = '#E08A6E';
+          msg.textContent = (data.errors && data.errors[0] && data.errors[0].message) || 'Não foi possível enviar agora. Tente de novo ou escreva para o nosso e-mail.';
+          submitBtn.disabled = false;
+          label.textContent = labelDefault;
+        }
+      } catch (err) {
+        msg.style.color = '#E08A6E';
+        msg.textContent = 'Sem conexão. Tente de novo ou escreva para o nosso e-mail.';
+        submitBtn.disabled = false;
+        label.textContent = labelDefault;
+      }
+    });
+  })();
+</script>
+</body>
+</html>
