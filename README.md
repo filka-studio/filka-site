@@ -4,7 +4,7 @@ Site institucional da Filka. HTML, CSS e JavaScript puro (sem build).
 
 ## Páginas
 - `index.html` — home (hero, serviços, projetos, processo, preços, contato)
-- `produtos.html`, `cases.html` — vitrine
+- `cases.html` — vitrine
 - `projetos.html` — projetos com pré-visualização em modal
 - `contato.html` — formulário de contato
 - `trabalhe.html` — trabalhe conosco
