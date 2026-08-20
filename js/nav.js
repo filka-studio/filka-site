@@ -13,7 +13,6 @@
       <div class="nav__menu">
         <a href="index.html#servicos">Serviços</a>
         <a href="index.html#projetos">Projetos</a>
-        <a href="cases.html">Cases</a>
         <a href="index.html#processo">Processo</a>
         <a href="index.html#precos">Preços</a>
         <a href="index.html#contato">Contato</a>
@@ -45,7 +44,6 @@
       </div>
       <a href="index.html#servicos">Serviços</a>
       <a href="index.html#projetos">Projetos</a>
-      <a href="cases.html">Cases</a>
       <a href="index.html#processo">Processo</a>
       <a href="index.html#precos">Preços</a>
       <a href="index.html#contato">Contato</a>

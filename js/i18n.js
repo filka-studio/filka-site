@@ -12,7 +12,6 @@
       "Preços": "Pricing",
       "Contato": "Contact",
       "Home": "Home",
-      "Produtos": "Products",
       // Hero
       "Integramos dois universos, programação e design, para transformar sua visão em produto. Alta qualidade e agilidade, da arquitetura ao último pixel.":
         "We bring two worlds together, engineering and design, to turn your vision into a product. High quality and speed, from architecture to the last pixel.",
@@ -263,7 +262,7 @@
         "Thanks for reaching out. We've got your details and will reply within 1 business day by email.",
       "Enquanto isso, se quiser, dê uma olhada no que já construímos:":
         "In the meantime, feel free to take a look at what we've built:",
-      "Ver nossos cases": "See our work",
+      "Ver nossos projetos": "See our projects",
       "Enviar outra mensagem": "Send another message",
       // Careers page (trabalhe)
       "trabalhe conosco": "work with us",
@@ -305,8 +304,6 @@
       "Preços": "Precios",
       "Contato": "Contacto",
       "Home": "Inicio",
-      "Produtos": "Productos",
-      "Cases": "Casos",
       // Hero
       "Integramos dois universos, programação e design, para transformar sua visão em produto. Alta qualidade e agilidade, da arquitetura ao último pixel.":
         "Unimos dos universos, programación y diseño, para convertir tu visión en producto. Alta calidad y agilidad, de la arquitectura al último píxel.",
@@ -557,7 +554,7 @@
         "Gracias por escribirnos. Ya tenemos tus datos y responderemos en hasta 1 día hábil por correo.",
       "Enquanto isso, se quiser, dê uma olhada no que já construímos:":
         "Mientras tanto, si quieres, echa un vistazo a lo que hemos construido:",
-      "Ver nossos cases": "Ver nuestros casos",
+      "Ver nossos projetos": "Ver nuestros proyectos",
       "Enviar outra mensagem": "Enviar otro mensaje",
       // Careers page (trabalhe)
       "trabalhe conosco": "trabaja con nosotros",
