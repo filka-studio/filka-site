@@ -13,6 +13,7 @@
       <div class="nav__menu">
         <a href="index.html#servicos">Serviços</a>
         <a href="index.html#projetos">Projetos</a>
+        <a href="cases.html">Cases</a>
         <a href="index.html#processo">Processo</a>
         <a href="index.html#precos">Preços</a>
         <a href="index.html#contato">Contato</a>
@@ -24,7 +25,7 @@
           <button data-lang="es">ES</button>
         </div>
         <a class="nav__cta" href="https://calendar.app.google/s7fpLVRSq7ARySYF6" target="_blank" rel="noopener">
-          Fale Conosco
+          Agendar reunião
           <span class="arrow"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
         </a>
         <button class="nav__burger" id="burger" aria-label="Abrir menu">
@@ -44,6 +45,7 @@
       </div>
       <a href="index.html#servicos">Serviços</a>
       <a href="index.html#projetos">Projetos</a>
+      <a href="cases.html">Cases</a>
       <a href="index.html#processo">Processo</a>
       <a href="index.html#precos">Preços</a>
       <a href="index.html#contato">Contato</a>
@@ -52,7 +54,16 @@
         <button data-lang="en">EN</button>
         <button data-lang="es">ES</button>
       </div>
-      <a href="https://calendar.app.google/s7fpLVRSq7ARySYF6" target="_blank" rel="noopener" style="color: var(--filka-blue)">Fale Conosco →</a>
+      <a href="https://calendar.app.google/s7fpLVRSq7ARySYF6" target="_blank" rel="noopener" style="color: var(--filka-blue)">Agendar reunião →</a>
+    </div>
+  `;
+
+  const MOBILE_CTA_HTML = `
+    <div class="mobile-cta" id="mobileCta">
+      <a class="btn btn--accent" href="https://calendar.app.google/s7fpLVRSq7ARySYF6" target="_blank" rel="noopener">
+        Agendar reunião
+        <span class="arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+      </a>
     </div>
   `;
 
@@ -109,11 +120,18 @@
   if (navMount) navMount.outerHTML = NAV_HTML;
   const footerMount = document.getElementById('footer-mount');
   if (footerMount) footerMount.outerHTML = FOOTER_HTML;
+  if (navMount) document.body.insertAdjacentHTML('beforeend', MOBILE_CTA_HTML);
 
-  // Scrolled state
+  // Scrolled state + hide the mobile CTA bar once the footer (which has its own CTA) is in view
   const nav = document.getElementById('nav');
+  const mobileCta = document.getElementById('mobileCta');
   const onScroll = () => {
     if (nav) nav.classList.toggle('scrolled', window.scrollY > 30);
+    if (mobileCta) {
+      const footer = document.querySelector('.contact-section');
+      const overFooter = footer && footer.getBoundingClientRect().top < window.innerHeight - 40;
+      mobileCta.classList.toggle('is-hidden', !!overFooter);
+    }
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
@@ -193,9 +211,18 @@
 
   // Mobile sheet
   const sheet = document.getElementById('mobileSheet');
-  document.getElementById('burger')?.addEventListener('click', () => sheet.classList.add('open'));
-  document.getElementById('closeSheet')?.addEventListener('click', () => sheet.classList.remove('open'));
-  sheet?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => sheet.classList.remove('open')));
+  document.getElementById('burger')?.addEventListener('click', () => {
+    sheet.classList.add('open');
+    mobileCta?.classList.add('is-hidden');
+  });
+  document.getElementById('closeSheet')?.addEventListener('click', () => {
+    sheet.classList.remove('open');
+    onScroll();
+  });
+  sheet?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    sheet.classList.remove('open');
+    onScroll();
+  }));
 
   // Reveal observer
   const io = new IntersectionObserver((entries) => {

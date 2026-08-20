@@ -11,11 +11,13 @@
       "Processo": "Process",
       "Preços": "Pricing",
       "Contato": "Contact",
-      "Fale Conosco": "Get in touch",
+      "Home": "Home",
+      "Produtos": "Products",
       // Hero
       "Integramos dois universos, programação e design, para transformar sua visão em produto. Alta qualidade e agilidade, da arquitetura ao último pixel.":
         "We bring two worlds together, engineering and design, to turn your vision into a product. High quality and speed, from architecture to the last pixel.",
-      "Agendar uma reunião": "Book a meeting",
+      "Agendar reunião": "Book a meeting",
+      "Agendar reunião →": "Book a meeting →",
       "Ver cases": "See our work",
       "role para explorar": "scroll to explore",
       // Manifesto
@@ -257,7 +259,7 @@
         "E.g.: we've had Databricks for a year, but the business still relies on an analyst for everything...",
       "Enviar mensagem": "Send message",
       "Mensagem recebida!": "Message received!",
-      "Obrigado pelo contato, Karina. Já recebemos as suas informações e vamos responder em até 1 dia útil por e-mail.":
+      "Obrigado pelo contato. Já recebemos as suas informações e vamos responder em até 1 dia útil, por e-mail.":
         "Thanks for reaching out. We've got your details and will reply within 1 business day by email.",
       "Enquanto isso, se quiser, dê uma olhada no que já construímos:":
         "In the meantime, feel free to take a look at what we've built:",
@@ -302,11 +304,14 @@
       "Processo": "Proceso",
       "Preços": "Precios",
       "Contato": "Contacto",
-      "Fale Conosco": "Hablemos",
+      "Home": "Inicio",
+      "Produtos": "Productos",
+      "Cases": "Casos",
       // Hero
       "Integramos dois universos, programação e design, para transformar sua visão em produto. Alta qualidade e agilidade, da arquitetura ao último pixel.":
         "Unimos dos universos, programación y diseño, para convertir tu visión en producto. Alta calidad y agilidad, de la arquitectura al último píxel.",
-      "Agendar uma reunião": "Agendar una reunión",
+      "Agendar reunião": "Agendar una reunión",
+      "Agendar reunião →": "Agendar una reunión →",
       "Ver cases": "Ver casos",
       "role para explorar": "desliza para explorar",
       // Manifesto
@@ -548,7 +553,7 @@
         "Ej.: tenemos Databricks hace 1 año, pero el negocio todavía depende de un analista para todo...",
       "Enviar mensagem": "Enviar mensaje",
       "Mensagem recebida!": "¡Mensaje recibido!",
-      "Obrigado pelo contato, Karina. Já recebemos as suas informações e vamos responder em até 1 dia útil por e-mail.":
+      "Obrigado pelo contato. Já recebemos as suas informações e vamos responder em até 1 dia útil, por e-mail.":
         "Gracias por escribirnos. Ya tenemos tus datos y responderemos en hasta 1 día hábil por correo.",
       "Enquanto isso, se quiser, dê uma olhada no que já construímos:":
         "Mientras tanto, si quieres, echa un vistazo a lo que hemos construido:",

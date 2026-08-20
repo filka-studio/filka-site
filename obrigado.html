@@ -3,9 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Página não encontrada · Filka</title>
-<meta name="description" content="Esta página ainda está em construção. Volte ao início ou fale com a gente." />
-<meta name="robots" content="noindex" />
+<title>Mensagem recebida · Filka</title>
+<meta name="description" content="Recebemos o seu contato. A Filka responde em até 1 dia útil, por e-mail." />
+<meta name="robots" content="noindex, follow" />
+<link rel="canonical" href="https://filkastudio.com.br/obrigado.html" />
 <link rel="icon" href="favicon.ico" sizes="32x32" />
 <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
 <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
@@ -16,26 +17,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Cabin:wght@400;500;600&family=Baumans&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/styles.css" />
 <style>
-  /* ===== 404 page ===== */
-  .nf {
+  /* ===== Thank-you page (mirrors 404.html hero) ===== */
+  .ob {
     position: relative; min-height: 100vh; overflow: hidden;
     color: #fff; background: #0a0810;
     display: flex; align-items: center; padding: 150px 0 90px;
   }
-  .nf__bg {
+  .ob__bg {
     position: absolute; inset: 0; z-index: 0;
     background-image: url("assets/img/brand-bg.webp");
     background-size: cover; background-position: center right;
     background-repeat: no-repeat; pointer-events: none;
   }
-  .nf__bg::after {
+  .ob__bg::after {
     content: ""; position: absolute; inset: 0;
     background:
       linear-gradient(95deg, rgba(10,8,16,.9) 0%, rgba(10,8,16,.62) 34%, rgba(10,8,16,.2) 66%, rgba(10,8,16,0) 100%),
       linear-gradient(0deg, rgba(10,8,16,.6) 0%, rgba(10,8,16,0) 44%);
     pointer-events: none;
   }
-  .nf__tech {
+  .ob__tech {
     position: absolute; inset: 0; z-index: 0; pointer-events: none;
     background-image:
       linear-gradient(to right, rgba(255,255,255,.10) 1px, transparent 1px),
@@ -44,11 +45,11 @@
     -webkit-mask-image: radial-gradient(120% 100% at 70% 40%, #000 30%, transparent 85%);
     mask-image: radial-gradient(120% 100% at 70% 40%, #000 30%, transparent 85%);
   }
-  .nf__grain {
+  .ob__grain {
     position: absolute; inset: 0; z-index: 0; opacity: .5; pointer-events: none;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/></svg>");
   }
-  .nf__plexus {
+  .ob__plexus {
     position: absolute; top: 0; bottom: 0; right: 0; z-index: 0;
     width: 62%; height: 100%; pointer-events: none;
     object-fit: cover; object-position: right center;
@@ -56,45 +57,34 @@
     mask-image: linear-gradient(to right, transparent 0%, #000 42%);
   }
 
-  .nf__inner { position: relative; z-index: 1; width: 100%; }
-  .nf__copy { max-width: 720px; }
+  .ob__inner { position: relative; z-index: 1; width: 100%; }
+  .ob__copy { max-width: 640px; }
 
-  .nf__code {
-    font-family: var(--font-head); font-weight: 400; line-height: .92;
-    font-size: clamp(96px, 20vw, 220px); letter-spacing: -0.04em;
-    background: var(--grad-css);
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-    margin: 0 0 8px;
+  .ob__icon {
+    width: 56px; height: 56px; border-radius: 50%;
+    display: grid; place-items: center; margin-bottom: 22px;
+    background: var(--grad-css); color: #fff;
   }
-  .nf__title {
-    font-family: var(--font-head); font-weight: 400; letter-spacing: -0.02em;
-    font-size: clamp(28px, 5vw, 46px); line-height: 1.06; margin: 0 0 18px;
+  .ob__title {
+    font-family: var(--font-head); font-weight: 400; letter-spacing: -0.03em;
+    font-size: clamp(32px, 5.4vw, 54px); line-height: 1.04; margin: 0 0 18px;
   }
-  .nf__lede {
-    color: rgba(255,255,255,.74); font-size: clamp(15px, 1.6vw, 18px);
-    line-height: 1.6; max-width: 52ch; margin: 0 0 20px;
+  .ob__lede {
+    color: rgba(255,255,255,.82); font-size: clamp(16px, 1.6vw, 18px);
+    line-height: 1.6; max-width: 52ch; margin: 0 0 10px;
   }
-  .nf__pages {
-    display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 34px;
+  .ob__hint {
+    color: rgba(255,255,255,.6); font-size: 14.5px; line-height: 1.6; margin: 0 0 34px;
   }
-  .nf__pill {
-    font-family: var(--font-mono); font-size: 12px; letter-spacing: .02em;
-    color: rgba(255,255,255,.7); padding: 8px 15px; border-radius: 999px;
-    border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.04);
-    display: inline-flex; align-items: center; gap: 8px;
-  }
-  .nf__pill::before {
-    content: ""; width: 6px; height: 6px; border-radius: 50%;
-    background: var(--filka-peach); flex: none;
-  }
-  /* Minimal header */
-  .nf-nav {
+  .ob__actions { display: flex; flex-wrap: wrap; gap: 14px; }
+
+  .ob-nav {
     position: absolute; top: 0; left: 0; right: 0; z-index: 20;
     display: flex; align-items: center; justify-content: space-between;
     padding: 22px max(28px, calc((100% - 1240px) / 2));
   }
-  .nf-nav__brand img { height: 22px; width: auto; display: block; }
-  .nf-back {
+  .ob-nav__brand img { height: 22px; width: auto; display: block; }
+  .ob-back {
     display: inline-flex; align-items: center; gap: 9px;
     font-family: var(--font-mono); font-size: 13px; letter-spacing: .01em;
     color: rgba(255,255,255,.82);
@@ -102,60 +92,74 @@
     padding: 9px 16px; border-radius: 999px;
     transition: background .25s, border-color .25s, color .25s;
   }
-  .nf-back:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.5); color: #fff; }
-  .nf-back svg { display: block; }
+  .ob-back:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.5); color: #fff; }
+  .ob-back svg { display: block; }
 
   @media (max-width: 900px) {
-    .nf__plexus { width: 100%; opacity: .5;
+    .ob__plexus { width: 100%; opacity: .5;
       -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 30%, #000 100%);
       mask-image: linear-gradient(to bottom, transparent 0%, #000 30%, #000 100%);
     }
   }
   @media (max-width: 640px) {
-    .nf { padding: 120px 0 70px; }
-    .nf__cta { width: 100%; }
-    .nf__cta .btn { width: 100%; justify-content: center; }
+    .ob { padding: 120px 0 70px; }
+    .ob__actions { width: 100%; }
+    .ob__actions .btn { width: 100%; justify-content: center; }
   }
 </style>
 </head>
 <body>
 
-<header class="nf-nav">
-  <a class="nf-nav__brand" href="index.html" aria-label="Filka">
+<header class="ob-nav">
+  <a class="ob-nav__brand" href="index.html" aria-label="Filka">
     <img src="assets/img/filka-wordmark-white.png" alt="Filka" />
   </a>
-  <a class="nf-back" href="index.html">
+  <a class="ob-back" href="index.html">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
     Voltar para a home
   </a>
 </header>
 
-<section class="nf" data-screen-label="404">
-  <div class="nf__bg" aria-hidden="true"></div>
-  <div class="nf__tech" aria-hidden="true"></div>
-  <canvas class="nf__plexus" id="hero-plexus" width="1920" height="1080" aria-hidden="true"></canvas>
-  <div class="nf__grain" aria-hidden="true"></div>
+<section class="ob" data-screen-label="Obrigado">
+  <div class="ob__bg" aria-hidden="true"></div>
+  <div class="ob__tech" aria-hidden="true"></div>
+  <canvas class="ob__plexus" id="hero-plexus" width="1920" height="1080" aria-hidden="true"></canvas>
+  <div class="ob__grain" aria-hidden="true"></div>
 
-  <div class="container nf__inner">
-    <div class="nf__copy">
-      <div class="eyebrow eyebrow--light">erro 404</div>
-      <p class="nf__code">404</p>
-      <h2 class="nf__title">Esta página ainda está sendo construída.</h2>
-      <p class="nf__lede">
-        O conteúdo que você procura ainda não está no ar. Estamos trabalhando nele —
-        enquanto isso, dá uma olhada em outra parte do site.
-      </p>
-
-      <div class="nf__pages">
-        <a class="nf__pill" href="produtos.html">Produtos</a>
-        <a class="nf__pill" href="cases.html">Cases</a>
-        <a class="nf__pill" href="index.html#precos">Preços</a>
-        <a class="nf__pill" href="contato.html">Falar com a gente</a>
+  <div class="container ob__inner">
+    <div class="ob__copy">
+      <div class="ob__icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      </div>
+      <h1 class="ob__title" id="obTitle">Mensagem recebida!</h1>
+      <p class="ob__lede" id="obLede">Obrigado pelo contato. Já recebemos as suas informações e vamos responder em até 1 dia útil, por e-mail.</p>
+      <p class="ob__hint">Enquanto isso, se quiser, dê uma olhada no que já construímos:</p>
+      <div class="ob__actions">
+        <a class="btn btn--light" href="cases.html">
+          Ver nossos cases
+          <span class="arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="btn btn--ghost" href="index.html" style="color: #fff; border-color: rgba(255,255,255,.25);">
+          Voltar para a home
+        </a>
       </div>
     </div>
   </div>
 </section>
 
+<script>
+  // Personalize with the visitor's first name when it arrives via redirect (?nome=...)
+  (function () {
+    const nome = new URLSearchParams(location.search).get('nome');
+    if (nome) {
+      const first = nome.trim().split(' ')[0];
+      if (first) {
+        document.getElementById('obLede').textContent =
+          'Obrigado pelo contato, ' + first + '. Já recebemos as suas informações e vamos responder em até 1 dia útil, por e-mail.';
+      }
+    }
+  })();
+</script>
 <script src="js/i18n.js" defer></script>
 <script src="js/plexus.js" defer></script>
 </body>
