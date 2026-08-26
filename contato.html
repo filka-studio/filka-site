@@ -534,21 +534,6 @@
         })();
         </script>
 
-        <div class="fp-success" id="projSuccess" hidden>
-          <div class="fp-success__icon">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          </div>
-          <h2 class="fp-success__title"><span style="color: #ffffffc7;">Mensagem recebida!</span></h2>
-          <p class="fp-success__text">Obrigado pelo contato. Já recebemos as suas informações e vamos responder em até 1 dia útil, por e-mail.</p>
-          <p class="fp-success__hint">Enquanto isso, se quiser, dê uma olhada no que já construímos:</p>
-          <div class="fp-success__actions">
-            <a class="btn btn--dark" href="projetos.html">
-              Ver nossos projetos
-              <span class="arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-            </a>
-            <button type="button" class="fp-success__again" id="projAgain">Enviar outra mensagem</button>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -561,12 +546,9 @@
   }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // Form submit → send to Formspree → thank-you state
+  // Form submit → send to Formspree → redirect to the thank-you page (obrigado.html)
   (function () {
     const form = document.getElementById('projForm');
-    const success = document.getElementById('projSuccess');
-    const nameOut = document.getElementById('projName');
-    const again = document.getElementById('projAgain');
     const submitBtn = document.getElementById('projSubmit');
     const msg = document.getElementById('projMsg');
     if (!form) return;
@@ -580,13 +562,6 @@
       if (!form.reportValidity()) return;
 
       const nome = (document.getElementById('nome').value || '').trim();
-      const first = nome.split(' ')[0];
-      const showSuccess = () => {
-        if (first) nameOut.textContent = first;
-        form.hidden = true;
-        success.hidden = false;
-        success.classList.add('is-in');
-      };
 
       // set reply-to from the email field
       const replyto = document.getElementById('replytoField');
@@ -632,7 +607,9 @@
         });
         const data = await res.json().catch(() => ({}));
         if (res.ok && (data.success === 'true' || data.success === true || res.status === 200)) {
-          showSuccess();
+          const dest = 'obrigado.html' + (nome ? '?nome=' + encodeURIComponent(nome) : '');
+          location.href = dest;
+          return;
         } else {
           fallback((data.errors && data.errors[0] && data.errors[0].message) || null);
         }
@@ -642,14 +619,6 @@
         label.textContent = labelDefault;
         submitBtn.disabled = false;
       }
-    });
-
-    again.addEventListener('click', () => {
-      form.reset();
-      success.hidden = true;
-      success.classList.remove('is-in');
-      form.hidden = false;
-      msg.textContent = '';
     });
   })();
 </script>
