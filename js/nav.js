@@ -11,10 +11,9 @@
         <img src="assets/img/filka-wordmark-white.png" alt="Filka" />
       </a>
       <div class="nav__menu">
+        <a href="index.html">Início</a>
         <a href="index.html#servicos">Serviços</a>
         <a href="index.html#projetos">Projetos</a>
-        <a href="index.html#processo">Processo</a>
-        <a href="index.html#precos">Preços</a>
         <a href="index.html#contato">Contato</a>
       </div>
       <div class="nav__right">
@@ -23,8 +22,8 @@
           <button data-lang="en">EN</button>
           <button data-lang="es">ES</button>
         </div>
-        <a class="nav__cta" href="https://calendar.app.google/s7fpLVRSq7ARySYF6" target="_blank" rel="noopener">
-          Agendar reunião
+        <a class="nav__cta" href="contato.html">
+          Iniciar projeto
           <span class="arrow"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
         </a>
         <button class="nav__burger" id="burger" aria-label="Abrir menu">
@@ -42,24 +41,23 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
         </button>
       </div>
+      <a href="index.html">Início</a>
       <a href="index.html#servicos">Serviços</a>
       <a href="index.html#projetos">Projetos</a>
-      <a href="index.html#processo">Processo</a>
-      <a href="index.html#precos">Preços</a>
       <a href="index.html#contato">Contato</a>
       <div class="mobile-sheet__lang">
         <button data-lang="pt" class="active">PT</button>
         <button data-lang="en">EN</button>
         <button data-lang="es">ES</button>
       </div>
-      <a href="https://calendar.app.google/s7fpLVRSq7ARySYF6" target="_blank" rel="noopener" style="color: var(--filka-blue)">Agendar reunião →</a>
+      <a href="contato.html" style="color: var(--filka-blue)">Iniciar projeto →</a>
     </div>
   `;
 
   const MOBILE_CTA_HTML = `
     <div class="mobile-cta" id="mobileCta">
-      <a class="btn btn--accent" href="https://calendar.app.google/s7fpLVRSq7ARySYF6" target="_blank" rel="noopener">
-        Agendar reunião
+      <a class="btn btn--accent" href="contato.html">
+        Iniciar projeto
         <span class="arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
       </a>
     </div>
@@ -77,19 +75,23 @@
             <div class="contact-info">
               <div class="contact-info__item">
                 <span class="contact-info__lab">diga oi!</span>
-                <a class="contact-info__val" href="mailto:filkastudio@outlook.com.br">filkastudio@outlook.com.br</a>
+                <a class="contact-info__val" href="mailto:contato@filkastudio.com.br">contato@filkastudio.com.br</a>
               </div>
               <div class="contact-info__social">
                 <span class="contact-info__lab">redes sociais</span>
                 <div class="contact-social">
-                  <a href="https://www.linkedin.com/company/filka/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+                  <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2"/><circle cx="12" cy="12" r="4.1"/><circle cx="16.9" cy="7.1" r="1.05" fill="currentColor" stroke="none"/></svg></a>
+                  <a href="https://www.linkedin.com/company/filka/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="4"/><path d="M7.6 10.4v6.2"/><circle cx="7.6" cy="7.6" r="1.05" fill="currentColor" stroke="none"/><path d="M11.4 16.6v-6.2M11.4 12.9a2.55 2.55 0 0 1 5.1 0v3.7"/></svg></a>
                 </div>
               </div>
               <p class="contact-info__note">Vamos construir algo que roda.</p>
-              <a class="btn btn--light" href="contato.html">
-                Iniciar projeto
-                <span class="arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-              </a>
+              <div class="contact-actions">
+                <a class="btn btn--light" href="contato.html">
+                  Iniciar projeto
+                  <span class="arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                </a>
+                <a class="btn btn--outline-light" href="https://calendar.app.google/s7fpLVRSq7ARySYF6" target="_blank" rel="noopener">Agendar reunião</a>
+              </div>
             </div>
           </div>
 
@@ -115,9 +117,9 @@
   // Inject
   const navMount = document.getElementById('nav-mount');
   if (navMount) navMount.outerHTML = NAV_HTML;
+  if (navMount) document.body.insertAdjacentHTML('beforeend', MOBILE_CTA_HTML);
   const footerMount = document.getElementById('footer-mount');
   if (footerMount) footerMount.outerHTML = FOOTER_HTML;
-  if (navMount) document.body.insertAdjacentHTML('beforeend', MOBILE_CTA_HTML);
 
   // Scrolled state + hide the mobile CTA bar once the footer (which has its own CTA) is in view
   const nav = document.getElementById('nav');

@@ -75,7 +75,7 @@
   }
   .fp-hero__inner { position: relative; z-index: 1; width: 100%; }
   .fp-hero__grid {
-    display: grid; grid-template-columns: 1fr 1.05fr; gap: 72px; align-items: center;
+    display: grid; grid-template-columns: 1fr 1.15fr; gap: 56px; align-items: start;
   }
   @media (max-width: 940px) { .fp-hero__grid { grid-template-columns: 1fr; gap: 40px; } }
   .fp-hero__intro { max-width: 520px; }
@@ -99,8 +99,11 @@
   }
   .fp-quote__text { font-family: var(--font-head); font-style: normal; font-size: 17px; letter-spacing: -0.01em; color: rgba(255,255,255,.92); line-height: 1.4; }
   .fp-quote__by { display: flex; align-items: center; gap: 12px; }
+  .fp-quote__avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
+  .fp-social { margin-top: 18px; display: flex; flex-direction: column; gap: 8px; }
+  .fp-social .contact-social a svg { display: block; }
   .fp-quote__avatar {
-    width: 38px; height: 38px; border-radius: 50%;
+    width: 38px; height: 38px; border-radius: 50%; overflow: hidden; flex: none;
     background: var(--grad-css);
     display: grid; place-items: center; color: #fff; font-family: var(--font-head); font-size: 15px; flex: none;
   }
@@ -119,11 +122,13 @@
   .fp-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   @media (max-width: 540px) { .fp-row { grid-template-columns: 1fr; } }
   .fp-field { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
-  .fp-field label {
+  .fp-field > label {
     font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
     color: var(--ink-soft);
   }
-  .fp-field label .req { color: var(--filka-peach); }
+  .fp-field > label .req { color: var(--filka-peach); }
+  .fp-field .fp-hint { font-family: var(--font-mono); font-size: 11px; line-height: 1.4; letter-spacing: .06em; color: var(--ink-mute); margin: -2px 0 2px; }
+  .fp-picks .fp-pick > span { font-family: var(--font-body); text-transform: none; letter-spacing: normal; }
   .fp-field input,
   .fp-field select,
   .fp-field textarea {
@@ -138,6 +143,27 @@
     -webkit-appearance: none; appearance: none;
   }
   .fp-field textarea { min-height: 120px; resize: vertical; line-height: 1.5; }
+  .fp-tel { display: flex; align-items: stretch; width: 100%; background: var(--paper); border: 1px solid var(--hairline); border-radius: 12px; transition: border-color .2s, box-shadow .2s; }
+  .fp-tel:focus-within { border-color: var(--filka-peach); box-shadow: 0 0 0 3px rgba(236,174,120,.18); }
+  .fp-tel__cc { position: relative; flex: none; display: flex; align-items: center; gap: 4px; padding: 0 10px; border-right: 1px solid var(--hairline); }
+  .fp-tel__dial { font-family: var(--font-body); font-size: 15px; color: var(--ink); }
+  .fp-tel__chev { color: var(--ink-mute); flex: none; }
+  .fp-tel__btn { display: flex; align-items: center; gap: 5px; background: none; border: 0; padding: 0; cursor: pointer; font: inherit; }
+  .fp-tel__pop { position: absolute; top: calc(100% + 8px); left: -1px; z-index: 30; width: 268px; max-width: 78vw; background: var(--paper-deep); border: 1px solid var(--hairline); border-radius: 12px; box-shadow: 0 18px 44px rgba(0,0,0,.45); padding: 8px; }
+  .fp-tel__search { width: 100%; background: var(--paper) !important; border: 1px solid var(--hairline); border-radius: 9px; padding: 9px 11px !important; font-family: var(--font-body); font-size: 14px; color: var(--ink); outline: none; }
+  .fp-tel__search:focus { border-color: var(--filka-peach); box-shadow: none !important; }
+  .fp-tel__list { list-style: none; margin: 6px 0 0; padding: 0; max-height: 232px; overflow-y: auto; }
+  .fp-tel__list li { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 9px 11px; border-radius: 8px; font-size: 14px; color: var(--ink-soft); cursor: pointer; }
+  .fp-tel__list li:hover, .fp-tel__list li.is-active { background: rgba(255,255,255,.06); color: var(--ink); }
+  .fp-tel__list li[aria-selected="true"] { color: var(--filka-peach); }
+  .fp-tel__list li span:last-child { font-family: var(--font-mono); font-size: 12px; color: var(--ink-mute); }
+  .fp-tel__empty { margin: 10px 4px 6px; font-size: 13px; color: var(--ink-mute); }
+  .fp-tel input { width: auto; flex: 1 1 0; min-width: 0; background: none; border: 0; border-radius: 0; padding: 14px 12px; }
+  .fp-tel input:focus { box-shadow: none; }
+  .fp-tel input::placeholder, #email::placeholder { font-size: 13.5px; }
+  @media (max-width: 1180px) and (min-width: 941px) {
+    .fp-hero__grid .fp-row { grid-template-columns: 1fr; }
+  }
   .fp-field input::placeholder, .fp-field textarea::placeholder { color: var(--ink-mute); }
   .fp-field input:focus, .fp-field select:focus, .fp-field textarea:focus {
     border-color: var(--filka-peach);
@@ -151,6 +177,8 @@
   .fp-field select option { background: var(--paper-deep); color: var(--ink); }
   .fp-submit-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 4px; }
   .fp-msg { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: .03em; color: var(--grad-mint); }
+  .fp-msg__link { color: var(--filka-peach); text-decoration: underline; text-underline-offset: 3px; }
+  .fp-msg__link:hover { color: #fff; }
   #projSubmit:disabled { opacity: .6; cursor: progress; }
 
   /* Success state */
@@ -203,7 +231,7 @@
         <div class="fp-contact">
           <div class="fp-contact__item">
             <span class="fp-contact__lab">E-mail</span>
-            <a class="fp-contact__val" href="mailto:filkastudio@outlook.com.br">filkastudio@outlook.com.br</a>
+            <a class="fp-contact__val" href="mailto:contato@filkastudio.com.br">contato@filkastudio.com.br</a>
           </div>
           <div class="fp-contact__item">
             <span class="fp-contact__lab">Atendimento</span>
@@ -211,21 +239,30 @@
           </div>
         </div>
 
+        <div class="fp-social">
+          <span class="fp-contact__lab">REDES SOCIAIS</span>
+          <div class="contact-social">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2"/><circle cx="12" cy="12" r="4.1"/><circle cx="16.9" cy="7.1" r="1.05" fill="currentColor" stroke="none"/></svg></a>
+            <a href="https://www.linkedin.com/company/filka/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="4"/><path d="M7.6 10.4v6.2"/><circle cx="7.6" cy="7.6" r="1.05" fill="currentColor" stroke="none"/><path d="M11.4 16.6v-6.2M11.4 12.9a2.55 2.55 0 0 1 5.1 0v3.7"/></svg></a>
+          </div>
+        </div>
+
         <div class="fp-quote">
-          <p class="fp-quote__text">"Todo projeto começa com uma boa conversa<span class="comma" style="color: var(--filka-peach);">,</span>"</p>
+          <p class="fp-quote__text">"Todo projeto começa com uma boa conversa."</p>
           <div class="fp-quote__by">
-            <span class="fp-quote__avatar">F</span>
+            <span class="fp-quote__avatar"><img src="assets/img/filipe.webp" alt="Filipe" /></span>
             <div>
               <div class="fp-quote__name">Filipe</div>
-              <div class="fp-quote__role">filka</div>
+              <div class="fp-quote__role">cofundador, tech</div>
             </div>
           </div>
         </div>
+
       </div>
 
       <!-- Right: form -->
       <div class="fp-form">
-        <form id="projForm" action="https://formsubmit.co/ajax/filkastudio@outlook.com.br" method="POST">
+        <form id="projForm" action="https://formsubmit.co/ajax/contato@filkastudio.com.br" method="POST">
           <input type="hidden" name="_subject" value="Novo contato pelo site da Filka" />
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_captcha" value="false" />
@@ -237,13 +274,26 @@
             </div>
             <div class="fp-field">
               <label for="telefone">Telefone <span class="req">*</span></label>
-              <input id="telefone" name="telefone" type="tel" required placeholder="(11) 90000-0000" />
+              <div class="fp-tel">
+                <div class="fp-tel__cc">
+                  <button type="button" class="fp-tel__btn" id="telBtn" aria-haspopup="listbox" aria-expanded="false" aria-label="Código do país">
+                    <span class="fp-tel__dial" id="telDial">+55</span>
+                    <svg class="fp-tel__chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="fp-tel__pop" id="telPop" hidden>
+                    <input type="text" id="telSearch" class="fp-tel__search" placeholder="Buscar país ou código" autocomplete="off" />
+                    <ul class="fp-tel__list" id="telList" role="listbox" tabindex="-1"></ul>
+                    <p class="fp-tel__empty" id="telEmpty" hidden>Nenhum país encontrado</p>
+                  </div>
+                </div>
+                <input id="telefone" name="telefone" type="tel" required inputmode="tel" autocomplete="tel" maxlength="20" placeholder="(11) 90000-0000" />
+              </div>
             </div>
           </div>
           <div class="fp-row">
             <div class="fp-field">
-              <label for="email">E-mail corporativo <span class="req">*</span></label>
-              <input id="email" name="email" type="email" required placeholder="voce@empresa.com" />
+              <label for="email">E-mail <span class="req">*</span></label>
+              <input id="email" name="email" type="email" required inputmode="email" autocomplete="email" spellcheck="false" maxlength="80" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}" placeholder="seu@email.com" />
             </div>
             <div class="fp-field">
               <label for="empresa">Empresa <span class="req">*</span></label>
@@ -252,26 +302,34 @@
           </div>
           <div class="fp-field">
             <label for="ajuda">Como podemos ajudar? <span class="req">*</span></label>
-            <select id="ajuda" name="ajuda" required>
-              <option value="" disabled selected>Selecione</option>
-              <option>Dados &amp; IA (diagnóstico, AI/BI, automação)</option>
-              <option>Salesforce sob medida</option>
-              <option>Landing page / Site institucional</option>
-              <option>Identidade visual</option>
-              <option>Retainer (capacidade contínua)</option>
-              <option>Ainda não sei, quero conversar</option>
-            </select>
+            <div class="fp-picks" id="fpPicks">
+              <div class="fp-cat">
+                <label class="fp-pick fp-pick--cat"><input type="checkbox" data-cat="Transformação digital" /><span>Transformação digital<svg class="fp-pick__chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></label>
+                <div class="fp-subs"><div class="fp-subs__inner"><label class="fp-pick fp-pick--sub"><input type="checkbox" name="servicos" value="Transformação digital — Integração de sistemas" /><span>Integração de sistemas</span></label><label class="fp-pick fp-pick--sub"><input type="checkbox" name="servicos" value="Transformação digital — Salesforce sob medida" /><span>Salesforce sob medida</span></label><label class="fp-pick fp-pick--sub"><input type="checkbox" name="servicos" value="Transformação digital — Desenvolvimento de software" /><span>Desenvolvimento de software</span></label><label class="fp-pick fp-pick--sub"><input type="checkbox" name="servicos" value="Transformação digital — Manutenção de legado" /><span>Manutenção de legado</span></label></div></div>
+              </div>
+              <div class="fp-cat">
+                <label class="fp-pick fp-pick--cat"><input type="checkbox" data-cat="Dados e IA" /><span>Dados e IA<svg class="fp-pick__chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></label>
+                <div class="fp-subs"><div class="fp-subs__inner"><label class="fp-pick fp-pick--sub"><input type="checkbox" name="servicos" value="Dados e IA — Diagnóstico de dados" /><span>Diagnóstico de dados</span></label><label class="fp-pick fp-pick--sub"><input type="checkbox" name="servicos" value="Dados e IA — IA e BI" /><span>IA e BI</span></label><label class="fp-pick fp-pick--sub"><input type="checkbox" name="servicos" value="Dados e IA — Automação" /><span>Automação</span></label></div></div>
+              </div>
+              <div class="fp-cat">
+                <label class="fp-pick fp-pick--cat"><input type="checkbox" data-cat="Digital e marca" /><span>Digital e marca<svg class="fp-pick__chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></label>
+                <div class="fp-subs"><div class="fp-subs__inner"><label class="fp-pick fp-pick--sub"><input type="checkbox" name="servicos" value="Digital e marca — One page" /><span>One page</span></label><label class="fp-pick fp-pick--sub"><input type="checkbox" name="servicos" value="Digital e marca — Site institucional com blog" /><span>Site institucional com blog</span></label><label class="fp-pick fp-pick--sub"><input type="checkbox" name="servicos" value="Digital e marca — Identidade visual" /><span>Identidade visual</span></label><label class="fp-pick fp-pick--sub"><input type="checkbox" name="servicos" value="Digital e marca — Criação de logo" /><span>Criação de logo</span></label><label class="fp-pick fp-pick--sub"><input type="checkbox" name="servicos" value="Digital e marca — Cartão de visita" /><span>Cartão de visita</span></label><label class="fp-pick fp-pick--sub"><input type="checkbox" name="servicos" value="Digital e marca — Social media" /><span>Social media</span></label></div></div>
+              </div>
+              <div class="fp-cat">
+                <label class="fp-pick fp-pick--cat"><input type="checkbox" data-cat="Outros" /><span>Outros<svg class="fp-pick__chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span></label>
+                <div class="fp-subs"><div class="fp-subs__inner"><label class="fp-pick fp-pick--sub"><input type="checkbox" name="servicos" value="Outros — Retainer (capacidade contínua)" /><span>Retainer (capacidade contínua)</span></label><label class="fp-pick fp-pick--sub"><input type="checkbox" name="servicos" value="Outros — Ainda não sei, quero conversar" /><span>Ainda não sei, quero conversar</span></label></div></div>
+              </div>
+            </div>
+            <input type="hidden" id="ajuda" name="ajuda" value="" />
           </div>
           <div class="fp-field">
-            <label for="origem">Como conheceu a Filka? <span class="req">*</span></label>
-            <select id="origem" name="origem" required>
-              <option value="" disabled selected>Selecione</option>
-              <option>Indicação</option>
-              <option>LinkedIn</option>
-              <option>Instagram</option>
-              <option>Google</option>
-              <option>Outro</option>
-            </select>
+            <label>Como conheceu a Filka? <span class="req">*</span></label>
+            <div class="fp-picks" id="fpOrigem">
+              <div class="fp-cat">
+                <label class="fp-pick fp-pick--cat"><input type="checkbox" data-cat="origem" /><span><span id="origemVal">Selecione</span><svg class="fp-pick__chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span></label>
+                <div class="fp-subs"><div class="fp-subs__inner"><label class="fp-pick fp-pick--sub fp-pick--one"><input type="radio" name="origem" data-req="1" value="Indicação" /><span>Indicação</span></label><label class="fp-pick fp-pick--sub fp-pick--one"><input type="radio" name="origem" data-req="1" value="LinkedIn" /><span>LinkedIn</span></label><label class="fp-pick fp-pick--sub fp-pick--one"><input type="radio" name="origem" data-req="1" value="Instagram" /><span>Instagram</span></label><label class="fp-pick fp-pick--sub fp-pick--one"><input type="radio" name="origem" data-req="1" value="Google" /><span>Google</span></label><label class="fp-pick fp-pick--sub fp-pick--one"><input type="radio" name="origem" data-req="1" value="Outro" /><span>Outro</span></label></div></div>
+              </div>
+            </div>
           </div>
           <div class="fp-field">
             <label for="mente">Conte um pouco do que você tem em mente <span class="req">*</span></label>
@@ -285,6 +343,212 @@
             <span id="projMsg" class="fp-msg"></span>
           </div>
         </form>
+
+        <script>
+        (function(){
+          var wrap=document.getElementById('fpOrigem');if(!wrap)return;
+          var cat=wrap.querySelector('.fp-cat'),box=wrap.querySelector('[data-cat]'),val=document.getElementById('origemVal');
+          function open(o){ box.checked=o; cat.classList.toggle('is-open',o) }
+          wrap.addEventListener('change',function(e){
+            if(e.target===box){ open(box.checked); return }
+            if(e.target.name==='origem'){ val.textContent=e.target.nextElementSibling.textContent; open(false); wrap.classList.remove('is-error') }
+          });
+          var f=document.getElementById('projForm');
+          if(f)f.addEventListener('submit',function(e){
+            if(!wrap.querySelector('input[name="origem"]:checked')){
+              e.preventDefault();e.stopImmediatePropagation();
+              wrap.classList.add('is-error');open(true);
+            }
+          },true);
+        })();
+        (function(){
+          var el=document.getElementById('telefone'),dial=document.getElementById('telDial'),
+              btn=document.getElementById('telBtn'),pop=document.getElementById('telPop'),
+              search=document.getElementById('telSearch'),list=document.getElementById('telList'),
+              empty=document.getElementById('telEmpty');
+          if(!el||!btn)return;
+          var C=[
+            ['BR','55','Brasil','(dd) ddddd-dddd'],['PT','351','Portugal','ddd ddd ddd'],
+            ['US','1','Estados Unidos','(ddd) ddd-dddd'],['CA','1','Canadá','(ddd) ddd-dddd'],
+            ['AR','54','Argentina','dd dddd-dddd'],['CL','56','Chile','d dddd dddd'],
+            ['CO','57','Colômbia','ddd ddd dddd'],['MX','52','México','dd dddd dddd'],
+            ['PE','51','Peru','ddd ddd ddd'],['UY','598','Uruguai','dd ddd ddd'],
+            ['PY','595','Paraguai','ddd dddddd'],['BO','591','Bolívia','d ddd dddd'],
+            ['EC','593','Equador','dd ddd dddd'],['ES','34','Espanha','ddd dd dd dd'],
+            ['GB','44','Reino Unido','dddd dddddd'],['IE','353','Irlanda','dd ddd dddd'],
+            ['FR','33','França','d dd dd dd dd'],['DE','49','Alemanha','ddd ddddddd'],
+            ['IT','39','Itália','ddd ddd dddd'],['NL','31','Holanda','d dddddddd'],
+            ['CH','41','Suíça','dd ddd dd dd'],['SE','46','Suécia','dd ddd dd dd'],
+            ['PL','48','Polônia','ddd ddd ddd'],['AE','971','Emirados Árabes','dd ddd dddd'],
+            ['IL','972','Israel','dd ddd dddd'],['ZA','27','África do Sul','dd ddd dddd'],
+            ['AU','61','Austrália','d dddd dddd'],['NZ','64','Nova Zelândia','dd ddd dddd'],
+            ['IN','91','Índia','ddddd dddddd'],['JP','81','Japão','dd dddd dddd'],
+            ['CN','86','China','ddd dddd dddd'],['KR','82','Coreia do Sul','dd dddd dddd'],
+            ['AO','244','Angola','ddd ddd ddd'],['MZ','258','Moçambique','dd ddd dddd']
+          ];
+          var LANG=(localStorage.getItem('filka-lang')||'pt');
+          var L={pt:{search:'Buscar país ou código',none:'Nenhum país encontrado',err:'Informe o telefone completo, ex.: '},
+                 en:{search:'Search country or code',none:'No country found',err:'Enter the full phone number, e.g. '},
+                 es:{search:'Buscar país o código',none:'Ningún país encontrado',err:'Ingrese el teléfono completo, ej.: '}};
+          function tag(){return LANG==='pt'?'pt-BR':LANG}
+          function cname(i){
+            try{ return new Intl.DisplayNames([tag()],{type:'region'}).of(C[i][0])||C[i][2] }catch(e){ return C[i][2] }
+          }
+          var order=[];
+          function reorder(){ order=C.map(function(c,i){return i}).sort(function(a,b){return cname(a).localeCompare(cname(b),tag())}) }
+          function l10n(){
+            var t=L[LANG]||L.pt;
+            search.placeholder=t.search; empty.textContent=t.none;
+            reorder();
+          }
+          document.addEventListener('filka:langchange',function(e){ LANG=(e.detail&&e.detail.lang)||'pt'; l10n(); if(!pop.hidden)render(search.value) });
+          function norm(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')}
+          function render(q){
+            q=norm(q||'').trim();
+            list.innerHTML='';
+            var n=0;
+            order.forEach(function(i){
+              var c=C[i],dq=q.replace(/\D/g,'');
+              var nm=cname(i);
+              if(q && norm(nm).indexOf(q)<0 && norm(c[2]).indexOf(q)<0 && ('+'+c[1]).indexOf(q)<0 && !(dq && c[1].indexOf(dq)===0)) return;
+              n++;
+              var li=document.createElement('li');
+              li.setAttribute('role','option'); li.dataset.i=String(i);
+              if(i===cur) li.setAttribute('aria-selected','true');
+              li.innerHTML='<span>'+nm+'</span><span>+'+c[1]+'</span>';
+              li.addEventListener('click',function(){ cur=i; paint(); el.value=fmt(el.value); closePop(); el.focus() });
+              list.appendChild(li);
+            });
+            empty.hidden = n>0;
+          }
+          function openPop(){
+            pop.hidden=false; btn.setAttribute('aria-expanded','true');
+            search.value=''; render(''); search.focus();
+          }
+          function closePop(){ pop.hidden=true; btn.setAttribute('aria-expanded','false') }
+          btn.addEventListener('click',function(){ pop.hidden?openPop():closePop() });
+          search.addEventListener('input',function(){ render(search.value) });
+          search.addEventListener('keydown',function(e){
+            if(e.key==='Escape'){ closePop(); btn.focus() }
+            if(e.key==='Enter'){ e.preventDefault(); var f=list.querySelector('li'); if(f)f.click() }
+          });
+          document.addEventListener('click',function(e){ if(!pop.hidden && !pop.contains(e.target) && e.target!==btn && !btn.contains(e.target)) closePop() });
+          function guess(){
+            var r='';
+            try{ r=(Intl.DateTimeFormat().resolvedOptions().locale||'').split('-')[2]||'' }catch(e){}
+            if(!r){ var l=navigator.language||''; r=(l.split('-')[1]||'') }
+            r=(r||'').toUpperCase();
+            var TZ={'America/Sao_Paulo':'BR','America/Fortaleza':'BR','America/Recife':'BR','America/Bahia':'BR','America/Manaus':'BR','Europe/Lisbon':'PT','America/New_York':'US','America/Chicago':'US','America/Los_Angeles':'US','America/Toronto':'CA','America/Mexico_City':'MX','America/Argentina/Buenos_Aires':'AR','America/Santiago':'CL','America/Bogota':'CO','America/Lima':'PE','America/Montevideo':'UY','Europe/Madrid':'ES','Europe/London':'GB','Europe/Paris':'FR','Europe/Berlin':'DE','Europe/Rome':'IT'};
+            if(!r){ try{ r=TZ[Intl.DateTimeFormat().resolvedOptions().timeZone]||'' }catch(e){} }
+            for(var i=0;i<C.length;i++) if(C[i][0]===r) return i;
+            return 0;
+          }
+          var cur=guess();
+          function paint(){
+            var c=C[cur];
+            dial.textContent='+'+c[1];
+            el.placeholder=c[3].replace(/d/g,'0');
+          }
+          function mask(){
+            var c=C[cur],m=c[3];
+            if(c[0]==='BR'&&el.value.replace(/\D/g,'').length<=10)m='(dd) dddd-dddd';
+            return m;
+          }
+          function fmt(v){
+            var d=v.replace(/\D/g,''),m=mask(),out='',i=0;
+            if(!d)return '';
+            for(var k=0;k<m.length&&i<d.length;k++) out+= m[k]==='d'?d[i++]:m[k];
+            if(i<d.length) out+=d.slice(i);
+            return out;
+          }
+          el.addEventListener('input',function(){
+            var atEnd=el.selectionStart===el.value.length;
+            el.value=fmt(el.value);
+            if(atEnd)try{el.setSelectionRange(el.value.length,el.value.length)}catch(e){}
+            el.setCustomValidity('');
+          });
+          el.addEventListener('blur',function(){ if(el.value)el.value=fmt(el.value).trim() });
+          function check(){
+            var d=el.value.replace(/\D/g,'');
+            if(d.length<8){el.setCustomValidity((L[LANG]||L.pt).err+C[cur][3].replace(/d/g,'0'));return false}
+            el.setCustomValidity('');return true;
+          }
+          var f=document.getElementById('projForm');
+          if(f)f.addEventListener('submit',function(e){
+            if(!check()){e.preventDefault();e.stopImmediatePropagation();el.reportValidity();el.focus();return}
+            if(el.value.charAt(0)!=='+') el.value='+'+C[cur][1]+' '+fmt(el.value).trim();
+          },true);
+          l10n(); paint();
+        })();
+        (function(){
+          var el=document.getElementById('email');if(!el)return;
+          var RE=/^[a-z0-9._%+-]+@[a-z0-9-]+(\.[a-z0-9-]+)+$/;
+          function clean(v){
+            return v.toLowerCase()
+              .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+              .replace(/\s+/g,'')
+              .replace(/[^a-z0-9@._%+-]/g,'')
+              .replace(/@{2,}/g,'@')
+              .replace(/\.{2,}/g,'.');
+          }
+          el.addEventListener('input',function(){
+            var p=el.selectionStart,before=el.value,after=clean(before);
+            if(before!==after){el.value=after;try{el.setSelectionRange(p-(before.length-after.length),p-(before.length-after.length))}catch(e){}}
+            el.setCustomValidity('');
+          });
+          el.addEventListener('paste',function(){setTimeout(function(){el.value=clean(el.value)},0)});
+          function check(){
+            var v=el.value.trim();
+            if(!v){el.setCustomValidity('Informe seu e-mail.');return false}
+            if((v.match(/@/g)||[]).length!==1||!RE.test(v)){el.setCustomValidity('Digite um e-mail válido, ex.: seu@email.com');return false}
+            el.setCustomValidity('');return true;
+          }
+          el.addEventListener('blur',function(){if(el.value)check()});
+          var f=document.getElementById('projForm');
+          if(f)f.addEventListener('submit',function(e){el.value=clean(el.value);if(!check()){e.preventDefault();e.stopImmediatePropagation();el.reportValidity();el.focus()}},true);
+        })();
+        (function(){
+          var form=document.getElementById('projForm'),picks=document.getElementById('fpPicks'),out=document.getElementById('ajuda');
+          if(!form||!picks||!out)return;
+          function sync(){
+            var parts=[];
+            Array.prototype.forEach.call(picks.children,function(el){
+              if(el.classList.contains('fp-cat')){
+                var c=el.querySelector('[data-cat]'); if(!c.checked)return;
+                var subs=Array.prototype.map.call(el.querySelectorAll('.fp-pick--sub input:checked'),function(i){return i.nextElementSibling.textContent});
+                parts.push(subs.length?c.getAttribute('data-cat')+' ('+subs.join(', ')+')':c.getAttribute('data-cat'));
+              } else { var i=el.querySelector('input'); if(i&&i.checked)parts.push(i.value) }
+            });
+            out.value=parts.join('; ');
+          }
+          picks.addEventListener('change',function(e){
+            var t=e.target;
+            if(t.hasAttribute&&t.hasAttribute('data-cat')){
+              var g=t.closest('.fp-cat');
+              g.classList.toggle('is-open',t.checked);
+              if(!t.checked)Array.prototype.forEach.call(g.querySelectorAll('.fp-pick--sub input'),function(i){i.checked=false});
+            }
+            sync();picks.classList.remove('is-error');
+          });
+          form.addEventListener('submit',function(e){sync();if(!out.value){e.preventDefault();e.stopImmediatePropagation();picks.classList.add('is-error');picks.querySelector('input').focus()}},true);
+        })();
+        </script>
+
+        <div class="fp-success" id="projSuccess" hidden>
+          <div class="fp-success__icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <h2 class="fp-success__title"><span style="color: #ffffffc7;">Mensagem recebida!</span></h2>
+          <p class="fp-success__text">Obrigado pelo contato. Já recebemos as suas informações e vamos responder em até 1 dia útil, por e-mail.</p>
+          <p class="fp-success__hint">Enquanto isso, se quiser, dê uma olhada no que já construímos:</p>
+          <div class="fp-success__actions">
+            <a class="btn btn--dark" href="projetos.html">
+              Ver nossos projetos
+              <span class="arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </a>
+            <button type="button" class="fp-success__again" id="projAgain">Enviar outra mensagem</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -297,9 +561,12 @@
   }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // Form submit → send to Formspree → redirect to the thank-you page (obrigado.html)
+  // Form submit → send to Formspree → thank-you state
   (function () {
     const form = document.getElementById('projForm');
+    const success = document.getElementById('projSuccess');
+    const nameOut = document.getElementById('projName');
+    const again = document.getElementById('projAgain');
     const submitBtn = document.getElementById('projSubmit');
     const msg = document.getElementById('projMsg');
     if (!form) return;
@@ -313,10 +580,45 @@
       if (!form.reportValidity()) return;
 
       const nome = (document.getElementById('nome').value || '').trim();
+      const first = nome.split(' ')[0];
+      const showSuccess = () => {
+        if (first) nameOut.textContent = first;
+        form.hidden = true;
+        success.hidden = false;
+        success.classList.add('is-in');
+      };
 
       // set reply-to from the email field
       const replyto = document.getElementById('replytoField');
       if (replyto) replyto.value = document.getElementById('email').value || '';
+
+      const L = localStorage.getItem('filka-lang') || 'pt';
+      const FB = {
+        pt: { lead: 'Não conseguimos enviar automaticamente.', link: 'Enviar pelo seu e-mail' },
+        en: { lead: 'We could not send it automatically.', link: 'Send from your email app' },
+        es: { lead: 'No pudimos enviarlo automáticamente.', link: 'Enviar desde tu correo' }
+      }[localStorage.getItem('filka-lang') || 'pt'] || { lead: 'Não conseguimos enviar automaticamente.', link: 'Enviar pelo seu e-mail' };
+      const fallback = (reason) => {
+        const g = (id) => (document.getElementById(id) || {}).value || '';
+        const body = [
+          'Nome: ' + g('nome'),
+          'Telefone: ' + g('telefone'),
+          'E-mail: ' + g('email'),
+          'Empresa: ' + g('empresa'),
+          'Serviços: ' + g('ajuda'),
+          'Como conheceu: ' + ((form.querySelector('input[name="origem"]:checked') || {}).value || ''),
+          '',
+          g('mente')
+        ].join('\n');
+        const href = 'mailto:contato@filkastudio.com.br'
+          + '?subject=' + encodeURIComponent('Novo projeto — ' + (g('empresa') || g('nome')))
+          + '&body=' + encodeURIComponent(body);
+        msg.style.color = '#E08A6E';
+        msg.textContent = (reason || FB.lead) + ' ';
+        const a = document.createElement('a');
+        a.href = href; a.textContent = FB.link; a.className = 'fp-msg__link';
+        msg.appendChild(a);
+      };
 
       msg.style.color = '';
       msg.textContent = '';
@@ -330,21 +632,24 @@
         });
         const data = await res.json().catch(() => ({}));
         if (res.ok && (data.success === 'true' || data.success === true || res.status === 200)) {
-          const dest = 'obrigado.html' + (nome ? '?nome=' + encodeURIComponent(nome) : '');
-          location.href = dest;
-          return;
+          showSuccess();
         } else {
-          msg.style.color = '#E08A6E';
-          msg.textContent = (data.errors && data.errors[0] && data.errors[0].message)
-            || 'Não foi possível enviar agora. Tente de novo ou escreva para o nosso e-mail.';
+          fallback((data.errors && data.errors[0] && data.errors[0].message) || null);
         }
       } catch (err) {
-        msg.style.color = '#E08A6E';
-        msg.textContent = 'Sem conexão. Tente de novo ou escreva para o nosso e-mail.';
+        fallback(null);
       } finally {
         label.textContent = labelDefault;
         submitBtn.disabled = false;
       }
+    });
+
+    again.addEventListener('click', () => {
+      form.reset();
+      success.hidden = true;
+      success.classList.remove('is-in');
+      form.hidden = false;
+      msg.textContent = '';
     });
   })();
 </script>

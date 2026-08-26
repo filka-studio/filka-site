@@ -5,16 +5,173 @@
 (function () {
   const T = {
     en: {
+      "Começamos no ambiente que você já tem. Três fases, até o dado responder ao negócio.": "We start from the environment you already have. Three phases, until the data answers to the business.",
+      "Análise do Ambiente": "Environment Analysis",
+      "Lemos a arquitetura, a qualidade dos pipelines e a governança que já existem, e definimos com você as perguntas que o dado precisa responder.": "We read the existing architecture, pipeline quality and governance, and define with you the questions the data needs to answer.",
+      "Data Discovery": "Data Discovery",
+      "Leitura da arquitetura": "Architecture review",
+      "Perguntas do negócio": "Business questions",
+      "Definição de indicadores": "Metrics definition",
+      "Modelagem e Governança": "Modelling and Governance",
+      "Organizamos camadas, permissões e contexto por domínio até os números fecharem entre relatórios, validando com quem usa.": "We organise layers, permissions and per-domain context until the numbers reconcile across reports, validating with the people who use them.",
+      "Data Governance": "Data Governance",
+      "Lean Analytics": "Lean Analytics",
+      "Modelagem das camadas": "Layer modelling",
+      "Qualidade e permissões": "Quality and permissions",
+      "Contexto por domínio": "Per-domain context",
+      "Validação com usuários": "Validation with users",
+      "Entrega e Evolução": "Delivery and Evolution",
+      "Camada de IA/BI e automações no ar, com monitoramento de uso e custo para seguir ajustando o que dá retorno.": "The AI/BI layer and automations live, with usage and cost monitoring so we keep tuning what pays off.",
+      "MLOps": "MLOps",
+      "Medir": "Measure",
+      "Aprender": "Learn",
+      "Ajustar": "Adjust",
+      "Escalar": "Scale",
+      "Marca e site na mesma linha. Três fases, do posicionamento ao site no ar.": "Brand and website on the same track. Three phases, from positioning to a site live.",
+      "Imersão de Marca": "Brand Immersion",
+      "Entendemos o negócio, o público e o que te diferencia da concorrência. É daqui que sai cada decisão visual depois.": "We understand the business, the audience and what sets you apart from the competition. Every visual decision follows from here.",
+      "Brand Strategy": "Brand Strategy",
+      "Diagnóstico de marca": "Brand assessment",
+      "Público e posicionamento": "Audience and positioning",
+      "Definição da mensagem": "Message definition",
+      "Arquitetura e Design": "Architecture and Design",
+      "Estruturamos as páginas e a mensagem antes de desenhar, e detalhamos a direção visual junto com você até o layout fechar.": "We structure the pages and the message before designing, then refine the visual direction with you until the layout lands.",
+      "Arquitetura de conteúdo": "Content architecture",
+      "Wireframe e fluxo": "Wireframe and flow",
+      "Direção visual": "Visual direction",
+      "Validação do layout": "Layout validation",
+      "Publicação e Otimização": "Launch and Optimisation",
+      "Vai ao ar com SEO técnico e analytics configurados, e segue evoluindo com base no que os dados mostram.": "It goes live with technical SEO and analytics configured, and keeps evolving based on what the data shows.",
+      "SEO": "SEO",
+      "CRO": "CRO",
+      "Publicar": "Publish",
+      "Tecnologia que devolve tempo.": "Technology that gives time back.",
+      "Mapeamos o processo, redesenhamos o fluxo e colocamos tecnologia onde ela realmente destrava a operação. Da estratégia ao squad que executa junto com o seu time.": "We map the process, redesign the flow and put technology where it truly unblocks the operation. From strategy to the squad that delivers alongside your team.",
+      "Começa com entendimento, não com ferramenta. Três fases, ao lado do seu time.": "It starts with understanding, not with a tool. Three phases, side by side with your team.",
+      "Análise de Negócio": "Business Analysis",
+      "Estudamos o mercado do cliente e definimos junto com você a proposta de valor e as métricas de sucesso do negócio.": "We study your market and define the value proposition and success metrics together with you.",
+      "Engenharia de Valor": "Value Engineering",
+      "Benchmark e tendências de mercado": "Benchmark and market trends",
+      "Proposta de valor": "Value proposition",
+      "Definição de entregas": "Deliverables definition",
+      "Modelagem de Solução": "Solution Modelling",
+      "Imersão com stakeholders e usuários-chave para absorver o conhecimento de negócio e conduzir a ideação da solução.": "Immersion with stakeholders and key users to absorb the business knowledge and drive the ideation of the solution.",
+      "Definição de funcionalidades": "Feature definition",
+      "Análise e levantamento de requisitos": "Requirements analysis and gathering",
+      "Brainstorm e ideação": "Brainstorming and ideation",
+      "Validação de ideias": "Idea validation",
+      "Entrega de Valor Constante": "Continuous Value Delivery",
+      "Metodologias ágeis para entregar os objetivos de negócio reduzindo o risco do projeto e otimizando o tempo de entrega.": "Agile methods to deliver the business goals while reducing project risk and optimising time to delivery.",
+      "Observar": "Observe",
+      "Orientar": "Orient",
+      "Decidir": "Decide",
+      "Agir": "Act",
+      "Integração de sistemas": "Systems integration",
+      "Fazemos as ferramentas que você já paga conversarem entre si, por API, conectores e camadas de integração.": "We make the tools you already pay for talk to each other, through APIs, connectors and integration layers.",
+      "Salesforce sob medida": "Custom Salesforce",
+      "Sales Cloud ajustado à sua operação: automações em Apex e Flows, componentes LWC e integrações com o resto do parque.": "Sales Cloud tailored to your operation: Apex and Flow automations, LWC components and integrations with the rest of your stack.",
+      "Desenvolvimento de software": "Software development",
+      "Sistemas e produtos internos construídos sob medida, do back ao front, feitos para rodar em produção e não para virar protótipo.": "Custom-built internal systems and products, back to front, made to run in production rather than end up as a prototype.",
+      "Do dado bruto à decisão.": "From raw data to the decision.",
+      "Diagnóstico do seu ambiente, camada de IA e BI com governança de verdade e automações que tiram o trabalho repetitivo do caminho do seu time.": "An assessment of your environment, a truly governed AI and BI layer, and automations that take repetitive work off your team.",
+      "Começamos no ambiente que você já tem e fazemos ele responder ao negócio.": "We start from the environment you already have and make it answer to the business.",
+      "Diagnosticar": "Assess",
+      "Avaliamos arquitetura, qualidade dos pipelines, governança e custo.": "We review architecture, pipeline quality, governance and cost.",
+      "Modelar": "Model",
+      "Organizamos camadas e permissões para os números fecharem.": "We organise layers and permissions so the numbers add up.",
+      "Entregar": "Deliver",
+      "Camada de IA/BI e automações que respondem ao negócio.": "An AI/BI layer and automations that answer to the business.",
+      "Sustentar": "Sustain",
+      "Handover documentado, treinamento e otimização de custo.": "Documented handover, training and cost optimisation.",
+      "Auditoria técnica do ambiente: camadas, qualidade dos pipelines, governança, custo de processamento e prontidão para IA. Entrega relatório executivo e plano priorizado.": "Technical audit of the environment: layers, pipeline quality, governance, processing cost and AI readiness. Delivered as an executive report and a prioritised plan.",
+      "Modelagem das views, permissões, contexto por domínio de negócio e exemplos validados com usuários reais. Seu time pergunta em português e o dado responde.": "View modelling, permissions, context per business domain and examples validated with real users. Your team asks in plain language and the data answers.",
+      "Automação": "Automation",
+      "Aquele processo manual que consome horas todo mês vira rotina automática: ETLs, integrações, conectores de API e relatórios que se montam sozinhos.": "That manual process eating hours every month becomes an automatic routine: ETLs, integrations, API connectors and reports that build themselves.",
+      "Sua marca no ar, com engenharia.": "Your brand online, with engineering.",
+      "A cara da sua empresa no digital, desenhada por quem entende de marca e construída por quem entende de código. Carrega rápido, mede tudo e converte.": "Your company's face online, designed by people who understand brand and built by people who understand code. Loads fast, measures everything and converts.",
+      "Marca e site na mesma linha: do posicionamento ao site publicado e funcionando.": "Brand and website on the same track: from positioning to a site published and working.",
+      "Imersão": "Immersion",
+      "Entendemos o negócio, o público e o que te diferencia.": "We understand the business, the audience and what sets you apart.",
+      "Estrutura": "Structure",
+      "Definimos páginas e mensagem antes de desenhar.": "We define pages and message before designing.",
+      "Design e código": "Design and code",
+      "O que você aprova é o que vai ao ar, rápido e acessível.": "What you approve is what goes live, fast and accessible.",
+      "No ar": "Live",
+      "Publicação com SEO e analytics, mais treinamento do seu time.": "Launch with SEO and analytics, plus training for your team.",
+      "Uma página, um objetivo. Copy orientada a conversão, design alinhado à marca e métricas configuradas desde o primeiro dia.": "One page, one goal. Conversion-driven copy, design aligned to the brand and metrics set up from day one.",
+      "Site institucional com blog": "Company website with blog",
+      "Sua marca no ar com várias páginas e área de conteúdo, SEO técnico, performance e integração com CRM e ferramentas de marketing.": "Your brand online with multiple pages and a content area, technical SEO, performance and integration with CRM and marketing tools.",
+      "Identidade visual": "Visual identity",
+      "Marca com conceito: paleta, tipografia, aplicações e um manual objetivo que as pessoas realmente usam no dia a dia.": "A brand with a concept: palette, typography, applications and a straightforward manual people actually use day to day.",
+      "Criação de logo": "Logo design",
+      "Desenho do símbolo e da assinatura da marca, com variações para cada uso e arquivos entregues em todos os formatos.": "Design of the symbol and brand signature, with variants for each use and files delivered in every format.",
+      "Cartão de visita": "Business card",
+      "Social media": "Social media",
+      "Conteúdo e posts para redes sociais: linha visual consistente, calendário editorial e peças prontas para publicar.": "Content and posts for social media: a consistent visual line, an editorial calendar and pieces ready to publish.",
+      "Papelaria alinhada à identidade, pronta para impressão, com arquivo fechado e especificação para a gráfica.": "Stationery aligned to the identity, print-ready, with the final file and specs for the printer.",
+      "Manutenção de Legado": "Legacy Maintenance",
+      "Sustentação e evolução de sistemas antigos que ainda sustentam o negócio: correções, atualização de dependências e modernização por partes, sem parar a operação.": "Support and evolution of older systems the business still runs on: fixes, dependency updates and step-by-step modernisation, without stopping operations.",
+      "Todos": "All",
+      "Ainda não temos um projeto público nesta frente. Fale com a gente para conhecer os cases sob NDA.":
+        "We don't have a public project in this area yet. Get in touch to hear about the cases under NDA.",
+      // Nav v2
+      "Início": "Home",
+      "Transformação Digital": "Digital Transformation",
+      "Dados e IA": "Data & AI",
+      "Digital e Marca": "Digital & Brand",
+      "Processos, sistemas e squad dedicado": "Processes, systems and a dedicated squad",
+      "Diagnóstico, IA/BI e automação": "Assessment, AI/BI and automation",
+      "Sites, identidade visual e marca": "Websites, visual identity and brand",
+      "Iniciar projeto": "Start a project",
+      "Agendar reunião": "Book a meeting",
+      // Home v2
+      "Pensamos em": "We think in",
+      "código e em composição visual": "code and in visual composition",
+      "marcas que passaram por aqui": "brands we've worked with",
+      "Gente que confiou no nosso trabalho.": "People who trusted our work.",
+      "Três frentes que se conversam. Escolha por onde começar e veja a metodologia e as soluções de cada uma.":
+        "Three connected fronts. Pick where to start and see the methodology and solutions of each one.",
+      "Mapeamos o processo, redesenhamos o fluxo e colocamos tecnologia onde ela devolve tempo. Da estratégia ao squad que executa junto com o seu time.":
+        "We map the process, redesign the flow and put technology where it gives time back. From strategy to the squad that delivers alongside your team.",
+      "Diagnóstico de maturidade digital": "Digital maturity assessment",
+      "mapeamento e redesenho de processos": "process mapping and redesign",
+      "integração de sistemas": "systems integration",
+      "Salesforce sob medida": "custom Salesforce",
+      "desenvolvimento de software": "software development",
+      "outsourcing e squad dedicado": "outsourcing and dedicated squad",
+      "Levamos o dado bruto até a decisão. Diagnóstico do ambiente, camada de IA/BI com governança e automações que eliminam o trabalho repetitivo.":
+        "We take raw data all the way to the decision. Environment assessment, a governed AI/BI layer and automations that remove repetitive work.",
+      "Diagnóstico de dados": "Data assessment",
+      "IA e BI": "AI and BI",
+      "automação": "automation",
+      "A cara da sua empresa no digital, com engenharia por trás. Carrega rápido, mede tudo e converte, sem abrir mão da estética.":
+        "Your company's face online, with engineering behind it. Loads fast, measures everything and converts, without giving up on aesthetics.",
+      "One page": "One page",
+      "site institucional com blog": "company website with blog",
+      "identidade visual": "visual identity",
+      "criação de logo": "logo design",
+      "cartão de visita": "business card",
+      "Saiba mais": "Learn more",
+      // Service pages
+      "como trabalhamos": "how we work",
+      "Metodologia": "Methodology",
+      "soluções": "solutions",
+      "O que entregamos": "What we deliver",
+      "transformação digital": "digital transformation",
+      "dados e ia": "data & ai",
+      "digital e marca": "digital & brand",
       // Nav
       "Serviços": "Services",
       "Projetos": "Projects",
       "Processo": "Process",
       "Preços": "Pricing",
       "Contato": "Contact",
+      "Fale Conosco": "Get in touch",
       "Home": "Home",
       // Hero
       "Integramos dois universos, programação e design, para transformar sua visão em produto. Alta qualidade e agilidade, da arquitetura ao último pixel.":
         "We bring two worlds together, engineering and design, to turn your vision into a product. High quality and speed, from architecture to the last pixel.",
+      "Agendar uma reunião": "Book a meeting",
       "Agendar reunião": "Book a meeting",
       "Agendar reunião →": "Book a meeting →",
       "Ver cases": "See our work",
@@ -233,9 +390,19 @@
       "Conte o que o seu negócio precisa. A gente responde em até 1 dia útil, por e-mail.":
         "Tell us what your business needs. We reply within 1 business day, by email.",
       "E-mail": "Email",
+      "cofundador, tech": "co-founder, tech",
       "WhatsApp": "WhatsApp",
       "Atendimento": "Availability",
       "Remoto, Brasil e exterior": "Remote, Brazil and abroad",
+      "E-mail": "Email",
+      "cofundador, tech": "co-founder, tech",
+      "seu@email.com": "you@email.com",
+      "Transformação digital": "Digital transformation",
+      "Digital e marca": "Digital & brand",
+      "Outros": "Other",
+      "Manutenção de legado": "Legacy maintenance",
+      "REDES SOCIAIS": "SOCIAL MEDIA",
+      "\"Todo projeto começa com uma boa conversa.\"": "\"Every project starts with a good conversation.\"",
       "\"Todo projeto começa com uma boa conversa": "\"Every project starts with a good conversation",
       "Seu nome": "Your name",
       "Telefone": "Phone",
@@ -262,6 +429,7 @@
         "Thanks for reaching out. We've got your details and will reply within 1 business day by email.",
       "Enquanto isso, se quiser, dê uma olhada no que já construímos:":
         "In the meantime, feel free to take a look at what we've built:",
+      "Ver nossos cases": "See our work",
       "Ver nossos projetos": "See our projects",
       "Enviar outra mensagem": "Send another message",
       // Careers page (trabalhe)
@@ -297,16 +465,173 @@
         "Thanks for your interest! We got your application and we'll keep your details on file."
     },
     es: {
+      "Começamos no ambiente que você já tem. Três fases, até o dado responder ao negócio.": "Empezamos en el entorno que ya tienes. Tres fases, hasta que el dato responda al negocio.",
+      "Análise do Ambiente": "Análisis del Entorno",
+      "Lemos a arquitetura, a qualidade dos pipelines e a governança que já existem, e definimos com você as perguntas que o dado precisa responder.": "Leemos la arquitectura, la calidad de los pipelines y la gobernanza que ya existen, y definimos contigo las preguntas que el dato debe responder.",
+      "Data Discovery": "Data Discovery",
+      "Leitura da arquitetura": "Lectura de la arquitectura",
+      "Perguntas do negócio": "Preguntas del negocio",
+      "Definição de indicadores": "Definición de indicadores",
+      "Modelagem e Governança": "Modelado y Gobernanza",
+      "Organizamos camadas, permissões e contexto por domínio até os números fecharem entre relatórios, validando com quem usa.": "Organizamos capas, permisos y contexto por dominio hasta que los números cuadren entre informes, validando con quien los usa.",
+      "Data Governance": "Data Governance",
+      "Lean Analytics": "Lean Analytics",
+      "Modelagem das camadas": "Modelado de las capas",
+      "Qualidade e permissões": "Calidad y permisos",
+      "Contexto por domínio": "Contexto por dominio",
+      "Validação com usuários": "Validación con usuarios",
+      "Entrega e Evolução": "Entrega y Evolución",
+      "Camada de IA/BI e automações no ar, com monitoramento de uso e custo para seguir ajustando o que dá retorno.": "Capa de IA/BI y automatizaciones en línea, con monitoreo de uso y costo para seguir ajustando lo que da retorno.",
+      "MLOps": "MLOps",
+      "Medir": "Medir",
+      "Aprender": "Aprender",
+      "Ajustar": "Ajustar",
+      "Escalar": "Escalar",
+      "Marca e site na mesma linha. Três fases, do posicionamento ao site no ar.": "Marca y sitio en la misma línea. Tres fases, del posicionamiento al sitio en línea.",
+      "Imersão de Marca": "Inmersión de Marca",
+      "Entendemos o negócio, o público e o que te diferencia da concorrência. É daqui que sai cada decisão visual depois.": "Entendemos el negocio, el público y lo que te diferencia de la competencia. De aquí sale cada decisión visual después.",
+      "Brand Strategy": "Brand Strategy",
+      "Diagnóstico de marca": "Diagnóstico de marca",
+      "Público e posicionamento": "Público y posicionamiento",
+      "Definição da mensagem": "Definición del mensaje",
+      "Arquitetura e Design": "Arquitectura y Diseño",
+      "Estruturamos as páginas e a mensagem antes de desenhar, e detalhamos a direção visual junto com você até o layout fechar.": "Estructuramos las páginas y el mensaje antes de diseñar, y detallamos la dirección visual contigo hasta cerrar el layout.",
+      "Arquitetura de conteúdo": "Arquitectura de contenido",
+      "Wireframe e fluxo": "Wireframe y flujo",
+      "Direção visual": "Dirección visual",
+      "Validação do layout": "Validación del layout",
+      "Publicação e Otimização": "Publicación y Optimización",
+      "Vai ao ar com SEO técnico e analytics configurados, e segue evoluindo com base no que os dados mostram.": "Sale al aire con SEO técnico y analytics configurados, y sigue evolucionando con base en lo que muestran los datos.",
+      "SEO": "SEO",
+      "CRO": "CRO",
+      "Publicar": "Publicar",
+      "Tecnologia que devolve tempo.": "Tecnología que devuelve tiempo.",
+      "Mapeamos o processo, redesenhamos o fluxo e colocamos tecnologia onde ela realmente destrava a operação. Da estratégia ao squad que executa junto com o seu time.": "Mapeamos el proceso, rediseñamos el flujo y ponemos tecnología donde realmente desbloquea la operación. De la estrategia al squad que ejecuta junto a tu equipo.",
+      "Começa com entendimento, não com ferramenta. Três fases, ao lado do seu time.": "Empieza con entendimiento, no con herramienta. Tres fases, al lado de tu equipo.",
+      "Análise de Negócio": "Análisis de Negocio",
+      "Estudamos o mercado do cliente e definimos junto com você a proposta de valor e as métricas de sucesso do negócio.": "Estudiamos el mercado del cliente y definimos contigo la propuesta de valor y las métricas de éxito del negocio.",
+      "Engenharia de Valor": "Ingeniería de Valor",
+      "Benchmark e tendências de mercado": "Benchmark y tendencias de mercado",
+      "Proposta de valor": "Propuesta de valor",
+      "Definição de entregas": "Definición de entregas",
+      "Modelagem de Solução": "Modelado de Solución",
+      "Imersão com stakeholders e usuários-chave para absorver o conhecimento de negócio e conduzir a ideação da solução.": "Inmersión con stakeholders y usuarios clave para absorber el conocimiento del negocio y conducir la ideación de la solución.",
+      "Definição de funcionalidades": "Definición de funcionalidades",
+      "Análise e levantamento de requisitos": "Análisis y levantamiento de requisitos",
+      "Brainstorm e ideação": "Brainstorm e ideación",
+      "Validação de ideias": "Validación de ideas",
+      "Entrega de Valor Constante": "Entrega de Valor Constante",
+      "Metodologias ágeis para entregar os objetivos de negócio reduzindo o risco do projeto e otimizando o tempo de entrega.": "Metodologías ágiles para entregar los objetivos de negocio reduciendo el riesgo del proyecto y optimizando el tiempo de entrega.",
+      "Observar": "Observar",
+      "Orientar": "Orientar",
+      "Decidir": "Decidir",
+      "Agir": "Actuar",
+      "Integração de sistemas": "Integración de sistemas",
+      "Fazemos as ferramentas que você já paga conversarem entre si, por API, conectores e camadas de integração.": "Hacemos que las herramientas que ya pagas conversen entre sí, por API, conectores y capas de integración.",
+      "Salesforce sob medida": "Salesforce a medida",
+      "Sales Cloud ajustado à sua operação: automações em Apex e Flows, componentes LWC e integrações com o resto do parque.": "Sales Cloud ajustado a tu operación: automatizaciones en Apex y Flows, componentes LWC e integraciones con el resto del parque.",
+      "Desenvolvimento de software": "Desarrollo de software",
+      "Sistemas e produtos internos construídos sob medida, do back ao front, feitos para rodar em produção e não para virar protótipo.": "Sistemas y productos internos construidos a medida, del back al front, hechos para correr en producción y no para quedar en prototipo.",
+      "Do dado bruto à decisão.": "Del dato bruto a la decisión.",
+      "Diagnóstico do seu ambiente, camada de IA e BI com governança de verdade e automações que tiram o trabalho repetitivo do caminho do seu time.": "Diagnóstico de tu entorno, capa de IA y BI con gobernanza de verdad y automatizaciones que quitan el trabajo repetitivo del camino de tu equipo.",
+      "Começamos no ambiente que você já tem e fazemos ele responder ao negócio.": "Empezamos en el entorno que ya tienes y lo hacemos responder al negocio.",
+      "Diagnosticar": "Diagnosticar",
+      "Avaliamos arquitetura, qualidade dos pipelines, governança e custo.": "Evaluamos arquitectura, calidad de los pipelines, gobernanza y costo.",
+      "Modelar": "Modelar",
+      "Organizamos camadas e permissões para os números fecharem.": "Organizamos capas y permisos para que los números cuadren.",
+      "Entregar": "Entregar",
+      "Camada de IA/BI e automações que respondem ao negócio.": "Capa de IA/BI y automatizaciones que responden al negocio.",
+      "Sustentar": "Sostener",
+      "Handover documentado, treinamento e otimização de custo.": "Handover documentado, capacitación y optimización de costo.",
+      "Auditoria técnica do ambiente: camadas, qualidade dos pipelines, governança, custo de processamento e prontidão para IA. Entrega relatório executivo e plano priorizado.": "Auditoría técnica del entorno: capas, calidad de los pipelines, gobernanza, costo de procesamiento y preparación para IA. Entrega informe ejecutivo y plan priorizado.",
+      "Modelagem das views, permissões, contexto por domínio de negócio e exemplos validados com usuários reais. Seu time pergunta em português e o dado responde.": "Modelado de las vistas, permisos, contexto por dominio de negocio y ejemplos validados con usuarios reales. Tu equipo pregunta en lenguaje natural y el dato responde.",
+      "Automação": "Automatización",
+      "Aquele processo manual que consome horas todo mês vira rotina automática: ETLs, integrações, conectores de API e relatórios que se montam sozinhos.": "Ese proceso manual que consume horas cada mes se vuelve rutina automática: ETLs, integraciones, conectores de API e informes que se arman solos.",
+      "Sua marca no ar, com engenharia.": "Tu marca en línea, con ingeniería.",
+      "A cara da sua empresa no digital, desenhada por quem entende de marca e construída por quem entende de código. Carrega rápido, mede tudo e converte.": "La cara de tu empresa en digital, diseñada por quien entiende de marca y construida por quien entiende de código. Carga rápido, mide todo y convierte.",
+      "Marca e site na mesma linha: do posicionamento ao site publicado e funcionando.": "Marca y sitio en la misma línea: del posicionamiento al sitio publicado y funcionando.",
+      "Imersão": "Inmersión",
+      "Entendemos o negócio, o público e o que te diferencia.": "Entendemos el negocio, el público y lo que te diferencia.",
+      "Estrutura": "Estructura",
+      "Definimos páginas e mensagem antes de desenhar.": "Definimos páginas y mensaje antes de diseñar.",
+      "Design e código": "Diseño y código",
+      "O que você aprova é o que vai ao ar, rápido e acessível.": "Lo que apruebas es lo que sale al aire, rápido y accesible.",
+      "No ar": "En línea",
+      "Publicação com SEO e analytics, mais treinamento do seu time.": "Publicación con SEO y analytics, más capacitación de tu equipo.",
+      "Uma página, um objetivo. Copy orientada a conversão, design alinhado à marca e métricas configuradas desde o primeiro dia.": "Una página, un objetivo. Copy orientada a conversión, diseño alineado a la marca y métricas configuradas desde el primer día.",
+      "Site institucional com blog": "Sitio institucional con blog",
+      "Sua marca no ar com várias páginas e área de conteúdo, SEO técnico, performance e integração com CRM e ferramentas de marketing.": "Tu marca en línea con varias páginas y área de contenido, SEO técnico, performance e integración con CRM y herramientas de marketing.",
+      "Identidade visual": "Identidad visual",
+      "Marca com conceito: paleta, tipografia, aplicações e um manual objetivo que as pessoas realmente usam no dia a dia.": "Marca con concepto: paleta, tipografía, aplicaciones y un manual objetivo que la gente realmente usa en el día a día.",
+      "Criação de logo": "Creación de logo",
+      "Desenho do símbolo e da assinatura da marca, com variações para cada uso e arquivos entregues em todos os formatos.": "Diseño del símbolo y de la firma de la marca, con variaciones para cada uso y archivos entregados en todos los formatos.",
+      "Cartão de visita": "Tarjeta de visita",
+      "Social media": "Redes sociales",
+      "Conteúdo e posts para redes sociais: linha visual consistente, calendário editorial e peças prontas para publicar.": "Contenido y posts para redes sociales: línea visual consistente, calendario editorial y piezas listas para publicar.",
+      "Papelaria alinhada à identidade, pronta para impressão, com arquivo fechado e especificação para a gráfica.": "Papelería alineada a la identidad, lista para imprimir, con archivo cerrado y especificación para la imprenta.",
+      "Manutenção de Legado": "Mantenimiento de Legado",
+      "Sustentação e evolução de sistemas antigos que ainda sustentam o negócio: correções, atualização de dependências e modernização por partes, sem parar a operação.": "Soporte y evolución de sistemas antiguos que aún sostienen el negocio: correcciones, actualización de dependencias y modernización por partes, sin detener la operación.",
+      "Todos": "Todos",
+      "Ainda não temos um projeto público nesta frente. Fale com a gente para conhecer os cases sob NDA.":
+        "Aún no tenemos un proyecto público en esta área. Habla con nosotros para conocer los casos bajo NDA.",
+      // Nav v2
+      "Início": "Inicio",
+      "Transformação Digital": "Transformación Digital",
+      "Dados e IA": "Datos e IA",
+      "Digital e Marca": "Digital y Marca",
+      "Processos, sistemas e squad dedicado": "Procesos, sistemas y squad dedicado",
+      "Diagnóstico, IA/BI e automação": "Diagnóstico, IA/BI y automatización",
+      "Sites, identidade visual e marca": "Sitios, identidad visual y marca",
+      "Iniciar projeto": "Iniciar proyecto",
+      "Agendar reunião": "Agendar reunión",
+      // Home v2
+      "Pensamos em": "Pensamos en",
+      "código e em composição visual": "código y en composición visual",
+      "marcas que passaram por aqui": "marcas con las que trabajamos",
+      "Gente que confiou no nosso trabalho.": "Gente que confió en nuestro trabajo.",
+      "Três frentes que se conversam. Escolha por onde começar e veja a metodologia e as soluções de cada uma.":
+        "Tres frentes que se conectan. Elige por dónde empezar y mira la metodología y las soluciones de cada una.",
+      "Mapeamos o processo, redesenhamos o fluxo e colocamos tecnologia onde ela devolve tempo. Da estratégia ao squad que executa junto com o seu time.":
+        "Mapeamos el proceso, rediseñamos el flujo y ponemos tecnología donde devuelve tiempo. De la estrategia al squad que ejecuta junto a tu equipo.",
+      "Diagnóstico de maturidade digital": "Diagnóstico de madurez digital",
+      "mapeamento e redesenho de processos": "mapeo y rediseño de procesos",
+      "integração de sistemas": "integración de sistemas",
+      "Salesforce sob medida": "Salesforce a medida",
+      "desenvolvimento de software": "desarrollo de software",
+      "outsourcing e squad dedicado": "outsourcing y squad dedicado",
+      "Levamos o dado bruto até a decisão. Diagnóstico do ambiente, camada de IA/BI com governança e automações que eliminam o trabalho repetitivo.":
+        "Llevamos el dato bruto hasta la decisión. Diagnóstico del entorno, capa de IA/BI con gobernanza y automatizaciones que eliminan el trabajo repetitivo.",
+      "Diagnóstico de dados": "Diagnóstico de datos",
+      "IA e BI": "IA y BI",
+      "automação": "automatización",
+      "A cara da sua empresa no digital, com engenharia por trás. Carrega rápido, mede tudo e converte, sem abrir mão da estética.":
+        "La cara de tu empresa en digital, con ingeniería detrás. Carga rápido, mide todo y convierte, sin renunciar a la estética.",
+      "One page": "One page",
+      "site institucional com blog": "sitio institucional con blog",
+      "identidade visual": "identidad visual",
+      "criação de logo": "creación de logo",
+      "cartão de visita": "tarjeta de visita",
+      "Saiba mais": "Saber más",
+      // Service pages
+      "como trabalhamos": "cómo trabajamos",
+      "Metodologia": "Metodología",
+      "soluções": "soluciones",
+      "O que entregamos": "Qué entregamos",
+      "transformação digital": "transformación digital",
+      "dados e ia": "datos e ia",
+      "digital e marca": "digital y marca",
       // Nav
       "Serviços": "Servicios",
       "Projetos": "Proyectos",
       "Processo": "Proceso",
       "Preços": "Precios",
       "Contato": "Contacto",
+      "Fale Conosco": "Hablemos",
       "Home": "Inicio",
       // Hero
       "Integramos dois universos, programação e design, para transformar sua visão em produto. Alta qualidade e agilidade, da arquitetura ao último pixel.":
         "Unimos dos universos, programación y diseño, para convertir tu visión en producto. Alta calidad y agilidad, de la arquitectura al último píxel.",
+      "Agendar uma reunião": "Agendar una reunión",
       "Agendar reunião": "Agendar una reunión",
       "Agendar reunião →": "Agendar una reunión →",
       "Ver cases": "Ver casos",
@@ -528,6 +853,15 @@
       "WhatsApp": "WhatsApp",
       "Atendimento": "Atención",
       "Remoto, Brasil e exterior": "Remoto, Brasil y exterior",
+      "E-mail": "Correo electrónico",
+      "cofundador, tech": "cofundador, tech",
+      "seu@email.com": "tu@email.com",
+      "Transformação digital": "Transformación digital",
+      "Digital e marca": "Digital y marca",
+      "Outros": "Otros",
+      "Manutenção de legado": "Mantenimiento de legado",
+      "REDES SOCIAIS": "REDES SOCIALES",
+      "\"Todo projeto começa com uma boa conversa.\"": "\"Todo proyecto empieza con una buena conversación.\"",
       "\"Todo projeto começa com uma boa conversa": "\"Todo proyecto empieza con una buena conversación",
       "Seu nome": "Tu nombre",
       "Telefone": "Teléfono",
@@ -554,6 +888,7 @@
         "Gracias por escribirnos. Ya tenemos tus datos y responderemos en hasta 1 día hábil por correo.",
       "Enquanto isso, se quiser, dê uma olhada no que já construímos:":
         "Mientras tanto, si quieres, echa un vistazo a lo que hemos construido:",
+      "Ver nossos cases": "Ver nuestros casos",
       "Ver nossos projetos": "Ver nuestros proyectos",
       "Enviar outra mensagem": "Enviar otro mensaje",
       // Careers page (trabalhe)
@@ -594,9 +929,8 @@
   let snapshot = null;
   let placeholders = null;
 
-  function collect() {
-    snapshot = [];
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+  function walk(root, out) {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
       acceptNode(n) {
         const p = n.parentNode;
         if (!p) return NodeFilter.FILTER_REJECT;
@@ -608,7 +942,12 @@
       }
     });
     let node;
-    while ((node = walker.nextNode())) snapshot.push({ node, pt: node.nodeValue });
+    while ((node = walker.nextNode())) out.push({ node, pt: node.nodeValue });
+    return out;
+  }
+
+  function collect() {
+    snapshot = walk(document.body, []);
     // Placeholders (inputs / textareas)
     placeholders = [];
     document.querySelectorAll('[placeholder]').forEach(el => {
@@ -616,10 +955,9 @@
     });
   }
 
-  function apply(lang) {
-    if (!snapshot) collect();
+  function translate(recs, lang) {
     const dict = T[lang];
-    snapshot.forEach(rec => {
+    recs.forEach(rec => {
       if (lang === 'pt' || !dict) { rec.node.nodeValue = rec.pt; return; }
       const tr = dict[norm(rec.pt)];
       if (tr != null) {
@@ -630,6 +968,12 @@
         rec.node.nodeValue = rec.pt;
       }
     });
+  }
+
+  function apply(lang) {
+    if (!snapshot) collect();
+    const dict = T[lang];
+    translate(snapshot, lang);
     if (placeholders) placeholders.forEach(rec => {
       if (lang === 'pt' || !dict) { rec.el.setAttribute('placeholder', rec.pt); return; }
       const tr = dict[norm(rec.pt)];
@@ -641,6 +985,21 @@
   }
 
   window.filkaApplyLang = apply;
+
+  // Translate content injected AFTER page load (modals, dynamically rendered sections).
+  // The load-time snapshot cannot see those nodes, so each render calls this on its root.
+  window.filkaTranslateSubtree = function (root, lang) {
+    if (!root) return;
+    const target = lang || localStorage.getItem('filka-lang') || 'pt';
+    if (target === 'pt') return;
+    const recs = walk(root, []);
+    translate(recs, target);
+    root.querySelectorAll('[placeholder]').forEach(el => {
+      const pt = el.getAttribute('placeholder');
+      const tr = (T[target] || {})[norm(pt)];
+      if (tr != null) el.setAttribute('placeholder', tr);
+    });
+  };
 
   // Apply persisted language on load (nav.js injected the bar already via defer order)
   const saved = localStorage.getItem('filka-lang') || 'pt';

@@ -3,9 +3,11 @@
 Site institucional da Filka. HTML, CSS e JavaScript puro (sem build).
 
 ## Páginas
-- `index.html` — home (hero, serviços, projetos, processo, preços, contato)
+- `index.html` — home (hero, serviços, projetos, FAQ, contato)
+- `transformacao-digital.html`, `dados-ia.html`, `digital-marca.html` — páginas de serviço, linkadas a partir da home
 - `projetos.html` — projetos com pré-visualização em modal
 - `contato.html` — formulário de contato
+- `obrigado.html` — página de agradecimento pós-envio do formulário (`noindex`)
 - `trabalhe.html` — trabalhe conosco
 - `privacidade.html` — política de privacidade
 - `termos.html` — termos de uso
@@ -25,6 +27,7 @@ Site institucional da Filka. HTML, CSS e JavaScript puro (sem build).
   - `privacy-i18n.js` / `termos-i18n.js` — traduções das páginas legais
   - `plexus.js` — animação do banner
   - `projects-modal.js` — modal de pré-visualização dos projetos
+  - `service-modal.js` — modal das páginas de serviço na home
   - `cookies.js` — pop-up de cookies
   - `filkai.js` — botão flutuante (WhatsApp + voltar ao topo)
 - `assets/img/` — imagens e logos (otimizadas, WebP quando possível)

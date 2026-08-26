@@ -182,7 +182,7 @@
       </p>
       <div class="legal-cta">
         <p>Send us your request and we'll get back to you within 1 business day.</p>
-        <a class="mail" href="mailto:filkastudio@outlook.com.br">filkastudio@outlook.com.br</a>
+        <a class="mail" href="mailto:contato@filkastudio.com.br">contato@filkastudio.com.br</a>
       </div>
     </section>`
   };
@@ -349,7 +349,7 @@
       </p>
       <div class="legal-cta">
         <p>Envía tu solicitud y te respondemos en hasta 1 día hábil.</p>
-        <a class="mail" href="mailto:filkastudio@outlook.com.br">filkastudio@outlook.com.br</a>
+        <a class="mail" href="mailto:contato@filkastudio.com.br">contato@filkastudio.com.br</a>
       </div>
     </section>`
   };
