@@ -79,8 +79,15 @@
 
 <section class="section--tight projx" data-screen-label="Lista de projetos">
   <div class="container">
+    <div style="display:flex; justify-content:center;"><div class="pfilter reveal" role="tablist" aria-label="Filtrar projetos">
+      <button class="pfilter__btn is-active" type="button" data-filter="all" role="tab" aria-selected="true">Todos</button>
+      <button class="pfilter__btn" type="button" data-filter="td" role="tab" aria-selected="false">Transformação Digital</button>
+      <button class="pfilter__btn" type="button" data-filter="dia" role="tab" aria-selected="false">Dados e IA</button>
+      <button class="pfilter__btn" type="button" data-filter="dm" role="tab" aria-selected="false">Digital e Marca</button>
+    </div></div>
+
     <div class="showcase">
-      <a class="showcase-card reveal" data-project href="https://filka-studio.github.io/colegio-volpi/" target="_blank" rel="noopener">
+      <a class="showcase-card reveal" data-project data-cat="dm" href="https://filka-studio.github.io/colegio-volpi/" target="_blank" rel="noopener">
         <div class="showcase-card__frame">
           <iframe src="https://filka-studio.github.io/colegio-volpi/" title="Colégio Volpi" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
         </div>
@@ -93,7 +100,7 @@
         </div>
       </a>
 
-      <a class="showcase-card reveal" data-project href="https://filka-studio.github.io/la-gondola/" target="_blank" rel="noopener">
+      <a class="showcase-card reveal" data-project data-cat="dm" href="https://filka-studio.github.io/la-gondola/" target="_blank" rel="noopener">
         <div class="showcase-card__frame">
           <iframe src="https://filka-studio.github.io/la-gondola/" title="La Góndola" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
         </div>
@@ -106,7 +113,7 @@
         </div>
       </a>
 
-      <a class="showcase-card reveal" data-project href="https://filka-studio.github.io/knupp/Home.dc.html" target="_blank" rel="noopener">
+      <a class="showcase-card reveal" data-project data-cat="dm" href="https://filka-studio.github.io/knupp/Home.dc.html" target="_blank" rel="noopener">
         <div class="showcase-card__frame">
           <iframe src="https://filka-studio.github.io/knupp/Home.dc.html" title="Knupp" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
         </div>
@@ -119,6 +126,8 @@
         </div>
       </a>
     </div>
+
+    <p class="pfilter__empty" id="pfilterEmpty" hidden>Ainda não temos um projeto público nesta frente. Fale com a gente para conhecer os cases sob NDA.</p>
 
     <div class="projx__more">
       <p>E muitos outros em andamento. Nossos trabalhos de design vivem no Behance.</p>
@@ -138,6 +147,26 @@
 <script src="js/cookies.js" defer></script>
 <script src="js/filkai.js" defer></script>
 <script src="js/projects-modal.js" defer></script>
+<script>
+  // Project category filter
+  document.addEventListener('DOMContentLoaded', function () {
+    const btns = document.querySelectorAll('.pfilter__btn');
+    const cards = document.querySelectorAll('.showcase-card[data-cat]');
+    const empty = document.getElementById('pfilterEmpty');
+    if (!btns.length) return;
+    btns.forEach(b => b.addEventListener('click', () => {
+      const f = b.dataset.filter;
+      btns.forEach(o => { o.classList.toggle('is-active', o === b); o.setAttribute('aria-selected', String(o === b)); });
+      let shown = 0;
+      cards.forEach(c => {
+        const on = f === 'all' || c.dataset.cat === f;
+        c.hidden = !on;
+        if (on) shown++;
+      });
+      if (empty) empty.hidden = shown > 0;
+    }));
+  });
+</script>
 <script>
   // Reveal on scroll
   (function () {
