@@ -3,8 +3,7 @@
 Site institucional da Filka. HTML, CSS e JavaScript puro (sem build).
 
 ## Páginas
-- `index.html` — home (hero, serviços, projetos, FAQ, contato)
-- `transformacao-digital.html`, `dados-ia.html`, `digital-marca.html` — páginas de serviço, linkadas a partir da home
+- `index.html` — home (hero, serviços, projetos, FAQ, contato). "Saiba mais" nas linhas de serviço abre um modal in-page (`service-modal.js`) — não há páginas de serviço separadas
 - `projetos.html` — projetos com pré-visualização em modal
 - `contato.html` — formulário de contato
 - `obrigado.html` — página de agradecimento pós-envio do formulário (`noindex`)
